@@ -1,0 +1,9 @@
+{
+  "name": "materializer",
+  "license": "UNLICENSED",
+  "private": true,
+
+  "dependencies": {
+    "materialize-css": "0.97.6"
+  }
+}
