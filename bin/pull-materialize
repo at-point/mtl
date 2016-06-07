@@ -27,8 +27,15 @@ cp -r node_modules/materialize-css/fonts vendor/assets/fonts
 echo " * Cleanup file permissions -x flags?!"
 find vendor/assets -type f -print0 | xargs -0 chmod gou-x
 
+vers=$(node -e 'var p=require("./node_modules/materialize-css/package.json");console.log(p.version)')
+
 echo
 echo " NEXT STEPS:"
 echo " [ ] Commit changes to vendor/assets via git"
-echo " [ ] Update app/assets/javascripts/materialize.js"
-echo " [ ] Update app/assets/javascripts/materialize.js"
+echo " [ ] Copy or update the following files:"
+echo "     - app/assets/javascripts/materialize.js"
+echo "     - lib/generators/materializer/templates/materialize.scss"
+echo "     - lib/generators/materializer/templates/_color.scss"
+echo "     - lib/generators/materializer/templates/_variables.scss"
+echo "  ~> Compare against node_modules/materialize-css/sass!"
+echo " [ ] Update lib/materializer/version#MATERIALIZE_VERSION => ${vers}"
