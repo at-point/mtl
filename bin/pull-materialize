@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+# Update npm
+npm update
+
+# Cleanup
+echo " * Cleaning up vendor/assets..."
+[ -d vendor/assets ] && rm -rf vendor/assets || true
+mkdir -p vendor/assets/stylesheets
+mkdir -p vendor/assets/javascripts
+
+# Copy SASS
+echo " * Copy node_modules/materialize-css/sass..."
+cp -r node_modules/materialize-css/sass/components vendor/assets/stylesheets/materialize
+
+# Copy JS
+echo " * Copy node_modules/materialize-css/js..."
+cp -r node_modules/materialize-css/js vendor/assets/javascripts/materialize
+rm vendor/assets/javascripts/materialize/materialize.js
+
+# Copy fonts
+echo " * Copy node_modules/materialize-css/fonts..."
+cp -r node_modules/materialize-css/fonts vendor/assets/fonts
+
+echo " * Cleanup file permissions -x flags?!"
+find vendor/assets -type f -print0 | xargs -0 chmod gou-x
+
+echo
+echo " NEXT STEPS:"
+echo " [ ] Commit changes to vendor/assets via git"
+echo " [ ] Update app/assets/javascripts/materialize.js"
+echo " [ ] Update app/assets/javascripts/materialize.js"
