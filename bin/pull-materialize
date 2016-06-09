@@ -3,7 +3,7 @@ set -euo pipefail
 IFS=$'\n\t'
 
 # Update npm
-npm update
+npm update --verbose
 
 # Cleanup
 echo " * Cleaning up vendor/assets..."
@@ -18,7 +18,7 @@ cp -r node_modules/materialize-css/sass/components vendor/assets/stylesheets/mat
 # Copy JS
 echo " * Copy node_modules/materialize-css/js..."
 cp -r node_modules/materialize-css/js vendor/assets/javascripts/materialize
-rm vendor/assets/javascripts/materialize/materialize.js
+[ -f vendor/assets/javascripts/materialize/materialize.js ] && rm vendor/assets/javascripts/materialize/materialize.js || true
 
 # Copy fonts
 echo " * Copy node_modules/materialize-css/fonts..."

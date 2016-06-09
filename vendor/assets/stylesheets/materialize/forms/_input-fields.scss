@@ -123,6 +123,18 @@ textarea.materialize-textarea {
 
 // Styling for input field wrapper
 .input-field {
+  // Gutter spacing
+  &.col {
+    label {
+      left: $gutter-width / 2;
+    }
+
+    .prefix ~ label,
+    .prefix ~ .validate ~ label {
+      width: calc(100% - 3rem - #{$gutter-width});
+    }
+  }
+
   position: relative;
   margin-top: 1rem;
 
@@ -130,7 +142,6 @@ textarea.materialize-textarea {
     color: $input-border-color;
     position: absolute;
     top: 0.8rem;
-    left: $gutter-width / 2;
     font-size: 1rem;
     cursor: text;
     transition: .2s ease-out;
@@ -152,7 +163,10 @@ textarea.materialize-textarea {
   }
 
   .prefix ~ input,
-  .prefix ~ textarea {
+  .prefix ~ textarea,
+  .prefix ~ label,
+  .prefix ~ .validate ~ label,
+  .prefix ~ .autocomplete-content {
     margin-left: 3rem;
     width: 92%;
     width: calc(100% - 3rem);
@@ -238,4 +252,23 @@ textarea {
   word-wrap: break-word;
   overflow-wrap: break-word; /* future version of deprecated 'word-wrap' */
   padding-top: 1.2rem; /* prevents text jump on Enter keypress */
+}
+
+
+/* Autocomplete */
+.autocomplete-content {
+  margin-top: -15px;
+  display: block;
+  opacity: 1;
+  position: static;
+
+  li {
+    .highlight { color: #444; }
+
+    img {
+      height: $dropdown-item-height - 10;
+      width: $dropdown-item-height - 10;
+      margin: 5px 15px;
+    }
+  }
 }

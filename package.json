@@ -4,6 +4,6 @@
   "private": true,
 
   "dependencies": {
-    "materialize-css": "latest"
+    "materialize-css": "https://github.com/Dogfalo/materialize.git#607951e"
   }
 }
