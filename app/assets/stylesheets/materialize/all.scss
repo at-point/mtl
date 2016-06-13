@@ -1,32 +1,38 @@
-@charset "UTF-8";
+@charset 'UTF-8';
 
 // Reset
-@import "materialize/normalize";
+@import 'materialize/normalize';
 
 // components
-@import "materialize/global";
-@import "materialize/material-icons";
-@import "materialize/grid";
-@import "materialize/navbar";
-@import "materialize/roboto";
-@import "materialize/typography";
-@import "materialize/cards";
-@import "materialize/toast";
-@import "materialize/tabs";
-@import "materialize/tooltip";
-@import "materialize/buttons";
-@import "materialize/dropdown";
-@import "materialize/waves";
-@import "materialize/modal";
-@import "materialize/collapsible";
-@import "materialize/chips";
-@import "materialize/materialbox";
-@import "materialize/forms/forms";
-@import "materialize/table_of_contents";
-@import "materialize/sideNav";
-@import "materialize/preloader";
-@import "materialize/slider";
-@import "materialize/carousel";
-@import "materialize/date_picker/default";
-@import "materialize/date_picker/default.date";
-@import "materialize/date_picker/default.time";
+@import 'materialize/global';
+@import 'materialize/material-icons';
+@import 'materialize/grid';
+@import 'materialize/navbar';
+@import 'materialize/roboto';
+@import 'materialize/typography';
+@import 'materialize/cards';
+@import 'materialize/toast';
+@import 'materialize/tabs';
+@import 'materialize/tooltip';
+@import 'materialize/buttons';
+@import 'materialize/dropdown';
+@import 'materialize/waves';
+@import 'materialize/modal';
+@import 'materialize/collapsible';
+@import 'materialize/chips';
+@import 'materialize/materialbox';
+@import 'materialize/forms/forms';
+@import 'materialize/table_of_contents';
+@import 'materialize/sideNav';
+@import 'materialize/preloader';
+@import 'materialize/slider';
+@import 'materialize/carousel';
+@import 'materialize/date_picker/default';
+@import 'materialize/date_picker/default.date';
+@import 'materialize/date_picker/default.time';
+
+// extending the materializer library
+@import './extend/all';
+
+// including layouts
+@import './layouts/all';
