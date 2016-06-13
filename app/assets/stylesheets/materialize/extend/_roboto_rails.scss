@@ -5,9 +5,9 @@
     asset-url('roboto/Roboto-Thin.woff2') format('woff2'),
     asset-url('roboto/Roboto-Thin.woff') format('woff'),
     asset-url('roboto/Roboto-Thin.ttf') format('truetype');
-
   font-weight: 200;
 }
+
 @font-face {
   font-family: 'Roboto';
   src: local(Roboto Light), asset-url('roboto/Roboto-Light.eot');

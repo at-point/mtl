@@ -5,18 +5,23 @@
 
 // components
 @import 'materialize/global';
-@import 'materialize/material-icons';
+@import './extend/material-icons';
 @import 'materialize/grid';
 @import 'materialize/navbar';
 
-// using asset_url's
 //@import 'materialize/roboto';
-@import './extend/roboto_rails';
+@import './extend/roboto_rails'; // using asset_url's
 
 @import 'materialize/typography';
+
 @import 'materialize/cards';
+@import './extend/cards';
+
 @import 'materialize/toast';
+
 @import 'materialize/tabs';
+@import './extend/tabs';
+
 @import 'materialize/tooltip';
 @import 'materialize/buttons';
 @import 'materialize/dropdown';
@@ -27,7 +32,10 @@
 @import 'materialize/materialbox';
 @import 'materialize/forms/forms';
 @import 'materialize/table_of_contents';
+
 @import 'materialize/sideNav';
+@import './extend/sideNav';
+
 @import 'materialize/preloader';
 @import 'materialize/slider';
 @import 'materialize/carousel';
@@ -35,10 +43,8 @@
 @import 'materialize/date_picker/default.date';
 @import 'materialize/date_picker/default.time';
 
-// extending the materializer library
+// extending the materializer library even more
 @import './extend/mixins';
-@import './extend/sidebar';
-@import './extend/cards';
 
 // including layouts
 @import './layouts/default';
