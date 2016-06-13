@@ -8,7 +8,11 @@
 @import 'materialize/material-icons';
 @import 'materialize/grid';
 @import 'materialize/navbar';
-@import 'materialize/roboto';
+
+// using asset_url's
+//@import 'materialize/roboto';
+@import './extend/roboto_rails';
+
 @import 'materialize/typography';
 @import 'materialize/cards';
 @import 'materialize/toast';
@@ -32,7 +36,7 @@
 @import 'materialize/date_picker/default.time';
 
 // extending the materializer library
-@import './extend/all';
+@import './extend/sidebar';
 
 // including layouts
-@import './layouts/all';
+@import './layouts/default';
