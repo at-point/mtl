@@ -1,13 +1,15 @@
 // sidebar
-.side-nav-user {
-  padding: 20px;
-  height: 200px;
+.side-nav {
+  &-user {
+    padding: 20px;
+    height: 200px;
 
-  a {
-    display: inline-block;
-    padding: 0;
+    a {
+      display: inline-block;
+      padding: 0;
+    }
   }
-}
-.side-nav-divider {
-  padding: 10px 0;
+  &-divider {
+    padding: 10px 0;
+  }
 }

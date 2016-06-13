@@ -1,35 +1,58 @@
 $mtl-layout-default-bg: #fafafa;
 $mtl-layout-default-sidenav-width: 240px;
 
-html,
-.mtl-layout-default {
-  background-color: $mtl-layout-default-bg;
+// yes, necessary
+html {
   height: 100%;
 }
 
-// sidebar logic
-.mtl-layout-default main {
-  padding-left: $mtl-layout-default-sidenav-width;
+// default layout: responsive with sidebar
+.mtl-layout-default {
+  background-color: $mtl-layout-default-bg;
+  height: 100%;
 
-  @media #{$medium-and-down} {
-    padding: 0;
+  // sidebar logic
+  main {
+    padding-left: $mtl-layout-default-sidenav-width;
+
+    @media #{$medium-and-down} {
+      padding: 0;
+    }
   }
-}
 
-// layout components
-.mtl-layout-default-header {
-  padding: 20px;
-}
-.mtl-layout-default-content {
-  padding: 20px;
-}
+  // layout components
+  &-header {
+    padding: 0.75rem 1.5rem;
+  }
+  &-content {
+    padding: 0.75rem 1.5rem;
+
+    &.half-padding {
+      padding: 0.75rem;
+    }
+    &.no-padding {
+      padding: 0;
+    }
+  }
 
 
-// header elements$
-.mtl-layout-default-header {
-  h1 {
-    margin: 0;
-    font-size: 20px;
-    line-height: 24px;
+  // header elements
+  &-header {
+    h1 {
+      margin: 0;
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  // container override
+  .container {
+    width: 100%;
+    max-width: 896px;
+  }
+
+  // header nav toggler
+  > nav .button-collapse {
+    padding: 0 1.3rem;
   }
 }
