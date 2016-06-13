@@ -2,6 +2,9 @@
 //=require "materialize/velocity.min"
 //=require "materialize/hammer.min"
 //=require "materialize/jquery.hammer"
+
+//=require "materialize/global"
+
 //=require "materialize/collapsible"
 //=require "materialize/dropdown"
 //=require "materialize/leanModal"
