@@ -36,7 +36,9 @@
 @import 'materialize/date_picker/default.time';
 
 // extending the materializer library
+@import './extend/mixins';
 @import './extend/sidebar';
+@import './extend/cards';
 
 // including layouts
 @import './layouts/default';

@@ -1,14 +1,35 @@
+$mtl-layout-default-bg: #fafafa;
+$mtl-layout-default-sidenav-width: 240px;
+
 html,
-body {
-  background-color: #fff;
+.mtl-layout-default {
+  background-color: $mtl-layout-default-bg;
   height: 100%;
 }
 
 // sidebar logic
-main {
-  padding-left: 240px;
+.mtl-layout-default main {
+  padding-left: $mtl-layout-default-sidenav-width;
 
   @media #{$medium-and-down} {
-    padding-left: 0;
+    padding: 0;
+  }
+}
+
+// layout components
+.mtl-layout-default-header {
+  padding: 20px;
+}
+.mtl-layout-default-content {
+  padding: 20px;
+}
+
+
+// header elements$
+.mtl-layout-default-header {
+  h1 {
+    margin: 0;
+    font-size: 20px;
+    line-height: 24px;
   }
 }
