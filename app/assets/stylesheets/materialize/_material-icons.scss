@@ -4,9 +4,9 @@
   font-weight: 400;
   src: local('Material Icons'),
        local('MaterialIcons-Regular'),
-       asset-url(material-icons/MaterialIcons-Regular.woff2) format('woff2'),
-       asset-url(material-icons/MaterialIcons-Regular.woff) format('woff'),
-       asset-url(material-icons/MaterialIcons-Regular.ttf) format('truetype');
+       asset-url('material-icons/MaterialIcons-Regular.woff2') format('woff2'),
+       asset-url('material-icons/MaterialIcons-Regular.woff') format('woff'),
+       asset-url('material-icons/MaterialIcons-Regular.ttf') format('truetype');
 }
 
 .material-icons {
