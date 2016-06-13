@@ -4,6 +4,7 @@
   "private": true,
 
   "dependencies": {
-    "materialize-css": "https://github.com/Dogfalo/materialize.git#607951e"
+    "materialize-css": "https://github.com/Dogfalo/materialize.git#607951e",
+    "material-design-icons": "2.2.3"
   }
 }

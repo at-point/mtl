@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+# Update npm
+NPM_ARGS=${NPM_ARGS:-}
+[[ $* == *"--verbose"* ]] && NPM_ARGS="${NPM_ARGS} --verbose" || true
+npm update $NPM_ARGS
+
+# Cleanup
+echo " * Cleaning up vendor/assets..."
+[ -d vendor/assets ] && rm -rf vendor/assets || true
+mkdir -p vendor/assets/stylesheets
+mkdir -p vendor/assets/javascripts
+mkdir -p vendor/assets/fonts
+
+# MATERIALIZE: 1 - Copy SASS
+echo " * [materialize-css] Copy node_modules/materialize-css/sass..."
+cp -r node_modules/materialize-css/sass/components vendor/assets/stylesheets/materialize
+
+# MATERIALIZE: 2 - Copy JS
+echo " * [materialize-css] Copy node_modules/materialize-css/js..."
+cp -r node_modules/materialize-css/js vendor/assets/javascripts/materialize
+[ -f vendor/assets/javascripts/materialize/materialize.js ] && rm vendor/assets/javascripts/materialize/materialize.js || true
+
+# MATERIALIZE: 3 - Copy fonts
+echo " * [materialize-css] Copy node_modules/materialize-css/fonts..."
+cp -r node_modules/materialize-css/fonts/roboto vendor/assets/fonts/roboto
+
+# MATERIALIZE: 4 - Cleanup / chmod
+echo " * [materialize-css] Cleanup file permissions -x flags?!"
+find vendor/assets -type f -print0 | xargs -0 chmod gou-x
+
+# ICONS: 1 - Copy fonts
+echo " * [materialize-css] Copy node_modules/material-design-icons/iconfont..."
+cp -r node_modules/material-design-icons/iconfont vendor/assets/fonts/material-icons
+
+materialize_vers=$(node -e 'var p=require("./node_modules/materialize-css/package.json");console.log(p.version)')
+icons_vers=$(node -e 'var p=require("./node_modules/material-design-icons/package.json");console.log(p.version)')
+
+echo
+echo "NEXT STEPS:"
+echo " 1. [ ] Commit changes to vendor/assets via git"
+echo " 2. [ ] Copy or update the following files:"
+echo "        - app/assets/javascripts/materialize.js"
+echo "        - lib/generators/materializer/templates/materialize.scss"
+echo "        - lib/generators/materializer/templates/_color.scss"
+echo "        - lib/generators/materializer/templates/_variables.scss"
+echo "     ~> Compare against node_modules/materialize-css/sass!"
+echo " 3. [ ] Check _material-icons.scss against original from node_modules/material-design-icons/iconfont"
+echo " 4. [ ] Update lib/materializer/version#MATERIALIZE_VERSION => ${materialize_vers}"
+echo " 5. [ ] Update lib/materializer/version#ICONS_VERSION => ${icons_vers}"

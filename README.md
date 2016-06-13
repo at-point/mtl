@@ -7,6 +7,7 @@ to simplify UI designs for back-office heavy applications by leveraging the foll
 tools:
 
 - [Materialize CSS][materialize]
+- [Material Icons][icons] font from Google
 - [Rails][rails] and it's asset pipeline
 - Google Material Design
 
@@ -62,12 +63,12 @@ To release a new version, update the version number in `version.rb`, and then ru
 `bundle exec rake release`, which will create a git tag for the version, push
 git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
-### Update materialize-css
+### Update materialize-css or icons
 
 1. Change version in `package.json`
 2. Run `npm update` to fetch the new version
-3. Run `./bin/pull-materialize`: this copies all resources to vendor/assets
-4. Follow _NEXT STEPS_ closely as defined in output of `pull-materialize`
+3. Run `./bin/pull-all`: this copies all resources to vendor/assets
+4. Follow _NEXT STEPS_ closely as defined in output of `pull-all`
 
 ## Contributing
 
@@ -77,4 +78,5 @@ are expected to adhere to the [Contributor Covenant](http://contributor-covenant
 code of conduct.
 
 [materialize]: http://materializecss.com/
+[icons]: https://design.google.com/icons/
 [rails]: http://rubyonrails.org
