@@ -3,3 +3,12 @@ body {
   background-color: #fff;
   height: 100%;
 }
+
+// sidebar logic
+main {
+  padding-left: 240px;
+
+  @media #{$medium-and-down} {
+    padding-left: 0;
+  }
+}
