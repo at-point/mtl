@@ -4,7 +4,6 @@
   left: 0;
   top: 0;
   margin: 0;
-  transform: translateX(-100%);
   height: 100%;
   height: calc(100% + 60px);
   height: -moz-calc(100%); //Temporary Firefox Fix
@@ -14,7 +13,6 @@
   backface-visibility: hidden;
   overflow-y: auto;
   will-change: transform;
-  backface-visibility: hidden;
   transform: translateX(-105%);
 
   @extend .z-depth-1;
@@ -24,7 +22,6 @@
     right: 0;
     transform: translateX(105%);
     left: auto;
-    transform: translateX(100%);
   }
 
   .collapsible {

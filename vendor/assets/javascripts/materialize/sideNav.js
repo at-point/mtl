@@ -23,12 +23,12 @@
         $('body').append(dragTarget);
 
         if (options.edge == 'left') {
-          menu_id.css('transform', 'translateX(-100%)');
+          menu_id.css('transform', 'translateX(-105%)');
           dragTarget.css({'left': 0}); // Add Touch Area
         }
         else {
           menu_id.addClass('right-aligned') // Change text-alignment to right
-            .css('transform', 'translateX(100%)');
+            .css('transform', 'translateX(105%)');
           dragTarget.css({'right': 0}); // Add Touch Area
         }
 
@@ -55,9 +55,9 @@
             }
             else if (menuOut === false){
               if (options.edge === 'left') {
-                menu_id.css('transform', 'translateX(-100%)');
+                menu_id.css('transform', 'translateX(-105%)');
               } else {
-                menu_id.css('transform', 'translateX(100%)');
+                menu_id.css('transform', 'translateX(105%)');
               }
 
             }
