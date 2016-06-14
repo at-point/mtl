@@ -63,9 +63,55 @@ html {
   }
 
   // sidebar
-  .side-nav a {
-    font-size: 14px;
-    height: 40px;
-    line-height: 40px;
+  .side-nav {
+    a {
+      font-size: 14px;
+      height: 40px;
+      line-height: 40px;
+    }
+
+    // user block
+    &-user {
+      padding: 20px;
+
+      a {
+        display: inline-block;
+        padding: 0;
+      }
+
+      // avatars
+      //.avatar {
+      //  .initials {}
+      //}
+
+      // account info
+      &-infos {
+        margin: 8px 0 0 !important;
+        display: block !important;
+        height: auto !important;
+        line-height: 18px !important;
+      }
+      &-name {
+        display: block;
+        font-weight: bold;
+        line-height: 18px;
+      }
+      &-mail {
+        display: block;
+        line-height: 18px;
+      }
+
+      // toggle icon
+      &-toggle {}
+    }
+    &-divider {
+      padding: 10px 0;
+    }
+
+
+    .active a {
+      font-weight: 400;
+    }
   }
+
 }

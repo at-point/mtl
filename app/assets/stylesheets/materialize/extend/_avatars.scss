@@ -1,0 +1,22 @@
+// avatars
+.avatar,
+.mtl-layout-default .side-nav .avatar {
+  display: block;
+  width: 52px;
+  height: 52px;
+  line-height: 52px;
+  padding: 0;
+  border-radius: 26px;
+
+  @extend .grey, .lighten-2;
+
+  .initials,
+  img {
+    display: block;
+    width: 52px;
+    height: 52px;
+    line-height: 52px;
+    text-align: center;
+    border-radius: 26px;
+  }
+}
