@@ -26,6 +26,10 @@ html {
     position: relative;
     z-index: 1;
 
+    .nav-wrapper {
+      margin: -0.75rem -1.5rem 0 0;
+    }
+
     &.no-padding-bottom {
       padding-bottom: 0;
     }
@@ -47,7 +51,10 @@ html {
     h1 {
       margin: 0;
       font-size: 20px;
-      line-height: 24px;
+      line-height: 44px;
+    }
+    .nav-wrapper h1 {
+      line-height: 64px;
     }
   }
 
