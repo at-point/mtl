@@ -1,0 +1,30 @@
+#!/bin/bash
+set -x
+
+failures=0
+
+# Run rubocop first
+if [[ -z "$*" || $* == *"rubocop"* ]]; then
+  ./bin/rubocop
+  failures=$((failures+$?))
+fi
+
+# Then run rspec
+if [[ -z "$*" || $* == *"rspec"* || $* == *"spec"* ]]; then
+  ./bin/rspec spec
+  failures=$((failures+$?))
+fi
+
+# Coffee Lint
+if [[ -z "$*" || $* == *"coffee"* ]]; then
+  ./bin/coffeelint.rb -r app/assets/javascripts
+  failures=$((failures+$?))
+fi
+
+# SCSS Lint
+if [[ -z "$*" || $* == *"css"* ]]; then
+  ./bin/scss-lint app/assets/stylesheets
+  failures=$((failures+$?))
+fi
+
+exit $failures
