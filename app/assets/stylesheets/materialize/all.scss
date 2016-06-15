@@ -10,7 +10,7 @@
 @import 'materialize/navbar';
 
 //@import 'materialize/roboto';
-@import './extend/roboto_rails'; // using asset_url's
+@import './extend/roboto-rails'; // using asset_url's
 
 @import 'materialize/typography';
 
@@ -34,7 +34,9 @@
 @import 'materialize/table_of_contents';
 
 @import 'materialize/sideNav';
-@import './extend/sideNav';
+@import './extend/side-nav';
+@import './extend/patch_side-nav';
+
 @import './extend/avatars';
 
 @import 'materialize/preloader';

@@ -1,5 +1,4 @@
 $mtl-layout-default-bg: #fafafa;
-$mtl-layout-default-sidenav-width: 240px;
 
 // yes, necessary
 html {
@@ -13,7 +12,7 @@ html {
 
   // sidebar logic
   main {
-    padding-left: $mtl-layout-default-sidenav-width;
+    padding-left: 240px;
 
     @media #{$medium-and-down} {
       padding: 0;
