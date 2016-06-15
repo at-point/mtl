@@ -1,0 +1,140 @@
+$mtl-layout-default-bg: #fafafa;
+
+// yes, necessary
+html {
+  height: 100%;
+}
+
+// default layout: responsive with sidebar
+.mtl-layout-default {
+  background-color: $mtl-layout-default-bg;
+  height: 100%;
+
+  // sidebar logic
+  main {
+    padding-left: 240px;
+
+    @media #{$medium-and-down} {
+      padding: 0;
+    }
+  }
+
+  // layout components
+  &-header {
+    position: relative;
+    z-index: 1;
+    height: auto;
+    @include clearafter;
+
+    .nav-wrapper {
+      @include clearafter;
+
+      .brand-logo {
+        @media #{$medium-and-down} {
+
+        }
+      }
+    }
+
+    &.no-padding-bottom {
+      padding-bottom: 0;
+    }
+  }
+  &-content {
+    padding: 1.5rem;
+
+    &.half-padding {
+      padding: 0.75rem;
+    }
+    &.no-padding {
+      padding: 0;
+    }
+  }
+
+
+  // header elements
+  &-header {
+    h1 {
+      margin: 0;
+      font-size: 20px;
+      line-height: 44px;
+      padding: 0.75rem 1.5rem;
+    }
+    .nav-wrapper h1 {
+      line-height: 64px;
+      padding: 0 1.5rem;
+    }
+  }
+
+  // container override
+  .container {
+    width: 100%;
+    max-width: 896px;
+  }
+
+  // header nav toggler
+  > nav .button-collapse {
+    padding: 0 1.3rem;
+  }
+
+  // sidebar
+  .side-nav {
+    a {
+      font-size: 14px;
+      height: 40px;
+      line-height: 40px;
+    }
+
+    // user block
+    &-user {
+      padding: 20px;
+
+      a {
+        display: inline-block;
+        padding: 0;
+      }
+
+      // avatars
+      //.avatar {
+      //  .initials {}
+      //}
+
+      // account info
+      &-infos {
+        margin: 8px 0 0 !important;
+        display: block !important;
+        height: auto !important;
+        line-height: 18px !important;
+      }
+      &-name {
+        display: block;
+        font-weight: bold;
+        line-height: 18px;
+      }
+      &-mail {
+        display: block;
+        line-height: 18px;
+      }
+
+      // toggle icon
+      &-toggle {}
+    }
+    &-divider {
+      padding: 10px 0;
+    }
+
+
+    .active a {
+      font-weight: 400;
+    }
+  }
+
+  nav h1 {
+    float: left;
+    margin: 0;
+    font-size: 30px;
+    height: 64px;
+    line-height: 64px;
+  }
+
+}

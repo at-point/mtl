@@ -1,0 +1,22 @@
+exclude: /*.css
+
+linters:
+  EmptyLineBetweenBlocks:
+    enabled: false
+  PropertySortOrder:
+    enabled: false
+  DeclarationOrder:
+    enabled: false
+  VendorPrefix:
+    enabled: false
+  NestingDepth:
+    enabled: false
+  SelectorDepth:
+    enabled: false
+  SelectorFormat:
+    enabled: true
+    convention: hyphenated_BEM
+  MergeableSelector:
+    enabled: false
+  ImportantRule:
+    enabled: false

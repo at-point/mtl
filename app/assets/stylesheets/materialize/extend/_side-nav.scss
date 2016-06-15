@@ -1,0 +1,9 @@
+// sidebar
+.side-nav li.active {
+  background-color: $sidenav-bg-active-color;
+
+  a,
+  a * {
+    color: $sidenav-font-active-color !important;
+  }
+}
