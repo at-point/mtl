@@ -37,8 +37,8 @@ $> ./bin/rails generate materializer:install
 
 Last but not least change your `application.css` to include:
 
-```css
-//= require "materialize"
+```
+//= require materialize
 ```
 
 Ensure it **does not contain** any reference to `require_tree .`, as this leads
@@ -49,6 +49,17 @@ to duplicate imports and weird asset pipeline errors.
 Customize and adapt your styling as wanted, feel free to modify things in
 `_variables.scss` to your liking. Try to avoid changeing `_color.scss` when
 possible.
+
+### Rails
+
+In addition we provide a few Rails specific helpers.
+
+**Header**, see [header_helper.rb][header_helper.rb] for more information
+and details, but a quick and dirty usage to render a navbar header is:
+```haml
+= materializer_header t('.title'), back: dossiers_path do
+  = render 'filters'
+```
 
 ## Development
 
@@ -80,3 +91,5 @@ code of conduct.
 [materialize]: http://materializecss.com/
 [icons]: https://design.google.com/icons/
 [rails]: http://rubyonrails.org
+
+[header_helper.rb]: https://github.com/at-point/materializer/blob/master/lib/materializer/rails/header_helper.rb
