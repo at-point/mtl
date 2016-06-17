@@ -9,15 +9,16 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Marco Plüss', 'Lukas Westermann']
   spec.email         = ['marco@at-point.ch', 'lukas@at-point.ch']
 
-  spec.summary       = %q{Write a summary.}
-  spec.description   = %q{Write a somehwat longer description about our neat-o little gem.}
+  spec.summary       = 'Write a summary.'
+  spec.description   = 'Write a somehwat longer description about our neat-o little gem.'
   spec.homepage      = 'https://github.com/at-point/materializer'
   spec.license       = 'UNLICENSED'
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host'
-  spec.metadata['allowed_push_host'] = "https://do-not-allow-push.rubygems"
+  spec.metadata['allowed_push_host'] = 'https://do-not-allow-push.rubygems'
 
-  spec.files         = %w{.gitignore Gemfile Rakefile README.md materializer.gemspec package.json} + Dir['{lib,app,bin,vendor,spec}/**/*.{rb,erb,scss,eot,svg,ttf,woff}']
+  spec.files         = %w{.gitignore Gemfile Rakefile README.md materializer.gemspec package.json} +
+                       Dir['{lib,app,bin,vendor,spec}/**/*.{rb,erb,scss,eot,svg,ttf,woff}']
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = %w{lib}

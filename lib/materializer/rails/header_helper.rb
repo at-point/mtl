@@ -1,6 +1,5 @@
 module Materializer
   module Rails
-
     # Navbar / Header Helper
     # ======================
     #
@@ -28,7 +27,6 @@ module Materializer
     # This renders the appropriate HTML snippet, see #materialize_header for
     # more options.
     module HeaderHelper
-
       # Renders a specialized template for the header.
       #
       # - **title** - `String` with the header to display, when set to `false`
@@ -41,7 +39,8 @@ module Materializer
       #   nav menu to show / hide on mobile devices. The default used is `nav-menu`.
       #   When set to `false`, this button is skipped.
       # - **&block** - Additional content to be rendered as part of the header
-      def materializer_header(title = translate('.title', default: 'Menu'), back: false, menu: 'nav-menu', &block)
+      def materializer_header(title = translate('.title', default: 'Menu'),
+                              back: false, menu: 'nav-menu', &block)
         materializer_content = block_given? ? capture(&block) : nil
 
         render file: 'materializer/header', locals: {

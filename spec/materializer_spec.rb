@@ -4,13 +4,13 @@ require 'json'
 require 'materializer/version'
 
 RSpec.describe Materializer do
-  let(:materialize_version) {
+  let(:materialize_version) do
     JSON.parse(File.read('node_modules/materialize-css/package.json'))['version']
-  }
+  end
 
-  let(:icons_version) {
+  let(:icons_version) do
     JSON.parse(File.read('node_modules/material-design-icons/package.json'))['version']
-  }
+  end
 
   it 'has a version number' do
     expect(Materializer::VERSION).not_to be nil

@@ -4,11 +4,11 @@ require 'materializer/rails/header_helper'
 
 RSpec.describe Materializer::Rails::HeaderHelper, dom: true do
   subject { ActionView::Base.new }
-  before {
+  before do
     subject.instance_variable_set(:'@virtual_path', 'leads/dashboard')
     subject.view_paths = %w{app/views}
     subject.send(:extend, described_class)
-  }
+  end
 
   context '#materializer_header' do
     it 'renders a default header with a translated title and a menu on mobile' do

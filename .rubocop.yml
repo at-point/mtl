@@ -1,6 +1,8 @@
 AllCops:
   Exclude:
     - 'bin/*'
+    - 'node_modules/**'
+    - 'node_modules/**/*'
 
   # Cop names are not displayed in offense messages by default. Change behavior
   # by overriding DisplayCopNames, or by giving the -D/--display-cop-names
@@ -14,3 +16,21 @@ AllCops:
 
 Rails:
   Enabled: true
+
+Metrics/LineLength:
+  Max: 100
+  Exclude:
+    - spec/*
+    - spec/**/*
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%r': '{}'
+    '%w': '{}'
+
+Style/Documentation:
+  Exclude:
+    - lib/generators/**/*.rb
+    - lib/materializer.rb
+    - spec/*
+    - spec/**/*
