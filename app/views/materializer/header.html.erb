@@ -1,0 +1,25 @@
+<header class="mtl-layout-default-header z-depth-1">
+  <nav>
+    <div class="nav-wrapper">
+      <%- if materializer_back %>
+        <%= link_to materializer_back, class: 'left' do %>
+          <i class="material-icons">arrow_back</i>
+        <%- end %>
+      <%- elsif materializer_menu %>
+        <%= link_to "##{materializer_menu}", class: 'left hide-on-large-only', 'data-activates': materializer_menu, 'data-materializer': 'side-nav' do %>
+          <i class="material-icons">menu</i>
+        <%- end %>
+      <%- end %>
+
+      <%- if materializer_title %>
+      <h1 class="page-title">
+        <%= materializer_title %>
+      </h1>
+      <%- end %>
+
+      <%- if materializer_content %>
+        <%= materializer_content %>
+      <%- end %>
+    </div>
+  </nav>
+</header>

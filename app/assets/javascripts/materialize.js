@@ -20,3 +20,5 @@
 //=require "materialize/slider"
 //=require "materialize/date_picker/picker"
 //=require "materialize/date_picker/picker.date"
+
+//= require "materialize/hooks"

@@ -3,7 +3,7 @@ require 'spec_helper'
 require 'json'
 require 'materializer/version'
 
-describe Materializer do
+RSpec.describe Materializer do
   let(:materialize_version) {
     JSON.parse(File.read('node_modules/materialize-css/package.json'))['version']
   }
