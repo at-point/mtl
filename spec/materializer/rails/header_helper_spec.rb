@@ -34,7 +34,7 @@ RSpec.describe Materializer::Rails::HeaderHelper, dom: true do
     it 'renders a back: link and skips the menu' do
       html = subject.materializer_header(back: '/back-url')
       expect(html).to_not contain_dom '<i class="material-icons">menu</i>'
-      expect(html).to contain_dom '<a class="left" href="/back-url"><i class="material-icons">arrow_back</i></a>'
+      expect(html).to contain_dom '<a class="mtl-layout-default-header-back left" href="/back-url"><i class="material-icons">arrow_back</i></a>'
     end
 
     it 'can pass in a custom title' do
