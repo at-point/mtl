@@ -28,14 +28,12 @@ html {
     height: auto;
     @include clearafter;
 
+    nav {
+      height: auto;
+    }
+
     .nav-wrapper {
       @include clearafter;
-
-      .brand-logo {
-        @media #{$medium-and-down} {
-
-        }
-      }
     }
 
     &.no-padding-bottom {
@@ -62,15 +60,22 @@ html {
       line-height: 44px;
       padding: .75rem 1.5rem;
     }
-    .nav-wrapper h1 {
-      line-height: 64px;
-      padding: 0 1.5rem;
+    .nav-wrapper {
 
-      @media #{$medium-and-down} {
-        padding-left: .5rem;
-      }
-      @media #{$small-and-down} {
-        line-height: 56px;
+      //.brand-logo {
+      //  @media #{$medium-and-down} {}
+      //}
+
+      h1 {
+        line-height: 64px;
+        padding: 0 1.5rem;
+
+        @media #{$medium-and-down} {
+          padding-left: .5rem;
+        }
+        @media #{$small-and-down} {
+          line-height: 56px;
+        }
       }
     }
 
@@ -78,6 +83,11 @@ html {
       @media #{$large-and-up} {
         background-color: $mtl-layout-default-bg;
         color: $mtl-layout-default-text;
+      }
+      * {
+        @media #{$large-and-up} {
+          color: $mtl-layout-default-text;
+        }
       }
     }
 
