@@ -14,10 +14,10 @@ RSpec.describe Materializer::Rails::HeaderHelper, dom: true do
     it 'renders a default header with a translated title and a menu on mobile' do
       allow(subject).to receive(:translate).with('.title', default: 'Menu') { 'Dashboard' }
       expect(subject.materializer_header).to match_dom <<-HTML
-        <header class="mtl-layout-default-header z-depth-1">
+        <header class="mtl-layout-default-header">
           <nav>
             <div class="nav-wrapper">
-              <a class="left hide-on-large-only" data-activates="nav-menu" data-materializer="side-nav" href="#nav-menu">
+              <a class="mtl-layout-default-header-toggle left hide-on-large-only" data-activates="nav-menu" data-materializer="side-nav" href="#nav-menu">
                 <i class="material-icons">menu</i>
               </a>
               <h1 class="page-title">Dashboard</h1>

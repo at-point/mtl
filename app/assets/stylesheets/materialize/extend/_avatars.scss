@@ -8,7 +8,9 @@
   padding: 0;
   border-radius: 26px;
 
+  //scss-lint:disable PlaceholderInExtend
   @extend .grey, .lighten-2;
+  //scss-lint:enable PlaceholderInExtend
 
   .initials,
   img {
