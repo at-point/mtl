@@ -30,6 +30,26 @@ html {
 
     nav {
       height: auto;
+
+      .select-wrapper {
+        margin: 14px 0 0 30px;
+        height: 32px;
+        overflow: visible;
+
+        .caret {
+          top: 0;
+          height: 100%;
+          line-height: 32px;
+        }
+      }
+      .select-dropdown {
+        margin: 0;
+        line-height: 32px;
+        height: 32px;
+      }
+      .dropdown-content {
+        height: auto;
+      }
     }
 
     .nav-wrapper {
