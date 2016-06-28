@@ -1,5 +1,7 @@
 // sidebar
+// scss-lint:disable QualifyingElement
 .side-nav li.active {
+// scss-lint:enable QualifyingElement
   background-color: $sidenav-bg-active-color;
 
   a,

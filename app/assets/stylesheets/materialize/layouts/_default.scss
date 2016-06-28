@@ -1,4 +1,6 @@
-$mtl-layout-default-bg: #fafafa;
+$mtl-layout-default-bg: color('grey', 'lighten-5');
+$mtl-layout-default-text: color('grey', 'darken-4');
+
 
 // yes, necessary
 html {
@@ -22,18 +24,36 @@ html {
   // layout components
   &-header {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     height: auto;
     @include clearafter;
 
-    .nav-wrapper {
-      @include clearafter;
+    nav {
+      height: auto;
 
-      .brand-logo {
-        @media #{$medium-and-down} {
+      .select-wrapper {
+        margin: 14px 0 0 30px;
+        height: 32px;
+        overflow: visible;
 
+        .caret {
+          top: 0;
+          height: 100%;
+          line-height: 32px;
         }
       }
+      .select-dropdown {
+        margin: 0;
+        line-height: 32px;
+        height: 32px;
+      }
+      .dropdown-content {
+        height: auto;
+      }
+    }
+
+    .nav-wrapper {
+      @include clearafter;
     }
 
     &.no-padding-bottom {
@@ -44,10 +64,22 @@ html {
     padding: 1.5rem;
 
     &.half-padding {
-      padding: 0.75rem;
+      padding: .75rem;
     }
     &.no-padding {
       padding: 0;
+    }
+    &.no-padding-top {
+      padding-top: 0;
+    }
+    &.no-padding-left {
+      padding-left: 0;
+    }
+    &.no-padding-right {
+      padding-right: 0;
+    }
+    &.no-padding-bottom {
+      padding-bottom: 0;
     }
   }
 
@@ -58,12 +90,48 @@ html {
       margin: 0;
       font-size: 20px;
       line-height: 44px;
-      padding: 0.75rem 1.5rem;
+      padding: .75rem 1.5rem;
     }
-    .nav-wrapper h1 {
-      line-height: 64px;
-      padding: 0 1.5rem;
+    .nav-wrapper {
+
+      //.brand-logo {
+      //  @media #{$medium-and-down} {}
+      //}
+
+      h1 {
+        line-height: 64px;
+        padding: 0 1.5rem;
+
+        @media #{$medium-and-down} {
+          padding-left: .5rem;
+        }
+        @media #{$small-and-down} {
+          line-height: 56px;
+        }
+      }
     }
+
+    nav {
+      @media #{$large-and-up} {
+        background-color: $mtl-layout-default-bg;
+        color: $mtl-layout-default-text;
+      }
+      * {
+        @media #{$large-and-up} {
+          color: $mtl-layout-default-text;
+        }
+      }
+    }
+
+    &-toggle {
+      width: 64px;
+      text-align: center;
+
+      i {
+        width: 100%;
+      }
+    }
+    //&-back {}
   }
 
   // container override
@@ -117,7 +185,7 @@ html {
       }
 
       // toggle icon
-      &-toggle {}
+      //&-toggle {}
     }
     &-divider {
       padding: 10px 0;
