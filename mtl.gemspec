@@ -9,13 +9,11 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Marco Plüss', 'Lukas Westermann']
   spec.email         = ['marco@at-point.ch', 'lukas@at-point.ch']
 
-  spec.summary       = 'Write a summary.'
-  spec.description   = 'Write a somehwat longer description about our neat-o little gem.'
+  spec.summary       = 'Rails gem to package materialize-css for reuse between projects.'
+  spec.description   = 'Reusable components and Rails helpers on top of materialize-css ' \
+                       'and material-design-icons.'
   spec.homepage      = 'https://github.com/at-point/mtl'
   spec.license       = 'MIT'
-
-  # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host'
-  spec.metadata['allowed_push_host'] = 'https://do-not-allow-push.rubygems'
 
   spec.files         = %w{.gitignore Gemfile Rakefile LICENSE.txt README.md
                           mtl.gemspec package.json} +
