@@ -1,4 +1,4 @@
-module Materializer
+module Mtl
   module Rails
     # Navbar / Header Helper
     # ======================
@@ -10,14 +10,14 @@ module Materializer
     # Include the following in every template that requires a navbar:
     #
     # ```erb
-    #   <%= materializer_header t('my.title') %>
+    #   <%= mtl_header t('my.title') %>
     # ```
     #
     # To render with a custom additional header content, this is then simply
     # appended after the title in the layout.
     #
     # ```erb
-    #   <%= materializer_header 'Dashboard' do %>
+    #   <%= mtl_header 'Dashboard' do %>
     #     <ul class="right">
     #       <li>Current User: Hans</li>
     #       <li><%= link_to 'Logout', logout_path %></li>
@@ -39,15 +39,15 @@ module Materializer
       #   nav menu to show / hide on mobile devices. The default used is `nav-menu`.
       #   When set to `false`, this button is skipped.
       # - **&block** - Additional content to be rendered as part of the header
-      def materializer_header(title = translate('.title', default: 'Menu'),
-                              back: false, menu: 'nav-menu', &block)
-        materializer_content = block_given? ? capture(&block) : nil
+      def mtl_header(title = translate('.title', default: 'Menu'),
+                     back: false, menu: 'nav-menu', &block)
+        mtl_content = block_given? ? capture(&block) : nil
 
-        render file: 'materializer/header', locals: {
-          materializer_content: materializer_content,
-          materializer_title: title.presence,
-          materializer_back: back,
-          materializer_menu: menu
+        render file: 'mtl/header', locals: {
+          mtl_content: mtl_content,
+          mtl_title: title.presence,
+          mtl_back: back,
+          mtl_menu: menu
         }
       end
     end

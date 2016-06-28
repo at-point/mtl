@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in materializer.gemspec
+# Specify your gem's dependencies in mtl.gemspec
 gemspec
 
 # Linters

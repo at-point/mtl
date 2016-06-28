@@ -1,0 +1,25 @@
+<header class="mtl-layout-default-header">
+  <nav>
+    <div class="nav-wrapper">
+      <%- if mtl_back  %>
+        <%= link_to mtl_back, class: 'mtl-layout-default-header-back left' do %>
+          <i class="material-icons">arrow_back</i>
+        <%- end %>
+      <%- elsif mtl_menu %>
+        <%= link_to "##{mtl_menu}", class: 'mtl-layout-default-header-toggle left hide-on-large-only', 'data-activates': mtl_menu, 'data-mtl': 'side-nav' do %>
+          <i class="material-icons">menu</i>
+        <%- end %>
+      <%- end %>
+
+      <%- if mtl_title %>
+      <h1 class="page-title">
+        <%= mtl_title %>
+      </h1>
+      <%- end %>
+
+      <%- if mtl_content %>
+        <%= mtl_content %>
+      <%- end %>
+    </div>
+  </nav>
+</header>

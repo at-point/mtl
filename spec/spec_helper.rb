@@ -1,6 +1,6 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 
-require 'materializer'
+require 'mtl'
 require 'support/dom'
 
 RSpec.configure do |config|

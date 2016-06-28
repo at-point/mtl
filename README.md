@@ -1,8 +1,8 @@
-# Materializer
+# MTL: Materializer
 
-![Tardis: Materializing](http://67.media.tumblr.com/5afe48c312ae01b8911eac26fa59dbb2/tumblr_ngya1wnTRm1sofmw0o1_500.gif)
+![Tardis: mtl](http://67.media.tumblr.com/5afe48c312ae01b8911eac26fa59dbb2/tumblr_ngya1wnTRm1sofmw0o1_500.gif)
 
-Welcome to **Materializer**, this is a gem we use at [at-point](https://at-point.ch)
+Welcome to **MTL: Materializer**, this is a Rails gem we use at [at-point](https://at-point.ch)
 to simplify UI designs for back-office heavy applications by leveraging the following
 tools:
 
@@ -16,7 +16,7 @@ tools:
 Add this line to your Rails application's `Gemfile`:
 
 ```ruby
-gem 'materializer', git: 'https://github.com/at-point/materializer'
+gem 'mtl', git: 'https://github.com/at-point/mtl'
 ```
 
 then execute:
@@ -28,17 +28,17 @@ $> bundle
 And finally run the installer to copy the "base files" to your application:
 
 ```
-$> ./bin/rails generate materializer:install
+$> ./bin/rails generate mtl:install
 # This copies the following files:
-#    - app/assets/stylesheets/materialize.scss
-#    - app/assets/stylesheets/materialize/_color.scss
-#    - app/assets/stylesheets/materialize/_variables.scss
+#    - app/assets/stylesheets/mtl.scss
+#    - app/assets/stylesheets/mtl/_color.scss
+#    - app/assets/stylesheets/mtl/_variables.scss
 ```
 
 Last but not least change your `application.css` to include:
 
 ```
-//= require materialize
+//= require mtl
 ```
 
 Ensure it **does not contain** any reference to `require_tree .`, as this leads
@@ -47,7 +47,7 @@ to duplicate imports and weird asset pipeline errors.
 ## Usage
 
 Customize and adapt your styling as wanted, feel free to modify things in
-`_variables.scss` to your liking. Try to avoid changeing `_color.scss` when
+`_variables.scss` to your liking. Try to avoid changing `_color.scss` when
 possible.
 
 ### Rails
@@ -57,7 +57,7 @@ In addition we provide a few Rails specific helpers.
 **Header**, see [header_helper.rb][header_helper.rb] for more information
 and details, but a quick and dirty usage to render a navbar header is:
 ```haml
-= materializer_header t('.title'), back: dossiers_path do
+= mtl_header t('.title'), back: dossiers_path do
   = render 'filters'
 ```
 
@@ -83,13 +83,18 @@ git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygem
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/at-point/materializer.
+Bug reports and pull requests are welcome on GitHub at https://github.com/at-point/mtl.
 This project is intended to be a safe, welcoming space for collaboration, and contributors
 are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org)
 code of conduct.
+
+### License
+
+[MIT License][license]. Copyright 2016 at-point ag. https://at-point.ch
 
 [materialize]: http://materializecss.com/
 [icons]: https://design.google.com/icons/
 [rails]: http://rubyonrails.org
 
-[header_helper.rb]: https://github.com/at-point/materializer/blob/master/lib/materializer/rails/header_helper.rb
+[header_helper.rb]: https://github.com/at-point/mtl/blob/master/lib/mtl/rails/header_helper.rb
+[license]: https://github.com/at-point/mtl/blob/master/LICENSE.txt

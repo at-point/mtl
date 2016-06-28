@@ -1,6 +1,6 @@
 {
-  "name": "materializer",
-  "license": "UNLICENSED",
+  "name": "mtl",
+  "license": "MIT",
   "private": true,
 
   "dependencies": {
