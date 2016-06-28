@@ -2,6 +2,8 @@
 
 ![Tardis: mtl](http://67.media.tumblr.com/5afe48c312ae01b8911eac26fa59dbb2/tumblr_ngya1wnTRm1sofmw0o1_500.gif)
 
+[![Build Status](https://travis-ci.org/at-point/mtl.svg?branch=master)](https://travis-ci.org/at-point/mtl)
+
 Welcome to **MTL: Materializer**, this is a Rails gem we use at [at-point](https://at-point.ch)
 to simplify UI designs for back-office heavy applications by leveraging the following
 tools:
