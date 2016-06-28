@@ -5,6 +5,9 @@ rvm:
   - ruby-head
 before_install:
   - gem install bundler -v 1.11.2
+  - nvm use 6
   - node -v
+install:
+  - bundle install
   - npm install
 script: ./bin/ci
