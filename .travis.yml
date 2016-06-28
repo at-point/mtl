@@ -5,6 +5,7 @@ rvm:
   - ruby-head
 before_install:
   - gem install bundler -v 1.11.2
+  - nvm install 6
   - nvm use 6
   - node -v
 install:
