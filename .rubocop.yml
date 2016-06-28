@@ -34,3 +34,7 @@ Style/Documentation:
     - lib/materializer.rb
     - spec/*
     - spec/**/*
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
