@@ -21,4 +21,6 @@
 //=require "materialize/date_picker/picker"
 //=require "materialize/date_picker/picker.date"
 
+//= require "mtl/turbolinks"
 //= require "mtl/hooks"
+//= require "mtl/select"

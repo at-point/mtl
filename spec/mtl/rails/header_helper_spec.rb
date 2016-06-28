@@ -17,7 +17,7 @@ RSpec.describe Mtl::Rails::HeaderHelper, dom: true do
         <header class="mtl-layout-default-header">
           <nav>
             <div class="nav-wrapper">
-              <a class="mtl-layout-default-header-toggle left hide-on-large-only" data-activates="nav-menu" data-mtl="side-nav" href="#nav-menu">
+              <a class="mtl-layout-default-header-toggle left hide-on-large-only" data-activates="nav-menu" data-mtl-nav="side" href="#nav-menu">
                 <i class="material-icons">menu</i>
               </a>
               <h1 class="page-title">Dashboard</h1>

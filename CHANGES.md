@@ -4,6 +4,10 @@ ChangeLog
 Development 0.1.0
 ------------------
 
+- Renamed `data-mtl="side-nav"` to `data-mtl-nav="side"`
+- Added `data-mtl-select` and `data-mtl-select="multiple"`, #6
+- Added MTL.onReady/onTurbolinksLoad JS helpers to skip duplicate calls
+  or first call when turbolinks is used
 - Improve hooks.coffee with a simple turbolinks guard, to ensure it
   is only called once on initial page load. Also added turbolink hook
   for Waves.displayEffect()
