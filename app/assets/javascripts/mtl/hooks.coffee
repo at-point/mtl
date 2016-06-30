@@ -1,29 +1,10 @@
 # Hooks for Turbolinks / jQuery et all
 
-skipSecond = (cb) ->
-  cntr = 0
-  ->
-    cntr += 1
-    cb() if cntr != 2
+MTL.onReady ->
+  # Hooks to data-mtl-nav
+  $('[data-mtl-nav="side"]').each -> $(this).sideNav()
 
-skipFirst = (cb) ->
-  cntr = 0
-  ->
-    cntr += 1
-    cb() if cntr > 1
-
-initSideNavs = ->
-  $('[data-mtl="side-nav"]').each -> $(this).sideNav()
-
-initFormLabels = ->
+# Things to run only once via on('ready') and need to be re-run in turbolinks
+MTL.onTurbolinksLoad ->
   Materialize.updateTextFields()
-
-initWaves = ->
   Waves.displayEffect()
-
-$(document).on 'ready turbolinks:load', skipSecond ->
-  initSideNavs()
-
-$(document).on 'turbolinks:load', skipFirst ->
-  initFormLabels()
-  initWaves()
