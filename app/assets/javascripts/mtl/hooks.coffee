@@ -1,8 +1,29 @@
 # Hooks for Turbolinks / jQuery et all
 
+skipSecond = (cb) ->
+  cntr = 0
+  ->
+    cntr += 1
+    cb() if cntr != 2
+
+skipFirst = (cb) ->
+  cntr = 0
+  ->
+    cntr += 1
+    cb() if cntr > 1
+
 initSideNavs = ->
   $('[data-mtl="side-nav"]').each -> $(this).sideNav()
 
-event = if window.Turbolinks? then 'turbolinks:load' else 'ready'
-$(document).on event, ->
+initFormLabels = ->
+  Materialize.updateTextFields()
+
+initWaves = ->
+  Waves.displayEffect()
+
+$(document).on 'ready turbolinks:load', skipSecond ->
   initSideNavs()
+
+$(document).on 'turbolinks:load', skipFirst ->
+  initFormLabels()
+  initWaves()
