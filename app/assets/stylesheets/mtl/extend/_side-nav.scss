@@ -1,11 +1,23 @@
 // sidebar
-// scss-lint:disable QualifyingElement
-.side-nav li.active {
-// scss-lint:enable QualifyingElement
-  background-color: $sidenav-bg-active-color;
+.side-nav {
 
-  a,
-  a * {
-    color: $sidenav-font-active-color !important;
+  // scss-lint:disable QualifyingElement
+  li.active {
+  // scss-lint:enable QualifyingElement
+    background-color: $sidenav-bg-active-color;
+
+    a,
+    a * {
+      color: $sidenav-font-active-color !important;
+    }
   }
+
+  ul {
+    margin: 0;
+  }
+
+}
+
+.side-nav-user {
+  margin: 0;
 }
