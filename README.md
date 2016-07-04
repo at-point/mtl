@@ -30,11 +30,12 @@ $> bundle
 And finally run the installer to copy the "base files" to your application:
 
 ```
-$> ./bin/rails generate mtl:install
+$> ./bin/rails generate mtl:install [--skip-simple-form]
 # This copies the following files:
 #    - app/assets/stylesheets/mtl.scss
 #    - app/assets/stylesheets/mtl/_color.scss
 #    - app/assets/stylesheets/mtl/_variables.scss
+#    - config/initializers/simple_form.rb
 ```
 
 Last but not least change your `application.css` to include:
@@ -61,6 +62,22 @@ and details, but a quick and dirty usage to render a navbar header is:
 ```haml
 = mtl_header t('.title'), back: dossiers_path do
   = render 'filters'
+```
+
+**Buttons**, see [button_helper.rb][button_helper.rb] for details, these helpers
+allow to render raised and flat buttons and basically wrap `link_to`:
+```haml
+= mtl_button 'Next', some_path
+= mtl_button_flat 'Cancel', some_path
+```
+
+**Icons**, see [icon_helper.rb][icon_helper.rb] for additional docs, but this
+helper is rather simple - it simply renders those `<i class="material-icons">..</i>`
+tags:
+```haml
+= mtl_icon :cloud
+= mtl_icon :send, class: 'right red'
+= mtl_icon :send, size: 'large'
 ```
 
 ## Development

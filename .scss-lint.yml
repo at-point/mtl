@@ -16,6 +16,8 @@ linters:
   SelectorFormat:
     enabled: true
     convention: hyphenated_BEM
+    exclude:
+      - app/assets/stylesheets/mtl/extend/_forms.scss
   MergeableSelector:
     enabled: false
   ImportantRule:

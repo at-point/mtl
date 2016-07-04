@@ -1,4 +1,8 @@
 language: ruby
+cache:
+  directories:
+    - vendor/bundle
+    - node_modules
 rvm:
   - 2.2.0
   - 2.3.1
@@ -9,6 +13,6 @@ before_install:
   - nvm use 6
   - node -v
 install:
-  - bundle install
+  - bundle install --jobs=3 --retry=3 --path vendor/bundle
   - npm install
 script: ./bin/ci
