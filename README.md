@@ -53,44 +53,6 @@ Customize and adapt your styling as wanted, feel free to modify things in
 `_variables.scss` to your liking. Try to avoid changing `_color.scss` when
 possible.
 
-### Rails
-
-In addition we provide a few Rails specific helpers.
-
-**Header**, see [header_helper.rb][header_helper.rb] for more information
-and details, but a quick and dirty usage to render a navbar header is:
-```haml
-= mtl_header t('.title'), back: dossiers_path do
-  = render 'filters'
-```
-
-**Buttons**, see [button_helper.rb][button_helper.rb] for details, these helpers
-allow to render raised and flat buttons and basically wrap `link_to`:
-```haml
-= mtl_button 'Next', some_path
-= mtl_button_flat 'Cancel', some_path
-= mtl_button_floating '+', some_path
-```
-
-**Icons**, see [icon_helper.rb][icon_helper.rb] for additional docs, but this
-helper is rather simple - it simply renders those `<i class="material-icons">..</i>`
-tags:
-```haml
-= mtl_icon :cloud
-= mtl_icon :send, class: 'right red'
-= mtl_icon :send, size: 'large'
-```
-
-### Javascript
-
-Some javascript helpers are also provided, to ease complex application development
-
-**Link elements**
-It's possible to transform any element into a link using the following attribute:
-```html
-<div data-mtl-href="/myurl">Hello</div>
-```
-
 ## Development
 
 For development `node` and `npm` is required.
