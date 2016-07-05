@@ -80,6 +80,16 @@ tags:
 = mtl_icon :send, size: 'large'
 ```
 
+### Javascript
+
+Some javascript helpers are also provided, to ease complex application development
+
+**Link elements**
+It's possible to transform any element into a link using the following attribute:
+```html
+<div data-mtl-href="/myurl">Hello</div>
+```
+
 ## Development
 
 For development `node` and `npm` is required.
