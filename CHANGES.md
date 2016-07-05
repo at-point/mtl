@@ -5,6 +5,7 @@ Development 0.1.0
 ------------------
 
 - Added javascript support to convert any element into a link [#11]
+- Added Rails `mtl_button_floating` helper for big round floating action buttons [#10]
 - Added configuration option for effects: `Mtl.effects`, they default to
   `waves-effect waves-light` and are used by all buttons [#7]
 - Added `mtl_button` and `mtl_button_flat` helper methods, when using: prefer

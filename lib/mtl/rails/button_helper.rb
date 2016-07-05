@@ -10,11 +10,17 @@ module Mtl
     # ```erb
     # <%= mtl_button "New", new_user_path # create a raised button %>
     # <%= mtl_button_flat "Delete", user_path(@user), method: :delete # create a flat button %>
+    # <%= mtl_button_floating mtl_icon(:add), new_user_path # create a floating button %>
     # ```
     #
     module ButtonHelper
       def mtl_button_flat(text, url, options = {})
         options[:class] = ['btn-flat', options[:class]].compact
+        mtl_button text, url, options
+      end
+
+      def mtl_button_floating(text, url, options = {})
+        options[:class] = ['btn-floating', options[:class]].compact
         mtl_button text, url, options
       end
 
