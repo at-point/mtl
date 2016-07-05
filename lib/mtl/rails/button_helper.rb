@@ -10,6 +10,7 @@ module Mtl
     # ```erb
     # <%= mtl_button "New", new_user_path # create a raised button %>
     # <%= mtl_button_flat "Delete", user_path(@user), method: :delete # create a flat button %>
+    # <%= mtl_button_floating "+", user_path(@user), method: :delete # create a floating button %>
     # ```
     #
     module ButtonHelper

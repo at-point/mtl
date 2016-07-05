@@ -69,6 +69,7 @@ allow to render raised and flat buttons and basically wrap `link_to`:
 ```haml
 = mtl_button 'Next', some_path
 = mtl_button_flat 'Cancel', some_path
+= mtl_button_floating '+', some_path
 ```
 
 **Icons**, see [icon_helper.rb][icon_helper.rb] for additional docs, but this
