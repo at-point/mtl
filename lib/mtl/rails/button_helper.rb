@@ -22,6 +22,11 @@ module Mtl
         options[:class] = ['btn', Mtl.effects, options[:class]].compact
         link_to text, url, options
       end
+
+      def mtl_button_floating(text, url, options = {})
+        options[:class] = ['btn-floating', options[:class]].compact
+        mtl_button text, url, options
+      end
     end
   end
 end
