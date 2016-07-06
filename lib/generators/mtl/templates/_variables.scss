@@ -297,5 +297,9 @@ $progress-bar-color: $secondary-color !default;
 $mtl-sidenav-bg-active-color: color('violet', 'base') !default;
 $mtl-sidenav-font-active-color: #fff !default;
 
+$mtl-layout-default-bg: color('grey', 'lighten-5');
+$mtl-layout-default-text: color('grey', 'darken-4');
+$mtl-layout-default-header-bg: color('shades', 'white');
+
 $mtl-layout-single-bg: color('grey', 'lighten-4');
 $mtl-layout-single-header-bg: color('grey', 'lighten-2');
