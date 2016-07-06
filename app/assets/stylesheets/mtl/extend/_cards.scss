@@ -1,10 +1,6 @@
 .card {
-  .card-title {
-    font-size: 15px;
-    display: block;
-    font-weight: 400;
-  }
-  .card-content .card-title {
-    line-height: 20px;
+  .card-content > .row {
+    margin-left: -.75rem;
+    margin-right: -.75rem;
   }
 }
