@@ -56,5 +56,6 @@
 @import './extend/mixins';
 
 // including layouts
+html { height: 100%; } // yes, necessary
 @import './layouts/default';
 @import './layouts/single';
