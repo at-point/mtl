@@ -4,7 +4,17 @@
     display: block;
     font-weight: 400;
   }
-  .card-content .card-title {
-    line-height: 20px;
+  .card-content {
+    .card-title {
+      line-height: 20px;
+
+      > *:first-child {
+        margin-top: 0;
+      }
+    }
+    > .row {
+      margin-left: -.75rem;
+      margin-right: -.75rem;
+    }
   }
 }
