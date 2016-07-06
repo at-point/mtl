@@ -105,7 +105,7 @@
 
     nav {
       @media #{$large-and-up} {
-        background-color: $mtl-layout-default-bg;
+        background-color: $mtl-layout-default-header-bg;
         color: $mtl-layout-default-text;
       }
       * {
