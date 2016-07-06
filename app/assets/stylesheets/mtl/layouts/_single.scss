@@ -1,0 +1,29 @@
+// yes, necessary
+html {
+  height: 100%;
+}
+
+// single layout: centered content block, e.g.: logins
+.mtl-layout-single {
+  min-height: 100%;
+  background-color: $mtl-layout-single-bg;
+
+  &-header {
+    background-color: $mtl-layout-single-header-bg;
+    padding: 50px 20px;
+
+    img {
+      width: auto;
+      height: auto;
+      display: block;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  &-content {
+    margin-top: -38px;
+  }
+  //&-footer {}
+
+}
