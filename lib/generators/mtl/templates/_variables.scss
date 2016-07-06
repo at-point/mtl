@@ -294,8 +294,8 @@ $progress-bar-color: $secondary-color !default;
 
 // 99. Custom ATP/MTL variables =============================================
 
-$sidenav-bg-active-color: color('violet', 'base') !default;
-$sidenav-font-active-color: #fff !default;
+$mtl-sidenav-bg-active-color: color('violet', 'base') !default;
+$mtl-sidenav-font-active-color: #fff !default;
 
 $mtl-layout-single-bg: color('grey', 'lighten-4');
 $mtl-layout-single-header-bg: color('grey', 'lighten-2');
