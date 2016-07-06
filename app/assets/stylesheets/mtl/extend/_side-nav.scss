@@ -4,11 +4,11 @@
   // scss-lint:disable QualifyingElement
   li.active {
   // scss-lint:enable QualifyingElement
-    background-color: $sidenav-bg-active-color;
+    background-color: $mtl-sidenav-bg-active-color;
 
     a,
     a * {
-      color: $sidenav-font-active-color !important;
+      color: $mtl-sidenav-font-active-color !important;
     }
   }
 
