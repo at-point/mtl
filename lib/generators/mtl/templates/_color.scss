@@ -21,20 +21,20 @@ $materialize-red: (
 );
 
 $red: (
-  "base":       #F44336,
-  "lighten-5":  #FFEBEE,
-  "lighten-4":  #FFCDD2,
-  "lighten-3":  #EF9A9A,
-  "lighten-2":  #E57373,
-  "lighten-1":  #EF5350,
-  "darken-1":   #E53935,
-  "darken-2":   #D32F2F,
-  "darken-3":   #C62828,
-  "darken-4":   #B71C1C,
-  "accent-1":    #FF8A80,
-  "accent-2":    #FF5252,
-  "accent-3":    #FF1744,
-  "accent-4":    #D50000
+  "base":       #f44336,
+  "lighten-5":  #ffebee,
+  "lighten-4":  #ffcdd2,
+  "lighten-3":  #ef9a9a,
+  "lighten-2":  #e57373,
+  "lighten-1":  #ef5350,
+  "darken-1":   #e53935,
+  "darken-2":   #d32f2f,
+  "darken-3":   #c62828,
+  "darken-4":   #b71c1c,
+  "accent-1":    #ff8a80,
+  "accent-2":    #ff5252,
+  "accent-3":    #ff1744,
+  "accent-4":    #d50000
 );
 
 $pink: (
@@ -68,7 +68,7 @@ $purple: (
   "accent-1":    #ea80fc,
   "accent-2":    #e040fb,
   "accent-3":    #d500f9,
-  "accent-4":    #aa00ff
+  "accent-4":    #a0f
 );
 
 $deep-purple: (
@@ -106,20 +106,20 @@ $indigo: (
 );
 
 $blue: (
-  "base":       #2196F3,
-  "lighten-5":  #E3F2FD,
-  "lighten-4":  #BBDEFB,
-  "lighten-3":  #90CAF9,
-  "lighten-2":  #64B5F6,
-  "lighten-1":  #42A5F5,
-  "darken-1":   #1E88E5,
-  "darken-2":   #1976D2,
-  "darken-3":   #1565C0,
-  "darken-4":   #0D47A1,
-  "accent-1":    #82B1FF,
-  "accent-2":    #448AFF,
-  "accent-3":    #2979FF,
-  "accent-4":    #2962FF
+  "base":       #2196f3,
+  "lighten-5":  #e3f2fd,
+  "lighten-4":  #bbdefb,
+  "lighten-3":  #90caf9,
+  "lighten-2":  #64b5f6,
+  "lighten-1":  #42a5f5,
+  "darken-1":   #1e88e5,
+  "darken-2":   #1976d2,
+  "darken-3":   #1565c0,
+  "darken-4":   #0d47a1,
+  "accent-1":    #82b1ff,
+  "accent-2":    #448aff,
+  "accent-3":    #2979ff,
+  "accent-4":    #2962ff
 );
 
 $light-blue: (
@@ -174,20 +174,20 @@ $teal: (
 );
 
 $green: (
-  "base":       #4CAF50,
-  "lighten-5":  #E8F5E9,
-  "lighten-4":  #C8E6C9,
-  "lighten-3":  #A5D6A7,
-  "lighten-2":  #81C784,
-  "lighten-1":  #66BB6A,
-  "darken-1":   #43A047,
-  "darken-2":   #388E3C,
-  "darken-3":   #2E7D32,
-  "darken-4":   #1B5E20,
-  "accent-1":    #B9F6CA,
-  "accent-2":    #69F0AE,
-  "accent-3":    #00E676,
-  "accent-4":    #00C853
+  "base":       #4caf50,
+  "lighten-5":  #e8f5e9,
+  "lighten-4":  #c8e6c9,
+  "lighten-3":  #a5d6a7,
+  "lighten-2":  #81c784,
+  "lighten-1":  #66bb6a,
+  "darken-1":   #43a047,
+  "darken-2":   #388e3c,
+  "darken-3":   #2e7d32,
+  "darken-4":   #1b5e20,
+  "accent-1":    #b9f6ca,
+  "accent-2":    #69f0ae,
+  "accent-3":    #00e676,
+  "accent-4":    #00c853
 );
 
 $light-green: (
@@ -236,7 +236,7 @@ $yellow: (
   "darken-3":   #f9a825,
   "darken-4":   #f57f17,
   "accent-1":    #ffff8d,
-  "accent-2":    #ffff00,
+  "accent-2":    #ff0,
   "accent-3":    #ffea00,
   "accent-4":    #ffd600
 );
@@ -322,7 +322,7 @@ $grey: (
   "base":       #9e9e9e,
   "lighten-5":  #fafafa,
   "lighten-4":  #f5f5f5,
-  "lighten-3":  #eeeeee,
+  "lighten-3":  #eee,
   "lighten-2":  #e0e0e0,
   "lighten-1":  #bdbdbd,
   "darken-1":   #757575,
@@ -332,8 +332,8 @@ $grey: (
 );
 
 $shades: (
-  "black":        #000000,
-  "white":        #FFFFFF,
+  "black":        #000,
+  "white":        #fff,
   "transparent":  transparent
 );
 
@@ -363,18 +363,17 @@ $colors: (
 
 
 // Color Classes
-
+// scss-lint:disable NameFormat
 @each $color_name, $color in $colors {
   @each $color_type, $color_value in $color {
-    @if $color_type == "base" {
+    @if $color_type == 'base' {
       .#{$color_name} {
         background-color: $color_value !important;
       }
       .#{$color_name}-text {
         color: $color_value !important;
       }
-    }
-    @else {
+    } @else {
       .#{$color_name}.#{$color_type} {
         background-color: $color_value !important;
       }
@@ -398,7 +397,6 @@ $colors: (
 
 // usage: color("name_of_color", "type_of_color")
 // to avoid to repeating map-get($colors, ...)
-
 @function color($color, $type) {
   @if map-has-key($colors, $color) {
     $curr_color: map-get($colors, $color);
@@ -409,4 +407,4 @@ $colors: (
   @warn "Unknown `#{name}` in $colors.";
   @return null;
 }
-
+// scss-lint:enable NameFormat
