@@ -75,7 +75,7 @@ module Mtl
       #
       # @param name [String]
       def mtl_avatar_initials(name)
-        initials = name.split('@').first.to_s.split(/[^[:alpha:]]+/).map(&:first)
+        initials = name.to_s.split('@').first.to_s.split(/[^[:alpha:]]+/).map(&:first)
         return initials.first.to_s.upcase if initials.length < 2
         [initials.first, initials.last].join.upcase
       end

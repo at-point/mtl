@@ -52,6 +52,10 @@ RSpec.describe Mtl::Rails::AvatarHelper, dom: true do
     it 'returns an empty string when a malformatted email is provided' do
       expect(subject.mtl_avatar_initials('@example.com')).to eq ''
     end
+
+    it 'returns an empty string when nil is provided' do
+      expect(subject.mtl_avatar_initials(nil)).to eq ''
+    end
   end
 
   context '#mtl_avatar_link' do
