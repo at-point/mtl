@@ -61,12 +61,12 @@ RSpec.describe Mtl::Rails::AvatarHelper, dom: true do
   context '#mtl_avatar_link' do
     it 'renders an <a/> tag with initials and no image, if none provided' do
       expect(subject.mtl_avatar_link('/url', 'John Doe'))
-        .to eq '<a class="avatar" href="/url">JD</a>'
+        .to eq '<a class="avatar waves-effect waves-light" href="/url">JD</a>'
     end
 
     it 'renders an <a/> tag with initials and an image, if an url is provided' do
       expect(subject.mtl_avatar_link('/url', 'John Doe', '/image_url.png'))
-        .to eq '<a class="avatar" href="/url"><img alt="John Doe" src="/image_url.png" />JD</a>'
+        .to eq '<a class="avatar waves-effect waves-light" href="/url"><img alt="John Doe" src="/image_url.png" />JD</a>'
     end
   end
 end
