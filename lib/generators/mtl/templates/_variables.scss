@@ -29,6 +29,8 @@
 //  22. Flow Text
 //  23. Collections
 //  24. Progress Bar
+//
+//  99. Custom ATP/MTL Elements
 
 
 // 1. Colors ================================================================
@@ -290,11 +292,9 @@ $collection-link-color: $secondary-color !default;
 $progress-bar-color: $secondary-color !default;
 
 
+// 99. Custom ATP/MTL Elements =============================================
 
-
-// 99. Custom ATP/MTL variables =============================================
-
-$mtl-sidenav-bg-active-color: color('violet', 'base') !default;
+$mtl-sidenav-bg-active-color: color('blue', 'base') !default;
 $mtl-sidenav-font-active-color: #fff !default;
 
 $mtl-layout-default-bg: color('grey', 'lighten-5');
