@@ -80,7 +80,14 @@ This project is intended to be a safe, welcoming space for collaboration, and co
 are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org)
 code of conduct.
 
-### License
+## Documentation
+
+To generate the a browsable html documentation site, use following commands:
+
+- `./bin/yardoc`
+- `open doc/index.html`
+
+## License
 
 [MIT License][license]. Copyright 2016 at-point ag. https://at-point.ch
 
