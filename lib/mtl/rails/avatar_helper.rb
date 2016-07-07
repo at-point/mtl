@@ -65,7 +65,7 @@ module Mtl
       # @param image_url [String] Optional image url for the avatar
       # @param options [Hash] Additional options that can be passed to `link_to`
       def mtl_avatar_link(url, name, image_url = nil, options = {})
-        options[:class] = ['avatar', options[:class]].compact
+        options[:class] = ['avatar', Mtl.effects, options[:class]].compact
         image = (image_url.present? ? image_tag(image_url, alt: name) : '')
         link_to image + mtl_avatar_initials(name), url, options
       end
@@ -76,7 +76,7 @@ module Mtl
       # @param image_url [String] Optional image url for the avatar
       # @param options [Hash] Additional options that can be passed to `link_to`
       def mtl_avatar(name, image_url = '', options = {})
-        options[:class] = ['avatar', options[:class]].compact
+        options[:class] = ['avatar', Mtl.effects, options[:class]].compact
         image = (image_url.present? ? image_tag(image_url, alt: name) : '')
         content_tag :span, image + mtl_avatar_initials(name), options
       end
