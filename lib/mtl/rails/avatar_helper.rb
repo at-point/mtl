@@ -36,6 +36,12 @@ module Mtl
     # <%= mtl_avatar 'John Doe', '/john_doe.png' %>
     # ```
     #
+    # An avatar, with a picture and some html options
+    #
+    # ```erb
+    # <%= mtl_avatar 'John Doe', '/john_doe.png', class: :red %>
+    # ```
+    #
     # ### Avatar initials
     #
     # This helper generates the initials for the avatar, based on the person name.
@@ -67,8 +73,10 @@ module Mtl
       #
       # @param name [String]
       # @param image_url [String] Optional image url for the avatar
-      def mtl_avatar(name, image_url = '')
-        content_tag :span, (image_url.present? ? image_tag(image_url, alt: name) : '') + mtl_avatar_initials(name), class: 'avatar'
+      # @param options [Hash] Additional options that can be passed to `link_to`
+      def mtl_avatar(name, image_url = '', options = {})
+        options[:class] = ['avatar', options[:class]].compact
+        content_tag :span, (image_url.present? ? image_tag(image_url, alt: name) : '') + mtl_avatar_initials(name), options
       end
 
       # Creates initials based on the given name or email.
