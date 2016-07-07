@@ -6,6 +6,7 @@ module Mtl
       source_root File.join File.dirname(__FILE__), 'templates'
       class_option :simple_form, type: :boolean, default: true
 
+      # @!visibility private
       def copy_stylesheets
         template 'mtl.scss',        'app/assets/stylesheets/mtl.scss'
         template '_color.scss',     'app/assets/stylesheets/mtl/_color.scss'

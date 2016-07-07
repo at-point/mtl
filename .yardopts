@@ -1,0 +1,14 @@
+--charset          utf-8
+--readme           REFERENCE.md
+--markup           markdown
+--title            "MTL Documentation"
+--exclude          lib/mtl/mtl.rb
+--exclude          lib/generators/mtl/install_generator.rb
+--hide-void-return
+--protected
+--no-private
+--no-highlight
+-
+README.md
+CHANGES.md
+LICENSE.txt
