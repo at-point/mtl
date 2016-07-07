@@ -104,14 +104,11 @@
     }
 
     nav {
+      color: $mtl-layout-default-text;
+
       @media #{$large-and-up} {
         background-color: $mtl-layout-default-header-bg;
         color: $mtl-layout-default-text;
-      }
-      * {
-        @media #{$large-and-up} {
-          color: $mtl-layout-default-text;
-        }
       }
     }
 

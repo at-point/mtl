@@ -1,17 +1,17 @@
 // vars/colors
 $avatar-size-small: 25px;
-$avatar-size-default: 32px;
+$avatar-size-medium: 32px;
 $avatar-size-large: 52px;
 
 // avatars
 .avatar {
   display: inline-block;
   border-radius: 50%;
-  height: $avatar-size-default;
-  width: $avatar-size-default;
+  height: $avatar-size-medium;
+  width: $avatar-size-medium;
   overflow: hidden;
   text-align: center;
-  line-height: $avatar-size-default;
+  line-height: $avatar-size-medium;
   position: relative;
   font-size: 11px;
   font-weight: normal;
@@ -26,14 +26,13 @@ $avatar-size-large: 52px;
   }
 }
 
-.avatar-small {
+.avatar.small {
   height: $avatar-size-small;
   width: $avatar-size-small;
   line-height: $avatar-size-small;
   font-size: 10px;
 }
-.avatar-large,
-.mtl-layout-default .side-nav .avatar {
+.avatar.large {
   height: $avatar-size-large;
   width: $avatar-size-large;
   line-height: $avatar-size-large;

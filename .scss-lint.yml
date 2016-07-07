@@ -22,3 +22,5 @@ linters:
     enabled: false
   ImportantRule:
     enabled: false
+  PlaceholderInExtend:
+    enabled: false
