@@ -1,24 +1,40 @@
+// vars/colors
+$avatar-size-small: 25px;
+$avatar-size-medium: 32px;
+$avatar-size-large: 52px;
+
 // avatars
-.avatar,
-.mtl-layout-default .side-nav .avatar {
-  display: block;
-  width: 52px;
-  height: 52px;
-  line-height: 52px;
-  padding: 0;
-  border-radius: 26px;
+.avatar {
+  display: inline-block;
+  border-radius: 50%;
+  height: $avatar-size-medium;
+  width: $avatar-size-medium;
+  overflow: hidden;
+  text-align: center;
+  line-height: $avatar-size-medium;
+  position: relative;
+  font-size: 11px;
+  font-weight: normal;
 
-  //scss-lint:disable PlaceholderInExtend
   @extend .grey, .lighten-2;
-  //scss-lint:enable PlaceholderInExtend
 
-  .initials,
   img {
     display: block;
-    width: 52px;
-    height: 52px;
-    line-height: 52px;
-    text-align: center;
-    border-radius: 26px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
   }
+}
+
+.avatar.small {
+  height: $avatar-size-small;
+  width: $avatar-size-small;
+  line-height: $avatar-size-small;
+  font-size: 10px;
+}
+.avatar.large {
+  height: $avatar-size-large;
+  width: $avatar-size-large;
+  line-height: $avatar-size-large;
+  font-size: 15px;
 }

@@ -1,9 +1,7 @@
 require 'rails'
 require 'mtl/version'
 
-require 'mtl/rails/button_helper'
-require 'mtl/rails/header_helper'
-require 'mtl/rails/icon_helper'
+require 'mtl/rails/view_helpers'
 
 # MTL configuration options are as follows:
 module Mtl
@@ -20,9 +18,7 @@ module Mtl
     end
 
     initializer 'mtl.view_helpers' do
-      ActionView::Base.send :include, Mtl::Rails::ButtonHelper
-      ActionView::Base.send :include, Mtl::Rails::HeaderHelper
-      ActionView::Base.send :include, Mtl::Rails::IconHelper
+      ActionView::Base.send :include, Mtl::Rails::ViewHelpers
     end
   end
 end
