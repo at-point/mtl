@@ -145,10 +145,34 @@
       font-size: 14px;
       height: 40px;
       line-height: 40px;
+      transition-duration: .4s;
+      transition-property: height, line-height;
 
       .material-icons {
         line-height: 40px;
         margin-right: 0;
+        transition-duration: .4s;
+        transition-property: line-height;
+      }
+    }
+    .compressed a {
+      height: 30px;
+      line-height: 30px;
+
+      .material-icons {
+        line-height: 30px;
+      }
+
+    }
+
+    &-anchor {
+      position: relative;
+
+      ul {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
       }
     }
 
