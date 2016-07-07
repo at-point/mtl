@@ -73,6 +73,13 @@ git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygem
 3. Run `./bin/pull-all`: this copies all resources to vendor/assets
 4. Follow _NEXT STEPS_ closely as defined in output of `pull-all`
 
+### Documentation
+
+To generate the a browsable html documentation site, use following commands:
+
+- `./bin/yardoc`
+- `open doc/index.html`
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/at-point/mtl.
@@ -80,14 +87,7 @@ This project is intended to be a safe, welcoming space for collaboration, and co
 are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org)
 code of conduct.
 
-## Documentation
-
-To generate the a browsable html documentation site, use following commands:
-
-- `./bin/yardoc`
-- `open doc/index.html`
-
-## License
+### License
 
 [MIT License][license]. Copyright 2016 at-point ag. https://at-point.ch
 
