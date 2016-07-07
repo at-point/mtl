@@ -3,7 +3,7 @@
   var methods = {
     init : function(options) {
       var defaults = {
-        menuWidth: 240,
+        menuWidth: 300,
         edge: 'left',
         closeOnClick: false
       };
@@ -14,7 +14,7 @@
         var menu_id = $("#"+ $this.attr('data-activates'));
 
         // Set to width
-        if (options.menuWidth != 240) {
+        if (options.menuWidth != 300) {
           menu_id.css('width', options.menuWidth);
         }
 
@@ -23,12 +23,12 @@
         $('body').append(dragTarget);
 
         if (options.edge == 'left') {
-          menu_id.css('transform', 'translateX(-105%)');
+          menu_id.css('transform', 'translateX(-100%)');
           dragTarget.css({'left': 0}); // Add Touch Area
         }
         else {
           menu_id.addClass('right-aligned') // Change text-alignment to right
-            .css('transform', 'translateX(105%)');
+            .css('transform', 'translateX(100%)');
           dragTarget.css({'right': 0}); // Add Touch Area
         }
 
@@ -55,9 +55,9 @@
             }
             else if (menuOut === false){
               if (options.edge === 'left') {
-                menu_id.css('transform', 'translateX(-105%)');
+                menu_id.css('transform', 'translateX(-100%)');
               } else {
-                menu_id.css('transform', 'translateX(105%)');
+                menu_id.css('transform', 'translateX(100%)');
               }
 
             }

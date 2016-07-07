@@ -139,10 +139,17 @@
 
   // sidebar
   .side-nav {
+    width: 240px;
+
     a {
       font-size: 14px;
       height: 40px;
       line-height: 40px;
+
+      .material-icons {
+        line-height: 40px;
+        margin-right: 0;
+      }
     }
 
     // user block
