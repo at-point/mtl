@@ -6,8 +6,8 @@ require 'mtl/version'
 Gem::Specification.new do |spec|
   spec.name          = 'mtl'
   spec.version       = Mtl::VERSION
-  spec.authors       = ['Marco Plüss', 'Lukas Westermann']
-  spec.email         = ['marco@at-point.ch', 'lukas@at-point.ch']
+  spec.authors       = ['Marco Plüss', 'Lukas Westermann', 'Loris Gavillet']
+  spec.email         = ['marco@at-point.ch', 'lukas@at-point.ch', 'loris@at-point.ch']
 
   spec.summary       = 'Rails gem to package materialize-css for reuse between projects.'
   spec.description   = 'Reusable components and Rails helpers on top of materialize-css ' \
