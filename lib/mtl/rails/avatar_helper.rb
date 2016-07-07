@@ -42,10 +42,10 @@ module Mtl
     # <%= mtl_avatar 'John Doe', '/john_doe.png', class: :red %>
     # ```
     #
-    # ### Avatar initials
+    # ### Avatar initials
     #
-    # This helper generates the initials for the avatar, based on the person name.
-    # It supports combined names or emails, and will return either a single initial, either a 2 letter.
+    # This helper generates the initials for the avatar, based on the person name. It supports
+    # combined names or emails, and will return either a single initial, either a 2 letter.
     # Examples:
     # - John Doe -> JD
     # - John Von Doe -> JD
@@ -66,7 +66,8 @@ module Mtl
       # @param options [Hash] Additional options that can be passed to `link_to`
       def mtl_avatar_link(url, name, image_url = nil, options = {})
         options[:class] = ['avatar', options[:class]].compact
-        link_to (image_url.present? ? image_tag(image_url, alt: name) : '') + mtl_avatar_initials(name), url, options
+        image = (image_url.present? ? image_tag(image_url, alt: name) : '')
+        link_to image + mtl_avatar_initials(name), url, options
       end
 
       # Renders an avatar, for the given name, with initials and an optional picture
@@ -76,16 +77,17 @@ module Mtl
       # @param options [Hash] Additional options that can be passed to `link_to`
       def mtl_avatar(name, image_url = '', options = {})
         options[:class] = ['avatar', options[:class]].compact
-        content_tag :span, (image_url.present? ? image_tag(image_url, alt: name) : '') + mtl_avatar_initials(name), options
+        image = (image_url.present? ? image_tag(image_url, alt: name) : '')
+        content_tag :span, image + mtl_avatar_initials(name), options
       end
 
       # Creates initials based on the given name or email.
       #
       # @param name [String]
       def mtl_avatar_initials(name)
-        initials = name.to_s.split('@').first.to_s.split(/[^[:alpha:]]+/).map(&:first)
-        return initials.first.to_s.upcase if initials.length < 2
-        [initials.first, initials.last].join.upcase
+        initials = name.to_s.upcase.split('@').first.to_s.split(/[^[:alpha:]]+/).map(&:first)
+        return initials.first.to_s if initials.length < 2
+        [initials.first, initials.last].join
       end
     end
   end
