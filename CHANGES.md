@@ -4,6 +4,7 @@ ChangeLog
 Development 0.1.0
 ------------------
 
+- Updated to Dogfalo/materialize-css@53c624d
 - Added yard / yardoc to document everything
 - Added javascript support to convert any element into a link [#11]
 - Added Rails `mtl_button_floating` helper for big round floating action buttons [#10]
