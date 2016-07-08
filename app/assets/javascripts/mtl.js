@@ -25,3 +25,4 @@
 //= require "mtl/href"
 //= require "mtl/hooks"
 //= require "mtl/select"
+//= require "mtl/collapsible"

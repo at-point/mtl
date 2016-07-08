@@ -10,7 +10,7 @@ prepareSelect = ($el) ->
 
 createSelectCallback = ($el) ->
   ->
-    return unless $el.data('mtl-select') == "multiple"
+    return unless $el.data('mtl-select') == 'multiple'
 
     $dropdown = $el.prev('.multiple-select-dropdown')
     val = $el.val()
