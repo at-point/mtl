@@ -4,6 +4,7 @@ ChangeLog
 Development 0.1.0
 ------------------
 
+- Auto-enhance `<select>`s within simple form `<form>`s [#27]
 - Added reference to Mtl::Rails::ViewHelpers, improved documentation on
   .fixed-action-btn within the default layout
 - Added `data-mtl-collapsible` and `data-mtl-collapsible-toggle`s [#22, #24]

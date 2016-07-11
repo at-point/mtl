@@ -33,6 +33,6 @@ createSelectCallback = ($el) ->
       $dropdown.find('li.active:not(:first)').trigger('click')
 
 MTL.onReady ->
-  $('select[data-mtl-select]').each ->
+  $('select[data-mtl-select], .simple_form .input-field.select > select.select').each ->
     $this = prepareSelect $(this)
     $this.material_select(createSelectCallback($this))
