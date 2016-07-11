@@ -51,7 +51,7 @@ the primary navigation.
 
 ```html
 <body class="mtl-layout-default">
-  <header id="nav-menu" class="side-nav fixed">
+  <header id="nav-menu" class="mtl-layout-default-header side-nav fixed">
     <!-- your nav collection -->
   </header>
   <main>
@@ -67,8 +67,6 @@ the primary navigation.
 
 A centered single column layout, e.g. for login screens or other standalone
 views.
-
-**TODO: @marco, can we align the markup structure between mtl-layout-default and this**
 
 ```html
 <body class="mtl-layout-single">
