@@ -71,6 +71,7 @@ views.
 ```html
 <body class="mtl-layout-single">
   <header class="mtl-layout-single-header">
+      <img src="your-logo.svg">
   </header>
   <main class="mtl-layout-single-content">
     <!-- your content, e.g. a card: -->
