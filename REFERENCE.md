@@ -40,12 +40,11 @@ Last but not least change your `application.css` to include:
 
 MTL provides two layouts:
 
-- a default application layout, with a header and a sidebar
-- a single layout with centered content
+- a default application layout, with a header and a sidebar ![default layout](../docs/layout-default.jpg)
+- a single layout with centered content ![simple layout](../docs/layout-simple.jpg)
 
-**TODO: @marco add example image for the layouts**
 
-### Application Layout
+### Default application Layout
 
 This layout is suited for standard application / backends with a sidebar for
 the primary navigation.
@@ -58,7 +57,7 @@ the primary navigation.
     <!-- your nav collection -->
   </div>
   <main>
-    <%= mtl_header 'Dashboard' %>      
+    <%= mtl_header 'Dashboard' %>
     <div class="mtl-layout-default-content">
       <!-- your content -->
     </div>
