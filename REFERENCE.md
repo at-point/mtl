@@ -49,13 +49,11 @@ MTL provides two layouts:
 This layout is suited for standard application / backends with a sidebar for
 the primary navigation.
 
-**TODO: @marco, why isn't the #nav-menu a <header>?**
-
 ```html
 <body class="mtl-layout-default">
-  <div id="nav-menu" class="side-nav fixed">
+  <header id="nav-menu" class="side-nav fixed">
     <!-- your nav collection -->
-  </div>
+  </header>
   <main>
     <%= mtl_header 'Dashboard' %>
     <div class="mtl-layout-default-content">
