@@ -126,6 +126,10 @@
   &.no-padding-bottom {
     padding-bottom: 0;
   }
+
+  > .row:last-child {
+    margin-bottom: 0;
+  }
 }
 
 
