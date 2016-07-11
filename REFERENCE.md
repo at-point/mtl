@@ -41,7 +41,7 @@ Last but not least change your `application.css` to include:
 MTL provides two layouts:
 
 - a default application layout, with a header and a sidebar ![default layout](../docs/layout-default.jpg)
-- a single layout with centered content ![simple layout](../docs/layout-simple.jpg)
+- a single layout with centered content ![single layout](../docs/layout-single.jpg)
 
 
 ### Default application Layout
