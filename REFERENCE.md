@@ -40,25 +40,22 @@ Last but not least change your `application.css` to include:
 
 MTL provides two layouts:
 
-- a default application layout, with a header and a sidebar
-- a single layout with centered content
+- a default application layout, with a header and a sidebar ![default layout](../docs/layout-default.jpg)
+- a single layout with centered content ![single layout](../docs/layout-single.jpg)
 
-**TODO: @marco add example image for the layouts**
 
-### Application Layout
+### Default application Layout
 
 This layout is suited for standard application / backends with a sidebar for
 the primary navigation.
 
-**TODO: @marco, why isn't the #nav-menu a <header>?**
-
 ```html
 <body class="mtl-layout-default">
-  <div id="nav-menu" class="side-nav fixed">
+  <header id="nav-menu" class="mtl-layout-default-header side-nav fixed">
     <!-- your nav collection -->
-  </div>
+  </header>
   <main>
-    <%= mtl_header 'Dashboard' %>      
+    <%= mtl_header 'Dashboard' %>
     <div class="mtl-layout-default-content">
       <!-- your content -->
     </div>
@@ -66,16 +63,20 @@ the primary navigation.
 </body>
 ```
 
+If you use a `.fixed-action-btn` inside `.mtl-layout-default-header`, it will be positioned to right lower side of the header:
+
+![fixed action button](../docs/fixed-action-button.jpg)
+
+
 ### Single Layout
 
 A centered single column layout, e.g. for login screens or other standalone
 views.
 
-**TODO: @marco, can we align the markup structure between mtl-layout-default and this**
-
 ```html
 <body class="mtl-layout-single">
   <header class="mtl-layout-single-header">
+      <img src="your-logo.svg">
   </header>
   <main class="mtl-layout-single-content">
     <!-- your content, e.g. a card: -->
