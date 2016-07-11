@@ -4,6 +4,8 @@ ChangeLog
 Development 0.1.0
 ------------------
 
+- Added reference to Mtl::Rails::ViewHelpers, improved documentation on
+  .fixed-action-btn within the default layout
 - Added `data-mtl-collapsible` and `data-mtl-collapsible-toggle`s [#22, #24]
 - Updated to Dogfalo/materialize-css@53c624d
 - Added yard / yardoc to document everything

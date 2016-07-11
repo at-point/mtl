@@ -10,7 +10,7 @@ MTL provides three different parts:
 
 - [Materialize CSS][materialize] and extensions for the asset pipeline,
 - [Materialize][materialize] JS wrappers for the asset pipeline (and support turbolinks),
-- and Rails view helpers to render common components
+- and {Mtl::Rails::ViewHelpers Rails view helpers} to render common components
 
 The first step is to add `mtl` to your `Gemfile`:
 
@@ -40,14 +40,16 @@ Last but not least change your `application.css` to include:
 
 MTL provides two layouts:
 
-- a default application layout, with a header and a sidebar ![default layout](../docs/layout-default.jpg)
-- a single layout with centered content ![single layout](../docs/layout-single.jpg)
+- a default application layout, with a header and a sidebar
+- a single layout with centered content
 
 
 ### Default application Layout
 
 This layout is suited for standard application / backends with a sidebar for
 the primary navigation.
+
+![default layout](images/layout-default.jpg)
 
 ```html
 <body class="mtl-layout-default">
@@ -63,15 +65,28 @@ the primary navigation.
 </body>
 ```
 
-If you use a `.fixed-action-btn` inside `.mtl-layout-default-header`, it will be positioned to right lower side of the header:
+#### Floating action button
 
-![fixed action button](../docs/fixed-action-button.jpg)
+If you use a `.fixed-action-btn` and {Mtl::Rails::ViewHelpers#mtl_button_floating mtl_button_floating}
+inside `.mtl-layout-default-header`, it will be positioned to right lower side
+of the header.
 
+![fixed action button](images/fixed-action-button.jpg)
+
+```html
+<%= mtl_header 'User' do %>
+  <div class="fixed-action-btn">
+    <%= mtl_button_floating :add, new_user_path, class: 'btn-large' %>
+  </div>
+<%- end %>
+```
 
 ### Single Layout
 
 A centered single column layout, e.g. for login screens or other standalone
 views.
+
+![single layout](images/layout-single.jpg)
 
 ```html
 <body class="mtl-layout-single">
@@ -90,6 +105,15 @@ views.
   </main>
 </body>
 ```
+
+## Rails view helpers
+
+![Buttons](images/buttons.jpg)
+
+### `Mtl::Rails::ViewHelpers`
+
+There are Rails view helpers for icons, buttons and more, see
+{Mtl::Rails::ViewHelpers}.
 
 ## JavaScript
 
@@ -253,3 +277,5 @@ This utility helps linking rows from a table or ul to open a detail page.
 
 [m-select]: http://materializecss.com/forms.html#select
 [m-collapsible]: http://materializecss.com/collapsible.html
+[m-icons]: http://materializecss.com/icons.html
+[m-buttons]: http://materializecss.com/buttons.html
