@@ -63,6 +63,11 @@ the primary navigation.
 </body>
 ```
 
+If you use a `.fixed-action-btn` inside `.mtl-layout-default-header`, it will be positioned to right lower side of the header:
+
+![fixed action button](../docs/fixed-action-button.jpg)
+
+
 ### Single Layout
 
 A centered single column layout, e.g. for login screens or other standalone
