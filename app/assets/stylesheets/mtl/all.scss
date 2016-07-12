@@ -8,7 +8,10 @@
 @import './extend/global';
 
 @import './extend/material-icons';
+
 @import 'materialize/grid';
+@import './extend/grid';
+
 @import 'materialize/navbar';
 
 //@import 'materialize/roboto';
