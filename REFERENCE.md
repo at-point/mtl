@@ -214,6 +214,9 @@ Examples:
 There are Rails view helpers for icons, buttons and more, see
 {Mtl::Rails::ViewHelpers}.
 
+
+
+
 ## JavaScript
 
 MTL provides unobstrusive wrappers that work with (and without) Rails' Turbolinks.
