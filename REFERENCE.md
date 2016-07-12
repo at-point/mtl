@@ -237,6 +237,7 @@ The following JS helpers from [Materialize CSS][materialize] are supported:
 - Text fields (support for Turbolinks)
 - Mobile navigation: `data-mtl-nav`
 - Select fields: `data-mtl-select`
+- Tabs: `data-mtl-tabs`
 - Collapsibles: `data-mtl-collapsible`
 - Modals: `data-mtl-modal`
 
@@ -297,6 +298,17 @@ and reselected based on user input.
   <option value="2">Option 2</option>
   <option value="3">Option 3</option>
 </select>
+```
+
+### Tabs
+
+Support for the [tabs from Materialize CSS][m-tabs], basically just some Turbolinks
+hooks again, usage as follows:
+
+```html
+<ul class="tabs" data-mtl-tabs>
+  <!-- standard materialize tab code ... -->
+</ul>
 ```
 
 ### Collapsible
@@ -438,3 +450,4 @@ This utility helps linking rows from a table or ul to open a detail page.
 [m-icons]: http://materializecss.com/icons.html
 [m-buttons]: http://materializecss.com/buttons.html
 [m-modals]: http://materializecss.com/modals.html
+[m-tabs]: http://materializecss.com/tabs.html

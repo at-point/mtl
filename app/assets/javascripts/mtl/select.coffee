@@ -32,7 +32,8 @@ createSelectCallback = ($el) ->
       $el.data('mtl-select:is-all-selected', true)
       $dropdown.find('li.active:not(:first)').trigger('click')
 
-MTL.onReady ->
+init = ->
   $('select[data-mtl-select], .simple_form .input-field.select > select.select').each ->
     $this = prepareSelect $(this)
     $this.material_select(createSelectCallback($this))
+if Turbolinks? then $(document).on('turbolinks:load', init) else $(init)

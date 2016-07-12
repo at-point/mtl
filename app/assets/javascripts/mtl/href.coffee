@@ -1,5 +1,10 @@
 $(document).on 'click', '[data-mtl-href]', (ev) ->
-  window.location.href = $(ev.currentTarget).data 'mtl-href'
+  target = $(this).data('mtl-href')
+
+  if Turbolinks?.supported?
+    Turbolinks.visit(target)
+  else
+    window.location.href = target
 
 $(document).on 'click', '[data-mtl-href] a', (ev) ->
   ev.stopPropagation()

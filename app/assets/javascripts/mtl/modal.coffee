@@ -27,5 +27,5 @@ $(document).on 'click', '[data-mtl-modal="close"]', (e) ->
   e.preventDefault()
   $(this).parents('.modal:first').closeModal()
 
-MTL.onReady ->
-  $('[data-mtl-modal]').each -> initModal($(this))
+init = -> $('[data-mtl-modal]').each -> initModal($(this))
+if Turbolinks? then $(document).on('turbolinks:load', init) else $(init)

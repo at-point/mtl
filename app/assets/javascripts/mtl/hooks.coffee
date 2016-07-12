@@ -1,10 +1,14 @@
 # Hooks for Turbolinks / jQuery et all
 
-MTL.onReady ->
-  # Hooks to data-mtl-nav
+# Hooks for data-mtl-*
+initMtlHooks = ->
   $('[data-mtl-nav="side"]').each -> $(this).sideNav()
+  $('[data-mtl-tabs]').tabs()
+
+if Turbolinks? then $(document).on('turbolinks:load', initMtlHooks) else $(initMtlHooks)
 
 # Things to run only once via on('ready') and need to be re-run in turbolinks
-MTL.onTurbolinksLoad ->
-  Materialize.updateTextFields()
-  Waves.displayEffect()
+$ ->
+  $(document).on 'turbolinks:load', ->
+    Materialize.updateTextFields()
+    Waves.displayEffect()

@@ -4,6 +4,9 @@ ChangeLog
 Development 0.1.0
 ------------------
 
+- Removed MTL.xyz magic, because it really is not required, required a fix
+  for http://jquery.com/upgrade-guide/3.0/#breaking-change-on-quot-ready-quot-fn-removed
+- Added supoort for tabs via `data-mtl-tabs`
 - Added CSS extensions: `.btn-square`, `.no-pad*`, `.scroll-y` and
   additional table styles like `.compressed` [#29]
 - Added support for modals via `data-mtl-modal`
@@ -39,4 +42,3 @@ Development 0.1.0
   that uses the embedded icon font and already contains the additional flags
 - Added material-design-icon font from npm, to provide the icon font locally
 - Updated to Dogfalo/materialize@607951e
-
