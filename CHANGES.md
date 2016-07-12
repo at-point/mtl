@@ -4,6 +4,8 @@ ChangeLog
 Development 0.1.0
 ------------------
 
+- Added CSS extensions: `.btn-square`, `.no-pad*`, `.scroll-y` and
+  additional table styles like `.compressed` [#29]
 - Added support for modals via `data-mtl-modal`
 - Auto-enhance `<select>`s within simple form `<form>`s [#27]
 - Added reference to Mtl::Rails::ViewHelpers, improved documentation on
