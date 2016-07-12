@@ -42,7 +42,80 @@ Last but not least change your `application.css` to include:
 
 
 
-## Extensions to materializecss
+## Layouts
+
+MTL provides two layouts:
+
+- a default application layout, with a header and a sidebar
+- a single layout with centered content
+
+
+### Default application Layout
+
+This layout is suited for standard application / backends with a sidebar for
+the primary navigation.
+
+![default layout](images/layout-default.jpg)
+
+```html
+<body class="mtl-layout-default">
+  <header id="nav-menu" class="mtl-layout-default-header side-nav fixed">
+    <!-- your nav collection -->
+  </header>
+  <main>
+    <%= mtl_header 'Dashboard' %>
+    <div class="mtl-layout-default-content">
+      <!-- your content -->
+    </div>
+  </main>
+</body>
+```
+
+#### Floating action button
+
+If you use a `.fixed-action-btn` and {Mtl::Rails::ViewHelpers#mtl_button_floating mtl_button_floating}
+inside `.mtl-layout-default-header`, it will be positioned to right lower side
+of the header.
+
+![fixed action button](images/fixed-action-button.jpg)
+
+```html
+<%= mtl_header 'User' do %>
+  <div class="fixed-action-btn">
+    <%= mtl_button_floating :add, new_user_path, class: 'btn-large' %>
+  </div>
+<%- end %>
+```
+
+### Single Layout
+
+A centered single column layout, e.g. for login screens or other standalone
+views.
+
+![single layout](images/layout-single.jpg)
+
+```html
+<body class="mtl-layout-single">
+  <header class="mtl-layout-single-header">
+      <img src="your-logo.svg">
+  </header>
+  <main class="mtl-layout-single-content">
+    <!-- your content, e.g. a card: -->
+    <div class="row">
+      <div class="col s12 m8 offset-m2">
+        <div class="card">
+          <!-- ... -->
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+```
+
+
+
+
+## CSS extensions
 
 ### Buttons
 
@@ -131,76 +204,6 @@ Examples:
 
 
 
-
-## Layouts
-
-MTL provides two layouts:
-
-- a default application layout, with a header and a sidebar
-- a single layout with centered content
-
-
-### Default application Layout
-
-This layout is suited for standard application / backends with a sidebar for
-the primary navigation.
-
-![default layout](images/layout-default.jpg)
-
-```html
-<body class="mtl-layout-default">
-  <header id="nav-menu" class="mtl-layout-default-header side-nav fixed">
-    <!-- your nav collection -->
-  </header>
-  <main>
-    <%= mtl_header 'Dashboard' %>
-    <div class="mtl-layout-default-content">
-      <!-- your content -->
-    </div>
-  </main>
-</body>
-```
-
-#### Floating action button
-
-If you use a `.fixed-action-btn` and {Mtl::Rails::ViewHelpers#mtl_button_floating mtl_button_floating}
-inside `.mtl-layout-default-header`, it will be positioned to right lower side
-of the header.
-
-![fixed action button](images/fixed-action-button.jpg)
-
-```html
-<%= mtl_header 'User' do %>
-  <div class="fixed-action-btn">
-    <%= mtl_button_floating :add, new_user_path, class: 'btn-large' %>
-  </div>
-<%- end %>
-```
-
-### Single Layout
-
-A centered single column layout, e.g. for login screens or other standalone
-views.
-
-![single layout](images/layout-single.jpg)
-
-```html
-<body class="mtl-layout-single">
-  <header class="mtl-layout-single-header">
-      <img src="your-logo.svg">
-  </header>
-  <main class="mtl-layout-single-content">
-    <!-- your content, e.g. a card: -->
-    <div class="row">
-      <div class="col s12 m8 offset-m2">
-        <div class="card">
-          <!-- ... -->
-        </div>
-      </div>
-    </div>
-  </main>
-</body>
-```
 
 ## Rails view helpers
 
