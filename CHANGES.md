@@ -37,4 +37,8 @@ Development 0.1.0
   that uses the embedded icon font and already contains the additional flags
 - Added material-design-icon font from npm, to provide the icon font locally
 - Updated to Dogfalo/materialize@607951e
-
+- Added css extensions:
+  + `square-button` to buttons.scss
+  + `no-pad`, `no-pad-left` and `no-pad-right` to grid.scss
+  + `scroll-y` wrapper helper to grid.scss
+  + `no-side-padding` and `compressed` to global.scss
