@@ -22,7 +22,9 @@
 //=require "materialize/date_picker/picker.date"
 
 //= require "mtl/turbolinks"
-//= require "mtl/href"
 //= require "mtl/hooks"
-//= require "mtl/select"
+
+//= require "mtl/href"
 //= require "mtl/collapsible"
+//= require "mtl/modal"
+//= require "mtl/select"

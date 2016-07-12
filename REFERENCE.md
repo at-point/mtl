@@ -135,6 +135,8 @@ The following JS helpers from [Materialize CSS][materialize] are supported:
 - Text fields (support for Turbolinks)
 - Mobile navigation: `data-mtl-nav`
 - Select fields: `data-mtl-select`
+- Collapsibles: `data-mtl-collapsible`
+- Modals: `data-mtl-modal`
 
 **Note:** at the time of writing not all JS helpers are supported. New wrappers
 are added step by step over time.
@@ -255,7 +257,61 @@ by default the first item is open.
 </ul>
 ```
 
-### `data-mtl-href` Utility
+### Modals
+
+Based on leanModal MTL adds turbolinks support as well as loading content over
+XHR GET requests. This can be used to render partials into modal windows. For
+markup details of the modal itself, please refer to the
+[Materialize CSS: Modals][m-modals] documentation.
+
+#### Simple modals
+
+A modal usually consists of a trigger (via `data-mtl-modal="default"`) and the
+corresponding modal content.
+
+```html
+<!-- Use data-mtl-modal="default" to enable as trigger, uses href or data-target -->
+<a href="#modal" class="btn-flat" data-mtl-modal="default">Open Modal</a>
+
+<div class="modal">
+  <div class="modal-content">
+    <h4>Your modal</h4>
+    <p>Example modal.</p>
+  </div>
+  <div class="modal-footer">
+    <!-- Use data-mtl-modal="close" to add a close button -->
+    <a href="#close" class="btn-flat modal-action" data-mtl-modal="close">
+      Close
+    </a>
+  </div>
+</div>
+```
+
+#### XHR modals
+
+To load content for the modal via XHR the trigger must be created as usual
+with the `data-mtl-modal="xhr"` marker. The `href` in that case indicates the
+resource to load via `$.load`. Behind the scenes an empty modal is generated,
+that is loaded on open. No additional markup is required in that case.
+
+```html
+<a href="/your_controller/assignees" data-mtl-modal="xhr">
+  Change assignee
+</a>
+```
+
+The (Rails) controller should be configured to only return a partial. The partial
+can contain `data-mtl-modal="close"` triggers too.
+
+```ruby
+# Rails: your_controller.rb
+def assignees_modal
+  @assignees = context.assignees
+  render partial: 'assignees_modal'
+end
+```
+
+### Helper: `data-mtl-href`
 
 This utility helps linking rows from a table or ul to open a detail page.
 
@@ -279,3 +335,4 @@ This utility helps linking rows from a table or ul to open a detail page.
 [m-collapsible]: http://materializecss.com/collapsible.html
 [m-icons]: http://materializecss.com/icons.html
 [m-buttons]: http://materializecss.com/buttons.html
+[m-modals]: http://materializecss.com/modals.html
