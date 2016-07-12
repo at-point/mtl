@@ -4,6 +4,9 @@ Materializer is an opinionated toolkit for Rails to simplify building user
 interfaces that are based on [Material Design][material] and
 [Materialize CSS][materialize].
 
+
+
+
 ## Using MTL
 
 MTL provides three different parts:
@@ -61,6 +64,72 @@ Example:
 ...will convert to:
 
 ![squared buttons](images/squared-buttons.jpg)
+
+
+### Grid
+
+We extended the grid system with some helper classes, removing some of the native padding of columns if needed.
+
+- **no-pad** will remove all padding of a *col* element
+- **no-pad-left** will remove the left padding of a *col* element
+- **no-pad-right** will remove the right padding of a *col* element
+
+Example:
+
+```html
+<div class="row">
+  <div class="col no-pad s12">
+    This column won't present any padding to its sides.
+  </div>
+</div>
+
+<div class="row">
+  <div class="col no-pad-left s6">
+    This column won't present any padding to its LEFT side.
+  </div>
+  <div class="col no-pad-right s6">
+    This column won't present any padding to its RIGHT side.
+  </div>
+</div>
+```
+
+As a generic helper, we added a scroll class to it too, which you can use on a .row, or some other wrapping div:
+
+Example:
+
+```html
+<div class="row scroll-y" style="height: 400px;">
+  This content will be scrollable if its size exceeds the specified height of 400px.
+</div>
+```
+
+
+### Tables
+
+We added two modes for tables: **no-side-padding** and **compressed**:
+
+- The class *no-side-padding* will remove the cell padding to the left of the first entry and the right one of the last.
+- The class *compressed* will reduce the vertical cellpadding, compressing the contents of a table.
+
+Examples:
+
+```html
+<table class="bordered no-side-padding compressed">
+  <tbody>
+    <tr>
+      <td>Lorem</td>
+      <td>Ipsum</td>
+      <td class="right">Sit amet</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+...will convert to:
+
+![table modes](images/table-modes.jpg)
+
+
 
 
 ## Layouts
