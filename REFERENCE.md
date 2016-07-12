@@ -36,6 +36,33 @@ Last but not least change your `application.css` to include:
 //= require mtl
 ```
 
+
+
+
+## Extensions to materializecss
+
+### Buttons
+
+We added **square-button** to display an icon in a squared button.
+
+Example:
+
+```html
+<div class="row">
+  <a class="btn-flat btn-square grey-text col left">
+    <%= mtl_icon :attach_file %>
+  </a>
+  <a class="btn-flat btn-square grey-text col left">
+    <%= mtl_icon :format_align_left %>
+  </a>
+</div>
+```
+
+...will convert to:
+
+![squared buttons](images/squared-buttons.jpg)
+
+
 ## Layouts
 
 MTL provides two layouts:
@@ -252,7 +279,7 @@ by default the first item is open.
     <div class="collapsible-header">User</div>
     <div class="collapsible-body">
       ...User Menu Options
-    </div>    
+    </div>
   </li>
 </ul>
 ```
