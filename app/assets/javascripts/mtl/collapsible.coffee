@@ -35,7 +35,9 @@ createExpandable = ($el) ->
   $el.data('collapsible', 'expandable')
     .collapsible(accordion: false)
 
-MTL.onReady ->
+init = ->
   $('[data-mtl-collapsible="accordion"]').each -> createAccordion($(this))
   $('[data-mtl-collapsible="expandable"]').each -> createExpandable($(this))
   $('[data-mtl-collapsible-toggle]').each -> createTrigger($(this))
+
+if Turbolinks? then $(document).on('turbolinks:load', init) else $(init)
