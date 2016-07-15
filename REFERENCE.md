@@ -203,6 +203,22 @@ Examples:
 ![table modes](images/table-modes.jpg)
 
 
+### Table of contents
+
+As an additional component, we defined the configurable **table of contents** listing, which uses following markup:
+
+```html
+<ul class="toc">
+  <li>
+    <a href="#lorem">Lorem</td>
+    <a href="#ipsum">Ipsum</td>
+    <a href="#sitamet">Sit amet</td>
+  </li>
+</ul>
+```
+
+Its links will per default use the app's link appearance. The color of the line to the left can be defined with the `$mtl-toc-line-color` in your `_variables.scss`.
+
 
 
 ## Rails view helpers
