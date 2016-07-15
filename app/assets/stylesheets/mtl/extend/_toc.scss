@@ -1,0 +1,17 @@
+// table of contents
+.toc {
+  list-style-type: none;
+  border-left: 3px solid $mtl-toc-line-color;
+  margin-top: 0;
+  padding-left: 16px;
+
+  li {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  a {
+    font-size: 15px;
+    line-height: 23px;
+  }
+}

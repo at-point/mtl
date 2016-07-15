@@ -57,6 +57,7 @@
 
 // extending the materializer library even more
 @import './extend/mixins';
+@import './extend/toc';
 
 // including layouts
 html { height: 100%; } // yes, necessary
