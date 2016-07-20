@@ -36,4 +36,9 @@ init = ->
   $('select[data-mtl-select], .simple_form .input-field.select > select.select').each ->
     $this = prepareSelect $(this)
     $this.material_select(createSelectCallback($this))
+
+teardown = ->
+  $('select.initialized').each -> $(this).material_select('destroy')
+
 if Turbolinks? then $(document).on('turbolinks:load', init) else $(init)
+$(document).on 'turbolinks:before-cache', teardown

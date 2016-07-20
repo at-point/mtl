@@ -4,6 +4,7 @@ ChangeLog
 Development 0.1.0
 ------------------
 
+- Properly teardown data-mtl-select on turbolinks:before-cache #34
 - Add border-radius to .avatar > img to avoid flickering
 - Removed MTL.xyz magic, because it really is not required, required a fix
   for http://jquery.com/upgrade-guide/3.0/#breaking-change-on-quot-ready-quot-fn-removed
