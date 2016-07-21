@@ -21,6 +21,21 @@
   background-color: $mtl-layout-default-header-bg;
   @include clearafter;
 
+  .page-title {
+    float: left;
+    margin: 0;
+    height: 64px;
+    line-height: 64px;
+    padding: 0 1.5rem;
+
+    @media #{$medium-and-down} {
+      padding-left: .5rem;
+    }
+    @media #{$small-and-down} {
+      line-height: 56px;
+    }
+  }
+
   nav {
     height: auto;
     color: $mtl-layout-default-header-bg;
@@ -54,16 +69,8 @@
   .nav-wrapper {
     @include clearafter;
 
-    h1 {
-      line-height: 64px;
-      padding: 0 1.5rem;
-
-      @media #{$medium-and-down} {
-        padding-left: .5rem;
-      }
-      @media #{$small-and-down} {
-        line-height: 56px;
-      }
+    .row {
+      margin: 0;
     }
   }
 
@@ -77,12 +84,6 @@
     bottom: 0;
     padding: 0;
     transform: translate(0, 50%);
-  }
-
-  h1 {
-    margin: 0;
-    line-height: 44px;
-    padding: .75rem 1.5rem;
   }
   p {
     margin: 0;
@@ -193,12 +194,4 @@
       font-weight: 400;
     }
   }
-
-  nav h1 {
-    float: left;
-    margin: 0;
-    height: 64px;
-    line-height: 64px;
-  }
-
 }
