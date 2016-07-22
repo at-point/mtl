@@ -21,6 +21,10 @@
   background-color: $mtl-layout-default-header-bg;
   @include clearafter;
 
+  * {
+    color: $mtl-layout-default-header-text;
+  }
+
   .page-title {
     float: left;
     margin: 0;
@@ -143,6 +147,11 @@
   // sidebar
   .side-nav {
     width: 240px;
+    background-color: $mtl-layout-default-sidenav-bg;
+
+    * {
+      color: $mtl-layout-default-sidenav-text;
+    }
 
     a {
       font-size: 1rem;
@@ -160,6 +169,12 @@
     // user block
     &-user {
       padding: 20px;
+      background-color: $mtl-layout-default-usernav-bg;
+
+      .trigger,
+      .trigger * {
+        color: $mtl-layout-default-usernav-text;
+      }
 
       a {
         display: inline-block;
