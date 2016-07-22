@@ -1,6 +1,21 @@
 .card {
+  .card-content .card-title {
+    font-size: $h3-fontsize;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
   .card-content > .row {
     margin-left: -.75rem;
     margin-right: -.75rem;
+  }
+
+  .card-action {
+    padding: 10px;
+  }
+
+  .card-action .btn {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }

@@ -25,7 +25,6 @@
 @import 'materialize/toast';
 
 @import 'materialize/tabs';
-@import './extend/tabs';
 
 @import 'materialize/tooltip';
 @import 'materialize/buttons';
@@ -57,6 +56,7 @@
 @import 'materialize/date_picker/default.time';
 
 // extending the materializer library even more
+@import './extend/typography';
 @import './extend/mixins';
 
 // including layouts
