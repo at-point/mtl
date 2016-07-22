@@ -1,0 +1,12 @@
+.table-of-contents {
+  a {
+    color: $mtl-toc-text;
+    &:hover {
+      color: lighten($mtl-toc-text, 20%);
+      border-color: $mtl-toc-border;
+    }
+    &.active {
+      border-color: $mtl-toc-border;
+    }
+  }
+}

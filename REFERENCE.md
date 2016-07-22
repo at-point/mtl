@@ -240,6 +240,7 @@ The following JS helpers from [Materialize CSS][materialize] are supported:
 - Tabs: `data-mtl-tabs`
 - Collapsibles: `data-mtl-collapsible`
 - Modals: `data-mtl-modal`
+- Pinned table of contents (with scrollSpy): `data-mtl-toc`
 
 **Note:** at the time of writing not all JS helpers are supported. New wrappers
 are added step by step over time.
@@ -425,6 +426,35 @@ def assignees_modal
 end
 ```
 
+### Table of Contents
+
+Based on the provided [scrollspy][m-scrollspy] and [pushpin][m-pushpin] methods
+the MTL table of content behaviour automatically creates a dynamic ToC, based on
+the current page content.
+
+A ToC entry is indicated by adding `data-mtl-section="Title"` and then is
+automatically added in the order of appearance on the site to the
+`ul[data-mtl-toc]` element. Any content within `data-mtl-toc` is completely
+replaced.
+
+```html
+<div class="row" data-mtl-section="Introduction">
+  <!-- content -->
+</div>
+<div class="row" data-mtl-section="Structure">
+  <!-- content -->
+</div>
+<div class="row" data-mtl-section="Other">
+  <!-- content -->
+</div>
+
+<!-- ToC element: an empty ul with class="table-of-contents" -->
+<ul class="table-of-contents" data-mtl-toc="pin"></ul>
+```
+
+Using `data-mtl-toc="pin"` makes use of the pushpin plugin to pin the ToC
+element to the top of the screen.
+
 ### Helper: `data-mtl-href`
 
 This utility helps linking rows from a table or ul to open a detail page.
@@ -451,3 +481,5 @@ This utility helps linking rows from a table or ul to open a detail page.
 [m-buttons]: http://materializecss.com/buttons.html
 [m-modals]: http://materializecss.com/modals.html
 [m-tabs]: http://materializecss.com/tabs.html
+[m-scrolllspy]: http://materializecss.com/scrolllspy.html
+[m-pushpin]: http://materializecss.com/pushpin.html

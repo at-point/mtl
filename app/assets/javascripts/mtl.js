@@ -20,9 +20,11 @@
 //=require "materialize/slider"
 //=require "materialize/date_picker/picker"
 //=require "materialize/date_picker/picker.date"
+//=require "materialize/pushpin"
 
 //= require "mtl/hooks"
 //= require "mtl/href"
 //= require "mtl/collapsible"
 //= require "mtl/modal"
 //= require "mtl/select"
+//= require "mtl/toc"

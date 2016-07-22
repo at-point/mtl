@@ -4,6 +4,9 @@ ChangeLog
 Development 0.1.0
 ------------------
 
+- Implement ToC based on pushpin and scrollspy [#36]
+  This introduces a two new variables to properly style ToCs,
+  these are $mtl-toc-text and $mtl-toc-border
 - Properly teardown data-mtl-select on turbolinks:before-cache #34
 - Add border-radius to .avatar > img to avoid flickering
 - Removed MTL.xyz magic, because it really is not required, required a fix
