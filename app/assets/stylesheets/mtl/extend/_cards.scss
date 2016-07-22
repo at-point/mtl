@@ -11,11 +11,11 @@
   }
 
   .card-action {
-    padding: 10px;
+    padding: $card-padding / 2;
   }
 
   .card-action .btn {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: $card-padding / 2;
+    padding-right: $card-padding / 2;
   }
 }
