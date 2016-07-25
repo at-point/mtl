@@ -185,6 +185,25 @@ module Mtl
         mtl_button mtl_icon(icon), url, options
       end
 
+      # Renders a flat button with the more_vert icon dots in a wrapper element.
+      # This is intended to be used to render these "more buttons" on the right,
+      # in cards or the navbar.
+      #
+      # ```erb
+      # <%= mtl_button_more '#dropdown', 'data-mtl-dropdown': true %>
+      # ```
+      #
+      # @param url [String] usually probably references the dropdown to trigger
+      # @param options [Hash] Additional options passed to `link_to`
+      # @return [String] HTML safe `<a/>` tag
+      def mtl_button_more(url, options = {})
+        wrapper_class = ['btn-more-wrapper', options.delete(:wrapper_class)].compact
+        options[:class] = ['btn-more', options[:class]].compact.flatten
+
+        btn = mtl_button_flat mtl_icon(:more_vert, size: :tiny), url, options
+        content_tag :div, btn, class: wrapper_class
+      end
+
       # Renders a visually raised button, i.e. the default button style.
       #
       # @param label [String]

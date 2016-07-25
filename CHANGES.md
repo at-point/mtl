@@ -4,6 +4,8 @@ ChangeLog
 Development 0.1.0
 ------------------
 
+- Added `data-mtl-dropdown` support and proper rendering of more menu buttons
+  via `.btn-more-wrapper` and `.btn-more` [#42]
 - Unify typography / headings to better conform to Material Design [#36, #39, #40]
 - Implement ToC based on pushpin and scrollspy [#36]
   This introduces a two new variables to properly style ToCs,

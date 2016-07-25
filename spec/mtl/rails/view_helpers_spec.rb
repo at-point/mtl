@@ -83,6 +83,18 @@ RSpec.describe Mtl::Rails::ViewHelpers, dom: true do
     end
   end
 
+  context '#mtl_button_more' do
+    it 'renders a wrapped flat button with an additional .btn-more class' do
+      expect(subject.mtl_button_more('#dropdown', 'data-mtl-dropdown': true, class: 'something'))
+        .to eq '<div class="btn-more-wrapper"><a data-mtl-dropdown="true" class="btn waves-effect waves-light btn-flat btn-more something" href="#dropdown"><i class="material-icons tiny">more_vert</i></a></div>'
+    end
+
+    it 'accepts :wrapper_class to pass classes to the wrapper' do
+      expect(subject.mtl_button_more('#dropdown', wrapper_class: 'something'))
+        .to eq '<div class="btn-more-wrapper something"><a class="btn waves-effect waves-light btn-flat btn-more" href="#dropdown"><i class="material-icons tiny">more_vert</i></a></div>'
+    end
+  end
+
   context '#mtl_avatar_link' do
     it 'renders an <a/> tag with initials and no image, if none provided' do
       expect(subject.mtl_avatar_link('/url', 'John Doe'))

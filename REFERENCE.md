@@ -235,12 +235,13 @@ The following JS helpers from [Materialize CSS][materialize] are supported:
 
 - Wave effects (enabled for Turbolinks)
 - Text fields (support for Turbolinks)
-- Mobile navigation: `data-mtl-nav`
-- Select fields: `data-mtl-select`
-- Tabs: `data-mtl-tabs`
-- Collapsibles: `data-mtl-collapsible`
-- Modals: `data-mtl-modal`
-- Pinned table of contents (with scrollSpy): `data-mtl-toc`
+- [Mobile navigation: `data-mtl-nav`](#label-Mobile+navigation)
+- [Select fields: `data-mtl-select`](#label-Select+fields)
+- [Tabs: `data-mtl-tabs`](#label-Tabs)
+- [Collapsibles: `data-mtl-collapsible`](#label-Collapsible)
+- Dropdowns: `data-mtl-dropdown`
+- [Modals: `data-mtl-modal`](#label-Modals)
+- [Pinned table of contents (with scrollSpy): `data-mtl-toc`](#label-Table+of+Contents)
 
 **Note:** at the time of writing not all JS helpers are supported. New wrappers
 are added step by step over time.
@@ -369,6 +370,40 @@ by default the first item is open.
       ...User Menu Options
     </div>
   </li>
+</ul>
+```
+
+### Dropdowns
+
+One of the more common uses of dropdowns is in the more menu items, where additional
+actions are hidden within three dots.
+
+![Dropdown](images/dropdown.gif)
+
+Currently the width of the dropdown must be actively defined, when icons are used,
+otherwise it can be left off. The trigger element simply requires a `data-mtl-dropdown`
+and the `href` should point to the actual dropdown content.
+
+There is also a Rails helper, see {Mtl::Rails::ViewHelpers#mtl_button_more}.
+
+```html
+<!-- Creates a button on the right, can be used in cards too, there is also
+     a Rails helper #mtl_button_more that generates this markup for you -->
+<div class="btn-more-wrapper">
+  <a href="#dropdown" class="btn-flat btn-more">
+    <i class="material-icons">more_vert</i>
+  </a>
+</div>
+
+<!-- The dropdown content -->
+<ul id="dropdown" class="dropdown-content">
+  <li>
+    <a href="...">
+      <i class="material-icons">archive</i>
+      Archive
+    </a>
+  </li>
+  <!-- ... -->
 </ul>
 ```
 
