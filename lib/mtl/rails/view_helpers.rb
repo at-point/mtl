@@ -230,7 +230,9 @@ module Mtl
       # @param options [Hash] Additional options that can be passed to `link_to`
       # @return [String] HTML safe `<a/>` tag
       def mtl_avatar_link(url, name, image_url = nil, options = {})
-        options[:class] = ['avatar', Mtl.effects, options.delete(:size), options[:class]].compact
+        options[:class] = [
+          'mtl-avatar', Mtl.effects, options.delete(:size), options[:class]
+        ].compact
         image = (image_url.present? ? image_tag(image_url, alt: name) : '')
         link_to image + mtl_avatar_initials(name), url, options
       end
@@ -243,7 +245,7 @@ module Mtl
       # @param options [Hash] Additional options that can be passed to `link_to`
       # @return [String] HTML safe `<span/>` tag
       def mtl_avatar(name, image_url = nil, options = {})
-        options[:class] = ['avatar', options.delete(:size), options[:class]].compact
+        options[:class] = ['mtl-avatar', options.delete(:size), options[:class]].compact
         image = (image_url.present? ? image_tag(image_url, alt: name) : '')
         content_tag :span, image + mtl_avatar_initials(name), options
       end
