@@ -1,5 +1,7 @@
 updateAttrs = ($el) ->
-  $el.attr('data-constrainwidth', 'false')
+  $el
+    .on('click', -> false)
+    .attr('data-constrainwidth', 'false')
     .attr('data-beloworigin', 'true')
     .attr('data-alignment', alignment($el))
     .attr('data-activates', activator($el))
