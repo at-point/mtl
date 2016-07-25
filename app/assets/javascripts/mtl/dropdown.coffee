@@ -15,4 +15,8 @@ init = ->
     $el = $(this)
     updateAttrs($el).dropdown()
 
+closeAll = ->
+  setTimeout -> $('[data-mtl-dropdown]').dropdown('close')
+
 if Turbolinks? then $(document).on('turbolinks:load', init) else $(init)
+$(window).on 'resize orientationchange', closeAll
