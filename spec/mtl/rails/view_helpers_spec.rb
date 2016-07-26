@@ -86,34 +86,34 @@ RSpec.describe Mtl::Rails::ViewHelpers, dom: true do
   context '#mtl_avatar_link' do
     it 'renders an <a/> tag with initials and no image, if none provided' do
       expect(subject.mtl_avatar_link('/url', 'John Doe'))
-        .to eq '<a class="avatar waves-effect waves-light" href="/url">JD</a>'
+        .to eq '<a class="mtl-avatar waves-effect waves-light" href="/url">JD</a>'
     end
 
     it 'renders an <a/> tag with initials and an image, if an url is provided' do
       expect(subject.mtl_avatar_link('/url', 'John Doe', '/image_url.png'))
-        .to eq '<a class="avatar waves-effect waves-light" href="/url"><img alt="John Doe" src="/image_url.png" />JD</a>'
+        .to eq '<a class="mtl-avatar waves-effect waves-light" href="/url"><img alt="John Doe" src="/image_url.png" />JD</a>'
     end
 
     it 'renders a small avatar <a/> tag with initials and an image, if size: :small' do
       expect(subject.mtl_avatar_link('/url', 'John Doe', '/image_url.png', size: :small))
-        .to eq '<a class="avatar waves-effect waves-light small" href="/url"><img alt="John Doe" src="/image_url.png" />JD</a>'
+        .to eq '<a class="mtl-avatar waves-effect waves-light small" href="/url"><img alt="John Doe" src="/image_url.png" />JD</a>'
     end
   end
 
   context '#mtl_avatar' do
     it 'renders an <span/> tag with initials and no image, if none provided' do
       expect(subject.mtl_avatar('John Doe'))
-        .to eq '<span class="avatar">JD</span>'
+        .to eq '<span class="mtl-avatar">JD</span>'
     end
 
     it 'renders an <span/> tag with initials and an image, if an url is provided' do
       expect(subject.mtl_avatar('John Doe', '/image_url.png'))
-        .to eq '<span class="avatar"><img alt="John Doe" src="/image_url.png" />JD</span>'
+        .to eq '<span class="mtl-avatar"><img alt="John Doe" src="/image_url.png" />JD</span>'
     end
 
     it 'renders a large <span/> tag as an avatar, if size: :large' do
       expect(subject.mtl_avatar('John Doe', nil, size: :large))
-        .to eq '<span class="avatar large">JD</span>'
+        .to eq '<span class="mtl-avatar large">JD</span>'
     end
   end
 
