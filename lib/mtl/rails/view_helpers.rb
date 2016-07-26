@@ -232,14 +232,12 @@ module Mtl
       def mtl_header(title = translate('.title', default: 'Menu'), **options, &block)
         mtl_content = block_given? ? capture(&block) : nil
         mtl_class = ['mtl-layout-default-header', options[:class]].compact.flatten.join(' ')
-        mtl_back = options.fetch(:back, false)
-        mtl_menu = options.fetch(:menu, 'nav-menu')
 
         render file: 'mtl/header', locals: {
           mtl_content: mtl_content,
           mtl_title: title.presence,
-          mtl_back: mtl_back,
-          mtl_menu: mtl_menu,
+          mtl_back: options.fetch(:back, false),
+          mtl_menu: options.fetch(:menu, 'nav-menu'),
           mtl_class: mtl_class
         }
       end
