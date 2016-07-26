@@ -450,6 +450,27 @@ that is loaded on open. No additional markup is required in that case.
 </a>
 ```
 
+Materialize also offers some control classes for the modal dialogs. As an XHR dialog
+is based on a fixed template, there's no control on the wrapping element and those
+classes can't be manually added. To solve this issue, you can use the optional data
+attribute `data-mtl-modal-class` which can contain any custom class, that will be applied
+to the wrapping modal element (in our case, the `<div class="modal"></div>`).
+Example:
+
+```html
+<a href="/your_controller/users/new" data-mtl-modal="xhr" data-mtl-modal-class="modal-fixed-footer">
+  Add user
+</a>
+```
+
+Resulting HTML:
+
+```html
+<div class="modal modal-fixed-footer">
+  <!-- XHR content -->
+</div>
+```
+
 The (Rails) controller should be configured to only return a partial. The partial
 can contain `data-mtl-modal="close"` triggers too.
 

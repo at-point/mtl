@@ -16,6 +16,7 @@ initXhrModal = ($el) ->
   ds = $el.prop('href')
   $modal = $(MODAL_TEMPLATE).prop('id', modalId)
   $modal.appendTo('body')
+  $modal.addClass(modalClass) if modalClass = $el.data('mtl-modal-class')
   $el.prop('href', "##{modalId}")
 
   initDefaultModal $el,
