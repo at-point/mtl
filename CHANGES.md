@@ -4,6 +4,7 @@ ChangeLog
 Development 0.1.0
 ------------------
 
+- Updated materialize-css to [171a9ef](https://github.com/Dogfalo/materialize/commit/171a9ef004b3145864ef975baa4cea8c0c06bf11) [#45]
 - Prefixed MTL avatar extension to `mtl-avatar` [#46]
 - Unify typography / headings to better conform to Material Design [#36, #39, #40]
 - Implement ToC based on pushpin and scrollspy [#36]

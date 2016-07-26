@@ -219,7 +219,7 @@ $sidenav-font-size: 1rem !default;
 $sidenav-font-color: rgba(0,0,0,.87) !default;
 $sidenav-bg-color: #fff !default;
 $sidenav-padding: 16px !default;
-$sidenav-item-height: 48px !default;
+$sidenav-item-height: 40px !default;
 
 
 // 15. Photo Slider =========================================================
@@ -299,16 +299,16 @@ $progress-bar-color: $secondary-color !default;
 $mtl-sidenav-bg-active-color: color('blue', 'base') !default;
 $mtl-sidenav-font-active-color: #fff !default;
 
-$mtl-layout-default-bg: color('grey', 'lighten-5');
-$mtl-layout-default-text: color('grey', 'darken-4');
-$mtl-layout-default-header-bg: color('shades', 'white');
+$mtl-layout-default-bg: color('grey', 'lighten-5') !default;
+$mtl-layout-default-text: color('grey', 'darken-4') !default;
+$mtl-layout-default-header-bg: color('shades', 'white') !default;
 
-$mtl-layout-single-bg: color('grey', 'lighten-4');
-$mtl-layout-single-header-bg: color('grey', 'lighten-2');
+$mtl-layout-single-bg: color('grey', 'lighten-4') !default;
+$mtl-layout-single-header-bg: color('grey', 'lighten-2') !default;
 
-$mtl-toc-text: color('grey', 'darken-4');
-$mtl-toc-border: $primary-color;
+$mtl-toc-text: color('grey', 'darken-4') !default;
+$mtl-toc-border: $primary-color !default;
 
-$mtl-avatar-size-small: 25px;
-$mtl-avatar-size-medium: 32px;
-$mtl-avatar-size-large: 52px;
+$mtl-avatar-size-small: 25px !default;
+$mtl-avatar-size-medium: 32px !default;
+$mtl-avatar-size-large: 52px !default;

@@ -146,11 +146,13 @@
 
     a {
       font-size: 1rem;
-      height: 40px;
-      line-height: 40px;
+      height: $sidenav-item-height;
+      line-height: $sidenav-item-height;
 
       .material-icons {
-        line-height: 40px;
+        width: $sidenav-item-height;
+        height: $sidenav-item-height;
+        line-height: $sidenav-item-height;
         margin-right: 0;
       }
     }
