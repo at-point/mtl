@@ -11,7 +11,10 @@ tools:
 - [Materialize CSS][materialize]
 - [Material Icons][icons] font from Google
 - [Rails][rails] and it's asset pipeline
+- [Lodash][lodash] utilities
 - Google Material Design
+
+It requires jQuery (works very will with 3.x).
 
 ## Installation
 
@@ -95,6 +98,7 @@ code of conduct.
 [materialize]: http://materializecss.com/
 [icons]: https://design.google.com/icons/
 [rails]: http://rubyonrails.org
+[lodash]: https://lodash.com/
 
 [header_helper.rb]: https://github.com/at-point/mtl/blob/master/lib/mtl/rails/header_helper.rb
 [license]: https://github.com/at-point/mtl/blob/master/LICENSE.txt

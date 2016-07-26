@@ -2,9 +2,9 @@
   "name": "mtl",
   "license": "MIT",
   "private": true,
-
   "dependencies": {
-    "materialize-css": "https://github.com/Dogfalo/materialize.git#171a9ef",
-    "material-design-icons": "2.2.3"
+    "lodash": "^4.14.0",
+    "material-design-icons": "2.2.3",
+    "materialize-css": "https://github.com/Dogfalo/materialize.git#171a9ef"
   }
 }

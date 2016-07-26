@@ -2,6 +2,7 @@
 //=require "materialize/velocity.min"
 //=require "materialize/hammer.min"
 //=require "materialize/jquery.hammer"
+//=require "lodash"
 
 //=require "materialize/global"
 
@@ -22,10 +23,10 @@
 //=require "materialize/date_picker/picker.date"
 //=require "materialize/pushpin"
 
-//= require "mtl/hooks"
-//= require "mtl/href"
-//= require "mtl/collapsible"
-//= require "mtl/dropdown"
-//= require "mtl/modal"
-//= require "mtl/select"
-//= require "mtl/toc"
+//=require "mtl/hooks"
+//=require "mtl/href"
+//=require "mtl/collapsible"
+//=require "mtl/dropdown"
+//=require "mtl/modal"
+//=require "mtl/select"
+//=require "mtl/toc"
