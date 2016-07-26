@@ -5,6 +5,8 @@ AllCops:
     - 'node_modules/**/*'
     - 'vendor/**'
     - 'vendor/**/*'
+    - 'gemfiles/**'
+    - 'gemfiles/**/*'
 
   # Cop names are not displayed in offense messages by default. Change behavior
   # by overriding DisplayCopNames, or by giving the -D/--display-cop-names
@@ -43,4 +45,3 @@ Style/ClassVars:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
-
