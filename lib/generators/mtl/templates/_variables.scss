@@ -1,3 +1,4 @@
+
 //  ==========================================================================
 //  Materialize variables
 //  ========================================================================== */
@@ -296,19 +297,32 @@ $progress-bar-color: $secondary-color !default;
 
 // 99. Custom ATP/MTL Elements =============================================
 
+// sidenav elements
 $mtl-sidenav-bg-active-color: color('blue', 'base') !default;
 $mtl-sidenav-font-active-color: #fff !default;
 
+// default layout
 $mtl-layout-default-bg: color('grey', 'lighten-5') !default;
 $mtl-layout-default-text: color('grey', 'darken-4') !default;
-$mtl-layout-default-header-bg: color('shades', 'white') !default;
 
+$mtl-layout-default-header-bg: color('grey', 'darken-2') !default;
+$mtl-layout-default-header-text: color('shades', 'white') !default;
+
+$mtl-layout-default-sidenav-bg: color('shades', 'white') !default;
+$mtl-layout-default-sidenav-text: color('grey', 'darken-4') !default;
+
+$mtl-layout-default-usernav-bg: color('grey', 'darken-4') !default;
+$mtl-layout-default-usernav-text: color('shades', 'white') !default;
+
+// single layout
 $mtl-layout-single-bg: color('grey', 'lighten-4') !default;
 $mtl-layout-single-header-bg: color('grey', 'lighten-2') !default;
 
+// table of contents
 $mtl-toc-text: color('grey', 'darken-4') !default;
 $mtl-toc-border: $primary-color !default;
 
+// avatar sizes
 $mtl-avatar-size-small: 25px !default;
 $mtl-avatar-size-medium: 32px !default;
 $mtl-avatar-size-large: 52px !default;

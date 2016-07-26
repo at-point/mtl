@@ -6,6 +6,9 @@
   // sidebar logic
   main {
     padding-left: 240px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
 
     @media #{$medium-and-down} {
       padding: 0;
@@ -19,7 +22,12 @@
   z-index: 2;
   height: auto;
   background-color: $mtl-layout-default-header-bg;
+  color: $mtl-layout-default-header-text;
   @include clearafter;
+
+  .btn-more {
+    color: $mtl-layout-default-header-text;
+  }
 
   .page-title {
     float: left;
@@ -37,12 +45,8 @@
 
   nav {
     height: auto;
-    color: $mtl-layout-default-header-bg;
-
-    @media #{$large-and-up} {
-      background-color: $mtl-layout-default-header-bg;
-      color: $mtl-layout-default-text;
-    }
+    background-color: $mtl-layout-default-header-bg;
+    color: $mtl-layout-default-header-text;
 
     .select-wrapper {
       margin: 14px 0 0 30px;
@@ -102,6 +106,9 @@
 // content area
 .mtl-layout-default-content {
   padding: 1.5rem;
+  box-flex: 1;
+  flex: 1;
+  justify-content: space-between;
 
   &.half-padding {
     padding: .75rem;
@@ -143,6 +150,8 @@
   // sidebar
   .side-nav {
     width: 240px;
+    background-color: $mtl-layout-default-sidenav-bg;
+    color: $mtl-layout-default-sidenav-text;
 
     a {
       font-size: 1rem;
@@ -160,6 +169,8 @@
     // user block
     &-user {
       padding: 20px;
+      background-color: $mtl-layout-default-usernav-bg;
+      color: $mtl-layout-default-usernav-text;
 
       a {
         display: inline-block;

@@ -1,4 +1,8 @@
+// scss-lint:disable QualifyingElement SelectorFormat
 .simple_form .check_boxes > label,
 .simple_form .radio_buttons > label {
   display: none;
+}
+.select-wrapper span.caret {
+  color: inherit;
 }

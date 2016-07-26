@@ -4,6 +4,8 @@ ChangeLog
 Development 0.1.0
 ------------------
 
+- Used flexbox fix to enable the content area over the full page height [#41]
+- Extended default layout coloring variables [#41]
 - Added `data-mtl-dropdown` support and proper rendering of more menu buttons
   via `.btn-more-wrapper` and `.btn-more` [#42]
 - Added custom class support for XHR modals [#47]
