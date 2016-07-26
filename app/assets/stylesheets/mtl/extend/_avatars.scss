@@ -12,6 +12,7 @@
   font-weight: normal;
 
   @extend .grey, .lighten-2;
+  color: $mtl-layout-default-text;
 
   img {
     display: block;

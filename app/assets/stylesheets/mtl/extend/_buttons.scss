@@ -6,11 +6,7 @@
 }
 
 .btn-more {
-  color: $mtl-layout-default-header-bg;
-
-  @media #{$large-and-up} {
-    color: $mtl-layout-default-text;
-  }
+  color: $mtl-layout-default-text;
 
   .material-icons {
     display: inline;
