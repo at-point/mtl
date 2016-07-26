@@ -25,6 +25,7 @@
 //= require "mtl/hooks"
 //= require "mtl/href"
 //= require "mtl/collapsible"
+//= require "mtl/dropdown"
 //= require "mtl/modal"
 //= require "mtl/select"
 //= require "mtl/toc"
