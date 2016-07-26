@@ -15,7 +15,8 @@ tools:
 
 ## Installation
 
-Add this line to your Rails application's `Gemfile`:
+Add this line to your Rails application's `Gemfile`, it supports Rails 4.2+
+(including Rails 5):
 
 ```ruby
 gem 'mtl', git: 'https://github.com/at-point/mtl'

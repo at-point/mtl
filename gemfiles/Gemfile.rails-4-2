@@ -1,0 +1,11 @@
+source 'https://rubygems.org'
+
+gemspec :path => '..'
+
+gem 'railties', '~> 4.2.0'
+gem 'actionview', '~> 4.2.0'
+
+# Linters
+gem 'rubocop', require: false
+gem 'scss_lint', require: false
+gem 'coffeelint', require: false
