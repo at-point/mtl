@@ -445,7 +445,7 @@ resource to load via `$.load`. Behind the scenes an empty modal is generated,
 that is loaded on open. No additional markup is required in that case.
 
 ```html
-<a href="/your_controller/assignees" data-mtl-modal="xhr">
+<a href="/your_controller/assignees" data-mtl-modal="xhr" data-mtl-modal-class="myoptionalcustomclass">
   Change assignee
 </a>
 ```
