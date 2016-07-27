@@ -35,8 +35,13 @@ find vendor/assets -type f -print0 | xargs -0 chmod gou-x
 echo " * [materialize-css] Copy node_modules/material-design-icons/iconfont..."
 cp -r node_modules/material-design-icons/iconfont vendor/assets/fonts/material-icons
 
+# LODASH: 1 - Copy JS
+echo " * [lodash] Copy node_modules/lodash/lodash.js..."
+cp -r node_modules/lodash/lodash.js vendor/assets/javascripts/lodash.js
+
 materialize_vers=$(node -e 'var p=require("./node_modules/materialize-css/package.json");console.log(p.version)')
 icons_vers=$(node -e 'var p=require("./node_modules/material-design-icons/package.json");console.log(p.version)')
+lodash_vers=$(node -e 'var p=require("./node_modules/lodash/package.json");console.log(p.version)')
 
 echo
 echo "NEXT STEPS:"
@@ -50,3 +55,4 @@ echo "     ~> Compare against node_modules/materialize-css/sass!"
 echo " 3. [ ] Check _material-icons.scss against original from node_modules/material-design-icons/iconfont"
 echo " 4. [ ] Update lib/mtl/version#MATERIALIZE_VERSION => ${materialize_vers}"
 echo " 5. [ ] Update lib/mtl/version#ICONS_VERSION => ${icons_vers}"
+echo " 6. [ ] Update lib/mtl/version#LODASH_VERSION => ${lodash_vers}"

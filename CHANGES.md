@@ -4,6 +4,7 @@ ChangeLog
 Development 0.1.0
 ------------------
 
+- Bundle lodash.js as part of the mtl.js [#49]
 - Removed wierd side-nav divider margin [#51]
 - Support Rails 5, relax dependency `railities` [#38, #48]
 - Used flexbox fix to enable the content area over the full page height [#41]
