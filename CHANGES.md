@@ -4,6 +4,8 @@ ChangeLog
 Development 0.1.0
 ------------------
 
+- Made side nav width configurable by $mtl-layout-default-sidenav-width and added
+  a fix to prevent overlapping of fixed headers. [#54]
 - Added `data-mtl-submit` behaviour [#53]
 - Made side-nav icons independent from the entry height pro proper spacing between icon and label [#52]
 - Bundle lodash.js as part of the mtl.js [#49]
