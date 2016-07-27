@@ -4,6 +4,7 @@ ChangeLog
 Development 0.1.0
 ------------------
 
+- Added `data-mtl-submit` behaviour [#53]
 - Made side-nav icons independent from the entry height pro proper spacing between icon and label [#52]
 - Bundle lodash.js as part of the mtl.js [#49]
 - Removed wierd side-nav divider margin [#51]
