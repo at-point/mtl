@@ -533,10 +533,10 @@ This utility allows submitting a form which is not a parent of the element.
 Useful for buttons in the header which act on a form defined in the content section.
 
 The form is targeted by a CSS selector.
- 
+
 ```html
 <a href="#" data-mtl-submit="#my-form">Save</a>
-<form id="#my-form" action="/" method="POST">
+<form id="my-form" action="/" method="POST">
     <input name="email" type="email"/>
 </form>
 ```
