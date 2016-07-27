@@ -8,3 +8,8 @@ $(document).on 'click', '[data-mtl-href]', (ev) ->
 
 $(document).on 'click', '[data-mtl-href] a', (ev) ->
   ev.stopPropagation()
+
+$(document).on 'click', '[data-mtl-submit]', (ev) ->
+  selector = $(this).data('mtl-submit')
+  $(selector).submit()
+  ev.preventDefault()

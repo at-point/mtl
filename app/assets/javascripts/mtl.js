@@ -24,10 +24,9 @@
 //=require "materialize/pushpin"
 
 //= require "mtl/hooks"
-//= require "mtl/href"
+//= require "mtl/clickables"
 //= require "mtl/collapsible"
 //= require "mtl/dropdown"
 //= require "mtl/modal"
 //= require "mtl/select"
 //= require "mtl/toc"
-//= require "mtl/submit"
