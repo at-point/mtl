@@ -49,6 +49,16 @@ RSpec.describe Mtl::Rails::ViewHelpers, dom: true do
       expect(subject.mtl_header('Dashboard') { subject.content_tag('div', 'Hello', class: 'foo') })
         .to contain_dom '<h1 class="page-title">Dashboard</h1><div class="foo">Hello</div>'
     end
+
+    it 'can pass in a custom css class' do
+      expect(subject.mtl_header('Dashboard', class: 'something'))
+        .to contain_dom '<header class="mtl-layout-default-header something">'
+    end
+
+    it 'can pass in an array of custom css classes' do
+      expect(subject.mtl_header('Dashboard', class: %w{something anything}))
+        .to contain_dom '<header class="mtl-layout-default-header something anything">'
+    end
   end
 
   context '#mtl_button' do

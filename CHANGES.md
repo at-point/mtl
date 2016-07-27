@@ -7,6 +7,7 @@ Development 0.1.0
 - Made side-nav icons independent from the entry height pro proper spacing between icon and label [#52]
 - Bundle lodash.js as part of the mtl.js [#49]
 - Removed wierd side-nav divider margin [#51]
+- Added custom CSS class support for `mtl_header` [#50]
 - Support Rails 5, relax dependency `railities` [#38, #48]
 - Used flexbox fix to enable the content area over the full page height [#41]
 - Extended default layout coloring variables [#41]
