@@ -5,7 +5,7 @@
 
   // sidebar logic
   main {
-    padding-left: 240px;
+    padding-left: $mtl-layout-default-sidenav-width;
     min-height: 100%;
     display: flex;
     flex-direction: column;
