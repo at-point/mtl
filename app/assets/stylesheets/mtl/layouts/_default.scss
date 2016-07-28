@@ -5,7 +5,7 @@
 
   // sidebar logic
   main {
-    padding-left: 240px;
+    padding-left: $mtl-layout-default-sidenav-width;
     min-height: 100%;
     display: flex;
     flex-direction: column;
@@ -101,6 +101,17 @@
     }
   }
   //&-back {}
+
+  // prevent overlap on the right in fixed navbar mode
+  @media #{$large-and-up} {
+    &.navbar-fixed {
+      > nav {
+        width: auto;
+        left: $mtl-layout-default-sidenav-width;
+        right: 0;
+      }
+    }
+  }
 }
 
 // content area
@@ -149,7 +160,7 @@
 
   // sidebar
   .side-nav {
-    width: 240px;
+    width: $mtl-layout-default-sidenav-width;
     background-color: $mtl-layout-default-sidenav-bg;
     color: $mtl-layout-default-sidenav-text;
 
