@@ -1,0 +1,91 @@
+// variables / colors
+$mtl-collection-files-spacing: 20px;
+$mtl-collection-file-minwidth: 170px;
+$mtl-collection-file-minheight: 93px;
+
+$mtl-collection-file-bg: color('grey', 'lighten-5');
+$mtl-collection-file-text-primary: color('grey', 'darken-4');
+$mtl-collection-file-text-secondary: color('grey', 'base');
+
+// collection of file cards
+.collection-files {
+  margin: (-$mtl-collection-files-spacing) 0 0 (-$mtl-collection-files-spacing);
+  @include clearafter;
+
+  // extending the card panel
+  .card-panel {
+    background-color: $mtl-collection-file-bg;
+    color: $mtl-collection-file-text-primary;
+    margin: $mtl-collection-files-spacing 0 0 $mtl-collection-files-spacing;
+    float: left;
+    width: calc(50% - 20px);
+    min-width: $mtl-collection-file-minwidth;
+    min-height: $mtl-collection-file-minheight;
+    position: relative;
+    overflow: visible;
+    font-size: 13px;
+    line-height: 16px;
+
+    &:hover {
+      box-shadow: 0 4px 8px rgba(color('shades', 'black'), .26);
+    }
+
+    > strong,
+    > span {
+      display: block;
+      font-size: 13px;
+      line-height: 16px;
+    }
+    > strong {
+      color: $mtl-collection-file-text-primary;
+    }
+    > span {
+      color: $mtl-collection-file-text-secondary;
+      vertical-align: middle;
+
+      // icon override 1
+      .material-icons {
+        line-height: 16px;
+        height: 16px;
+        font-size: 20px;
+        vertical-align: middle;
+      }
+    }
+
+    // image
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    // remove button for file cards
+    .close {
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: translate(50%, -50%);
+      width: 20px;
+      height: 20px;
+      background-color: color('shades', 'white');
+      box-shadow: 0 1px 2px rgba(color('shades', 'black'), .26);
+      border-radius: 50%;
+      transition-duration: .2s;
+      transition-property: color, background-color;
+
+      // icon override 2
+      line-height: 20px;
+      font-size: 14px;
+      text-align: center;
+      color: color('grey', 'darken-3');
+
+      &:hover {
+        color: color('shades', 'white');
+        background-color: color('grey', 'darken-3');
+      }
+      &:active {
+        color: color('shades', 'white');
+        background-color: color('grey', 'darken-4');
+      }
+    }
+  }
+}
