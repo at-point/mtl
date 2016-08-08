@@ -1,6 +1,5 @@
 // variables / colors
-$mtl-collection-files-vspacing: 7px;
-$mtl-collection-files-hspacing: 21px;
+$mtl-collection-files-spacing: 11px;
 $mtl-collection-file-width: 193px;
 $mtl-collection-file-height: 93px;
 
@@ -10,14 +9,14 @@ $mtl-collection-file-text-secondary: color('grey', 'base');
 
 // collection of file cards
 .collection-files {
-  margin: (-$mtl-collection-files-hspacing) 0 0 (-$mtl-collection-files-vspacing);
+  margin: (-$mtl-collection-files-spacing) 0 0 (-$mtl-collection-files-spacing);
   @include clearafter;
 
   // extending the card panel
   .card-panel {
     background-color: $mtl-collection-file-bg;
     color: $mtl-collection-file-text-primary;
-    margin: $mtl-collection-files-hspacing 0 0 $mtl-collection-files-vspacing;
+    margin: $mtl-collection-files-spacing 0 0 $mtl-collection-files-spacing;
     float: left;
     width: $mtl-collection-file-width;
     height: $mtl-collection-file-height;
@@ -71,7 +70,7 @@ $mtl-collection-file-text-secondary: color('grey', 'base');
     // remove button for file cards
     .close {
       text-indent: 0;
-      display: block !important;
+      display: none;
       position: absolute;
       right: 0;
       top: 0;
@@ -99,6 +98,9 @@ $mtl-collection-file-text-secondary: color('grey', 'base');
         color: color('shades', 'white');
         background-color: color('grey', 'darken-4');
       }
+    }
+    &:hover .close {
+      display: block !important;
     }
   }
 }
