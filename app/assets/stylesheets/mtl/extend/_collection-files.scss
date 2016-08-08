@@ -1,7 +1,8 @@
 // variables / colors
-$mtl-collection-files-spacing: 20px;
-$mtl-collection-file-minwidth: 170px;
-$mtl-collection-file-minheight: 93px;
+$mtl-collection-files-vspacing: 7px;
+$mtl-collection-files-hspacing: 21px;
+$mtl-collection-file-width: 193px;
+$mtl-collection-file-height: 93px;
 
 $mtl-collection-file-bg: color('grey', 'lighten-5');
 $mtl-collection-file-text-primary: color('grey', 'darken-4');
@@ -9,22 +10,28 @@ $mtl-collection-file-text-secondary: color('grey', 'base');
 
 // collection of file cards
 .collection-files {
-  margin: (-$mtl-collection-files-spacing) 0 0 (-$mtl-collection-files-spacing);
+  margin: (-$mtl-collection-files-hspacing) 0 0 (-$mtl-collection-files-vspacing);
   @include clearafter;
 
   // extending the card panel
   .card-panel {
     background-color: $mtl-collection-file-bg;
     color: $mtl-collection-file-text-primary;
-    margin: $mtl-collection-files-spacing 0 0 $mtl-collection-files-spacing;
+    margin: $mtl-collection-files-hspacing 0 0 $mtl-collection-files-vspacing;
     float: left;
-    width: calc(50% - 20px);
-    min-width: $mtl-collection-file-minwidth;
-    min-height: $mtl-collection-file-minheight;
+    width: $mtl-collection-file-width;
+    height: $mtl-collection-file-height;
     position: relative;
     overflow: visible;
     font-size: 13px;
     line-height: 16px;
+    background-size: cover;
+    background-position: center;
+    padding: 12px 13px 0;
+
+    @media #{$small-and-down} {
+      width: 100%;
+    }
 
     &:hover {
       box-shadow: 0 4px 8px rgba(color('shades', 'black'), .26);
@@ -52,14 +59,19 @@ $mtl-collection-file-text-secondary: color('grey', 'base');
       }
     }
 
-    // image
-    img {
-      display: block;
-      width: 100%;
+    // image only panel
+    &.card-panel-image {
+      text-indent: -6000px;
+
+      * {
+        display: none;
+      }
     }
 
     // remove button for file cards
     .close {
+      text-indent: 0;
+      display: block !important;
       position: absolute;
       right: 0;
       top: 0;
