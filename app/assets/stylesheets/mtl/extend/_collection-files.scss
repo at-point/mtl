@@ -83,6 +83,7 @@ $mtl-collection-file-text-secondary: color('grey', 'base');
       border-radius: 50%;
       transition-duration: .2s;
       transition-property: color, background-color;
+      z-index: 2;
 
       // icon override 2
       line-height: 20px;
