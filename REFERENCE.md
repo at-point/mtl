@@ -203,7 +203,42 @@ Examples:
 ![table modes](images/table-modes.jpg)
 
 
+### Files/Downloads
 
+To show a list of files / downloads, you can use following markup:
+
+```html
+<a class="card-panel" href="/path/to/file.pdf" title="Document Dolorem.jpg">
+  Document Dolorem
+  <span>
+    <i class="material-icons red-text">picture_as_pdf</i>
+    PDF
+  </span>
+  <i class="close material-icons">close</i>
+</a>
+<a class="card-panel" href="..." title="file.xlsx">
+  <strong>Lots of I don't know what, what is this?</strong>
+  file.xlsx
+  <span class="grey-text">
+    <i class="material-icons blue-text">insert_drive_file</i>
+    Image
+  </span>
+  <i class="close material-icons">close</i>
+</a>
+<a class="card-panel card-panel-image" href="..." style="background-image: url('http://i.giphy.com/l2JJsnBRsvr9bs5RC.gif');" title="This content will be hidden...">
+  <strong>This content will be hidden...</strong>
+  hidden.gif
+  <span class="grey-text">
+    <i class="material-icons blue-text">insert_drive_file</i>
+    Image
+  </span>
+  <i class="close material-icons">close</i>
+</a>
+```
+
+This will be rendered into a neat and responsive listing of files with previews for images:
+
+![collection-files](images/collection-files.jpg)
 
 ## Rails view helpers
 
