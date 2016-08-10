@@ -4,6 +4,7 @@ ChangeLog
 Development 0.1.0
 ------------------
 
+- Added file card helper for file collections [#58]
 - Added styles for files/downloads collection
 - Made side nav width configurable by $mtl-layout-default-sidenav-width and added
   a fix to prevent overlapping of fixed headers. [#54]
