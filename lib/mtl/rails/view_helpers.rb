@@ -1,3 +1,6 @@
+require 'uri'
+require 'mtl/rails/card_file_presenter'
+
 module Mtl
   module Rails
     # Assortment of Rails view helpers to simplify rendering materialize css
@@ -292,6 +295,22 @@ module Mtl
       def mtl_icon(icon, options = {})
         options[:class] = [ICON_CLASS, options.delete(:size), options[:class]].compact
         content_tag :i, icon, options
+      end
+
+      # Renders a card file tag to display the file and its informations, containing
+      # icons, file name, link and an optional preview
+      #
+      # @param filename [String] filename of the file
+      # @param href [String] url to pass to the link_to
+      # @option options [String] :title Title of the link, defaults to the filename
+      # @option options [String] :type To specify a custom file type, which will serve
+      #         to display the icon. Will default to the file type based on the ext
+      # @option options [String] :preview URL to an image to use as the file preview
+      # @option options [String] :data-mtl-delete URL to use as the delete action, if any
+      # @param options [Hash] additional options passed to `content_tag`
+      # @return [String] HTML safe String
+      def mtl_card_file(filename, href, params = {})
+        CardFilePresenter.new(self).render(filename, href, params)
       end
     end
   end
