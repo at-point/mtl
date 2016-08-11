@@ -2,86 +2,8 @@ require 'uri'
 
 module Mtl
   module Rails
+    # Private
     # Specialised renderer for the file card element used in a file collection
-    #
-    # Basic usage:
-    # ```ruby
-    # CardFilePresenter.new(view).render('Document Dolorem.jpg', '/path/to/file.jpg')
-    # ```
-    # ```html
-    # <a class="card-panel" href="/path/to/file.jpg" target="_blank" title="Document Dolorem.jpg">
-    #   Document Dolorem.jpg
-    #   <span class="grey-text">
-    #     <i class="material-icons red-text">image</i>
-    #     JPG
-    #   </span>
-    # </a>
-    # ```
-    #
-    # With title option:
-    # ```ruby
-    # CardFilePresenter.new(view).render('Document Dolorem.jpg', '/path/to/file.jpg',
-    #                                    title: 'foo')
-    # ```
-    # ```html
-    # <a class="card-panel" href="/path/to/file.jpg" target="_blank" title="foo">
-    #   <strong>foo</strong>
-    #   Document Dolorem.jpg
-    #   <span class="grey-text">
-    #     <i class="material-icons red-text">image</i>
-    #     JPG
-    #   </span>
-    # </a>
-    # ```
-    #
-    # With type option:
-    # ```ruby
-    # CardFilePresenter.new(view).render('Document Dolorem.jpg', '/path/to/file.jpg',
-    #                                    type: 'bar')
-    # ```
-    # ```html
-    # <a class="card-panel" href="/path/to/file.jpg" target="_blank" title="Document Dolorem.jpg">
-    #   Document Dolorem.jpg
-    #   <span class="grey-text">
-    #     <i class="material-icons blue-text">insert_drive_file</i>
-    #     BAR
-    #   </span>
-    # </a>
-    # ```
-    #
-    # With preview option:
-    # ```ruby
-    # CardFilePresenter.new(view).render('Document Dolorem.jpg', '/path/to/file.jpg',
-    #                                    preview: '/path/to/preview.jpg')
-    # ```
-    # ```html
-    # <a class="card-panel card-panel-image" href="/path/to/file.jpg" target="_blank"
-    #    title="Document Dolorem.jpg" style="background-image: url(/path/to/preview.jpg)">
-    #   Document Dolorem.jpg
-    #   <span class="grey-text">
-    #     <i class="material-icons red-text">image</i>
-    #     JPG
-    #   </span>
-    # </a>
-    # ```
-    #
-    # With data-mtl-delete option:
-    # ```ruby
-    # CardFilePresenter.new(view).render('Document Dolorem.jpg', '/path/to/file.jpg',
-    #                                    'data-mtl-delete': '/path/to/delete/the/file')
-    # ```
-    # ```html
-    # <a class="card-panel" href="/path/to/file.jpg" target="_blank" title="Document Dolorem.jpg">
-    #   Document Dolorem.jpg
-    #   <span class="grey-text">
-    #     <i class="material-icons red-text">image</i>
-    #     JPG
-    #   </span>
-    #   <a href="/path/to/delete/the/file" method="delete">
-    #     <i class="close material-icons">close</i>
-    #   </a>
-    # </a>
-    # ```
     class CardFilePresenter
       attr_reader :view
 
