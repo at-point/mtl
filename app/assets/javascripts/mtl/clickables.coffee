@@ -1,5 +1,5 @@
-$.rails.href = (element) ->
-  element.data('mtl-href') || element[0].href
+oldHref = $.rails.href
+$.rails.href = (element) -> element.data('mtl-href') || oldHref(element)
 
 $(document).on 'click', '[data-mtl-href]', (e) ->
   link = $(this)
