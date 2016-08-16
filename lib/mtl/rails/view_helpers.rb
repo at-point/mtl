@@ -226,10 +226,10 @@ module Mtl
     # </a>
     # ```
     #
-    # With data-mtl-delete option:
+    # With delete option:
     # ```erb
     # <%= mtl_card_file 'Document Dolorem.jpg', '/path/to/file.jpg',
-    #                                    'data-mtl-delete': '/path/to/delete/the/file' %>
+    #                                    delete: '/path/to/delete/the/file' %>
     # ```
     # ```html
     # <a class="card-panel" href="/path/to/file.jpg" target="_blank" title="Document Dolorem.jpg">
@@ -238,9 +238,26 @@ module Mtl
     #     <i class="material-icons red-text">image</i>
     #     JPG
     #   </span>
-    #   <a href="/path/to/delete/the/file" method="delete">
-    #     <i class="close material-icons">close</i>
-    #   </a>
+    #   <i class="close material-icons" data-mtl-href="/path/to/delete/the/file"
+    #      data-method="delete">close</i>
+    # </a>
+    # ```
+    #
+    # With confirm option:
+    # ```erb
+    # <%= mtl_card_file 'Document Dolorem.jpg', '/path/to/file.jpg',
+    #                                    delete: '/path/to/delete/the/file',
+    #                                    confirm: 'Sure?' %>
+    # ```
+    # ```html
+    # <a class="card-panel" href="/path/to/file.jpg" target="_blank" title="Document Dolorem.jpg">
+    #   Document Dolorem.jpg
+    #   <span class="grey-text">
+    #     <i class="material-icons red-text">image</i>
+    #     JPG
+    #   </span>
+    #   <i class="close material-icons" data-mtl-href="/path/to/delete/the/file"
+    #     data-method="delete" data-confirm="Sure?">close</i>
     # </a>
     # ```
     module ViewHelpers
