@@ -9,6 +9,16 @@ module Mtl
   mattr_accessor :effects
   @@effects = 'waves-effect waves-light'
 
+  mattr_accessor :file_icons
+  @@file_icons = {
+    'pdf' => [:picture_as_pdf, 'red-text'],
+    'png' => [:image, 'red-text'],
+    'jpg' => [:image, 'red-text'],
+    'gif' => [:image, 'red-text'],
+    'bmp' => [:image, 'red-text'],
+    'other' => [:insert_drive_file, 'blue-text']
+  }
+
   #:nodoc:
   class Engine < ::Rails::Engine
     initializer 'mtl.assets.precompile' do |app|

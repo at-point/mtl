@@ -27,6 +27,9 @@ Metrics/LineLength:
     - spec/*
     - spec/**/*
 
+Metrics/AbcSize:
+  Max: 20
+
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
     '%r': '{}'

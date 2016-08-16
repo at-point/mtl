@@ -1,3 +1,6 @@
+require 'uri'
+require 'mtl/rails/card_file_presenter'
+
 module Mtl
   module Rails
     # Assortment of Rails view helpers to simplify rendering materialize css
@@ -159,6 +162,87 @@ module Mtl
     # - [List of available icons](https://design.google.com/icons/)
     # - [Materialize CSS: Icons](http://materializecss.com/icons.html)
     #
+    #
+    # # Card file for files collection
+    #
+    # Basic usage:
+    # ```erb
+    # <%= mtl_card_file 'Document Dolorem.jpg', '/path/to/file.jpg' %>
+    # ```
+    # ```html
+    # <a class="card-panel" href="/path/to/file.jpg" target="_blank" title="Document Dolorem.jpg">
+    #   Document Dolorem.jpg
+    #   <span class="grey-text">
+    #     <i class="material-icons red-text">image</i>
+    #     JPG
+    #   </span>
+    # </a>
+    # ```
+    #
+    # With title option:
+    # ```erb
+    # <%= mtl_card_file 'Document Dolorem.jpg', '/path/to/file.jpg',
+    #                                    title: 'foo' %>
+    # ```
+    # ```html
+    # <a class="card-panel" href="/path/to/file.jpg" target="_blank" title="foo">
+    #   <strong>foo</strong>
+    #   Document Dolorem.jpg
+    #   <span class="grey-text">
+    #     <i class="material-icons red-text">image</i>
+    #     JPG
+    #   </span>
+    # </a>
+    # ```
+    #
+    # With type option:
+    # ```erb
+    # <%= mtl_card_file 'Document Dolorem.jpg', '/path/to/file.jpg',
+    #                                    type: 'bar' %>
+    # ```
+    # ```html
+    # <a class="card-panel" href="/path/to/file.jpg" target="_blank" title="Document Dolorem.jpg">
+    #   Document Dolorem.jpg
+    #   <span class="grey-text">
+    #     <i class="material-icons blue-text">insert_drive_file</i>
+    #     BAR
+    #   </span>
+    # </a>
+    # ```
+    #
+    # With preview option:
+    # ```erb
+    # <%= mtl_card_file 'Document Dolorem.jpg', '/path/to/file.jpg',
+    #                                    preview: '/path/to/preview.jpg' %>
+    # ```
+    # ```html
+    # <a class="card-panel card-panel-image" href="/path/to/file.jpg" target="_blank"
+    #    title="Document Dolorem.jpg" style="background-image: url(/path/to/preview.jpg)">
+    #   Document Dolorem.jpg
+    #   <span class="grey-text">
+    #     <i class="material-icons red-text">image</i>
+    #     JPG
+    #   </span>
+    # </a>
+    # ```
+    #
+    # With data-mtl-delete option:
+    # ```erb
+    # <%= mtl_card_file 'Document Dolorem.jpg', '/path/to/file.jpg',
+    #                                    'data-mtl-delete': '/path/to/delete/the/file' %>
+    # ```
+    # ```html
+    # <a class="card-panel" href="/path/to/file.jpg" target="_blank" title="Document Dolorem.jpg">
+    #   Document Dolorem.jpg
+    #   <span class="grey-text">
+    #     <i class="material-icons red-text">image</i>
+    #     JPG
+    #   </span>
+    #   <a href="/path/to/delete/the/file" method="delete">
+    #     <i class="close material-icons">close</i>
+    #   </a>
+    # </a>
+    # ```
     module ViewHelpers
       # @!visibility private
       ICON_CLASS = 'material-icons'.freeze
@@ -292,6 +376,22 @@ module Mtl
       def mtl_icon(icon, options = {})
         options[:class] = [ICON_CLASS, options.delete(:size), options[:class]].compact
         content_tag :i, icon, options
+      end
+
+      # Renders a card file tag to display the file and its informations, containing
+      # icons, file name, link and an optional preview
+      #
+      # @param filename [String] filename of the file
+      # @param href [String] url to pass to the link_to
+      # @option options [String] :title Title of the link, defaults to the filename
+      # @option options [String] :type To specify a custom file type, which will serve
+      #         to display the icon. Will default to the file type based on the ext
+      # @option options [String] :preview URL to an image to use as the file preview
+      # @option options [String] :data-mtl-delete URL to use as the delete action, if any
+      # @param options [Hash] additional options passed to `content_tag`
+      # @return [String] HTML safe String
+      def mtl_card_file(filename, href, params = {})
+        CardFilePresenter.new(self).render(filename, href, params)
       end
     end
   end
