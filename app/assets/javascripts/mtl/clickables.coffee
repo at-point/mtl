@@ -16,8 +16,6 @@ $(document).on 'click', '[data-mtl-href], [data-confirm]:not(a), [data-method]:n
   else
     window.location.href = $(this).data('mtl-href')
 
-$(document).on 'click', '[data-mtl-href]', (ev) ->
-
 $(document).on 'click', '[data-mtl-href] a', (ev) ->
   ev.stopPropagation()
 
