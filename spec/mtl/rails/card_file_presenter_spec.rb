@@ -61,15 +61,29 @@ RSpec.describe Mtl::Rails::CardFilePresenter, dom: true do
       HTML
     end
 
-    it 'renders a file card with filename, href and a custom preview' do
-      expect(subject.render('Document Dolorem.jpg', '/path/to/file.jpg', 'data-mtl-delete' => '/path/to/delete/the/file')).to match_dom <<-HTML
+    it 'renders a file card with filename, href and a custom custom delete' do
+      expect(subject.render('Document Dolorem.jpg', '/path/to/file.jpg', delete: '/path/to/delete/the/file')).to match_dom <<-HTML
         <a title="Document Dolorem.jpg" target="_blank" class="card-panel "  href="/path/to/file.jpg">
           Document Dolorem.jpg
           <span class="grey-text">
             <i class="material-icons red-text">image</i>
             JPG
           </span>
-          <a rel="nofollow" data-method="delete" href="/path/to/delete/the/file"><i class="material-icons close">close</i></a>
+          <i class="material-icons close" data-method="delete" data-mtl-href="/path/to/delete/the/file">close</i>
+        </a>
+      HTML
+    end
+
+    it 'renders a file card with filename, href and a custom custom delete and a confirm' do
+      p(subject.render('Document Dolorem.jpg', '/path/to/file.jpg', delete: '/path/to/delete/the/file', confirm: 'sure?'))
+      expect(subject.render('Document Dolorem.jpg', '/path/to/file.jpg', delete: '/path/to/delete/the/file', confirm: 'sure?')).to match_dom <<-HTML
+        <a title="Document Dolorem.jpg" target="_blank" class="card-panel "  href="/path/to/file.jpg">
+          Document Dolorem.jpg
+          <span class="grey-text">
+            <i class="material-icons red-text">image</i>
+            JPG
+          </span>
+          <i class="material-icons close" data-method="delete" data-mtl-href="/path/to/delete/the/file" data-confirm="sure?">close</i>
         </a>
       HTML
     end

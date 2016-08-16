@@ -45,9 +45,9 @@ module Mtl
       end
 
       def delete(params)
-        view.link_to(view.mtl_icon(:close, class: 'close'),
-                     params['data-mtl-delete'],
-                     method: :delete) if params['data-mtl-delete'].present?
+        return unless params[:delete]
+        data = { method: :delete, 'mtl-href': params[:delete], confirm: params[:confirm] }
+        view.mtl_icon :close, class: 'close', data: data.reject { |_, v| v.blank? }
       end
     end
   end
