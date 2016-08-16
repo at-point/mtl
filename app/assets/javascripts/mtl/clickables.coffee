@@ -1,7 +1,7 @@
 $.rails.href = (element) ->
   element.data('mtl-href') || element[0].href
 
-$(document).on 'click', '[data-mtl-href], [data-confirm]:not(a), [data-method]:not(a)', (e) ->
+$(document).on 'click', '[data-mtl-href]', (e) ->
   link = $(this)
   method = link.data('method')
 
