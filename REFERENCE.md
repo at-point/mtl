@@ -576,12 +576,12 @@ The form is targeted by a CSS selector.
 </form>
 ```
 
-### JS Helper: `Mtl.file_icons`
+### JS Helper: `Mtl.fileIcons`
 
-Utility that returns the exact same content that Mtl.file_icons, but in Javascript
+Utility that returns the exact same content that Mtl.fileIcons, but in Javascript
 
 ```javascript
-Mtl.file_icons['pdf'] # returns ['picture_as_pdf', 'red-text']
+Mtl.fileIcons['pdf'] # returns ['picture_as_pdf', 'red-text']
 ```
 
 ### JS Helper: `Mtl.icon`
