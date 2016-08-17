@@ -576,6 +576,23 @@ The form is targeted by a CSS selector.
 </form>
 ```
 
+### JS Helper: `Mtl.fileIcons`
+
+Utility that returns the exact same content that Mtl.fileIcons, but in Javascript
+
+```javascript
+Mtl.fileIcons['pdf'] # returns ['picture_as_pdf', 'red-text']
+```
+
+### JS Helper: `Mtl.icon`
+
+JS equivalent of the mtl_icon helper in ruby. Returns HTML
+
+```javascript
+Mtl.icon('picture_as_pdf', { class: 'red-text' })
+```
+
+
 [material]: https://material.google.com/
 [materialize]: http://materializecss.com/
 [icons]: https://design.google.com/icons/

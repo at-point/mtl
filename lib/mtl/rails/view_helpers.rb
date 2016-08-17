@@ -261,9 +261,6 @@ module Mtl
     # </a>
     # ```
     module ViewHelpers
-      # @!visibility private
-      ICON_CLASS = 'material-icons'.freeze
-
       # Renders a flat button which does not visually lift like the raised buttons.
       #
       # @param label [String]
@@ -391,7 +388,7 @@ module Mtl
       # @param options [Hash] additional options passed to `content_tag`
       # @return [String] HTML safe String
       def mtl_icon(icon, options = {})
-        options[:class] = [ICON_CLASS, options.delete(:size), options[:class]].compact
+        options[:class] = [Mtl.icon_class, options.delete(:size), options[:class]].compact
         content_tag :i, icon, options
       end
 
