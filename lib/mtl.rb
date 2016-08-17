@@ -9,6 +9,10 @@ module Mtl
   mattr_accessor :effects
   @@effects = 'waves-effect waves-light'
 
+  # CSS classes added for icons
+  mattr_accessor :icon_class
+  @@icon_class = 'material-icons'
+
   mattr_accessor :file_icons
   @@file_icons = {
     'pdf' => [:picture_as_pdf, 'red-text'],

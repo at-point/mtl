@@ -23,6 +23,8 @@
 //=require "materialize/date_picker/picker.date"
 //=require "materialize/pushpin"
 
+//= require_self
+//= require "mtl/configuration"
 //= require "mtl/hooks"
 //= require "mtl/clickables"
 //= require "mtl/collapsible"
@@ -30,3 +32,8 @@
 //= require "mtl/modal"
 //= require "mtl/select"
 //= require "mtl/toc"
+//= require "mtl/icon"
+
+
+// Export
+window.MTL = {}

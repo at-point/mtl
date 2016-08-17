@@ -1,0 +1,6 @@
+icon = (code, options = {}) ->
+  options.class = [<%= Mtl.icon_class.to_json %>, options.size, options.class].join ' '
+  delete options.size
+  $("<i/>", options).html(code)[0].outerHTML
+
+@MTL.icon = icon
