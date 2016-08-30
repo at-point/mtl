@@ -4,6 +4,7 @@ ChangeLog
 Development 0.1.0
 ------------------
 
+- Exposed label styles for the h5 element [#61, #62]
 - Introduced JS helpers within MTL namespace (icon helpers) [#60]
 - Added file card helper for file collections [#58]
 - Added styles for files/downloads collection
