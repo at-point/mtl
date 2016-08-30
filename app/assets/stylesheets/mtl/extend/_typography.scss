@@ -1,18 +1,30 @@
+// variables / colors
+$mtl-typography-h5: color('grey', 'base');
+
+// bold elements
 h1,
 h4,
 strong {
   font-weight: 500;
 }
 
+// h4
 h4 {
   line-height: 1.5;
   margin-top: 0;
 }
 
+// h5 - look like form labels
+h5 {
+  color: $mtl-typography-h5;
+}
+
+// smaller elements
 small {
   font-size: 85%;
 }
 
+// normalize buttons and tabs
 .btn,
 .tab {
   letter-spacing: 0;
