@@ -1,16 +1,7 @@
-$table-border-color-head: #eee;
-
 td,
 th {
   border-radius: 0;
 }
-th {
-  background-color: $table-head-bg;
-}
-tbody tr {
-  border-bottom: 1px solid $table-border-color;
-}
-
 
 table {
   &.responsive-table {
@@ -22,12 +13,6 @@ table {
     }
 
     thead {
-      border-color: $table-border-color-head;
-
-      @media #{$medium-and-down} {
-        border-color: $table-border-color;
-      }
-
       tr {
         padding: 0;
 
