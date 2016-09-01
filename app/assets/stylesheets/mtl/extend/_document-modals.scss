@@ -62,4 +62,24 @@
       height: auto;
     }
   }
+
+  // left & right controls
+  &-prev,
+  &-next {
+    position: fixed;
+    top: 50%;
+    transform: translate(0, -50%, 0);
+    padding: 0 1.5rem;
+    z-index: 3;
+
+    .material-icons {
+      font-size: 32px;
+    }
+  }
+  &-next {
+    right: 1rem;
+  }
+  &-prev {
+    left: 1rem;
+  }
 }
