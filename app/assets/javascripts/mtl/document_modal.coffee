@@ -81,7 +81,7 @@ findOrCreateDocumentModal = ->
   $('body > .document-modal').first()
 
 initDocumentModal = ($fileCard) ->
-  filename = $fileCard.prop('title')
+  filename = $fileCard.data('mtl-document-name')
   url = $fileCard.prop('href')
   hasNext = hasNextFileCard($fileCard)
   hasPrev = hasPrevFileCard($fileCard)

@@ -17,7 +17,7 @@ module Mtl
                      title: params[:title] || filename,
                      target: '_blank',
                      class: ['card-panel', params[:preview] ? 'card-panel-image' : nil],
-                     data: { mtl_document_modal: 'open' },
+                     data: { mtl_document_modal: 'open', mtl_document_name: filename },
                      style: if params[:preview]
                               "background-image: url(#{URI.encode(params[:preview])})"
                             end
