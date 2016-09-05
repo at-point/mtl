@@ -34,7 +34,7 @@ MTL.templates.document_modal = """
   </div>
 """
 
-MTL.templates.preview_unknown = """
+MTL.templates.no_preview = """
   <div class="no-preview">
     <p class="center">
       <%= MTL.icon('visibility_off', { size: 'large grey-text' }) %>
@@ -74,7 +74,7 @@ createPreview = ($container, filename, url) ->
     when isPDF(filename) && PDFObject.supportsPDFs
       PDFObject.embed(url, $container, { width: '800px', height: $(window).height() + 'px' })
     else
-      $container.append(MTL.renderTemplate('preview_unknown', { filename: filename, url: url }))
+      $container.append(MTL.renderTemplate('no_preview', { filename: filename, url: url }))
 
 findOrCreateDocumentModal = ->
   return $('<div/>').appendTo('body') unless $('body > .document-modal').first().length
