@@ -83,15 +83,13 @@ findOrCreateDocumentModal = ->
 initDocumentModal = ($fileCard) ->
   filename = $fileCard.data('mtl-document-name')
   url = $fileCard.prop('href')
-  hasNext = hasNextFileCard($fileCard)
-  hasPrev = hasPrevFileCard($fileCard)
   $modal = $(
     MTL.renderTemplate(
       'document_modal',
       filename: filename,
       url: url,
-      hasNext: hasNext,
-      hasPrev: hasPrev
+      hasNext: hasNextFileCard($fileCard),
+      hasPrev: hasPrevFileCard($fileCard)
     )
   )
   $modal.find('.document-modal-next').on('click', -> initDocumentModal(nextFileCard($fileCard)))
