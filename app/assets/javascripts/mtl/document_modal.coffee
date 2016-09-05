@@ -74,7 +74,8 @@ createPreview = ($container, title, filename, url) ->
     when isPDF(filename) && PDFObject.supportsPDFs
       PDFObject.embed(url, $container, { width: '800px', height: $(window).height() + 'px' })
     else
-      $container.append(MTL.renderTemplate('no_preview', { title: title, filename: filename, url: url }))
+      data = { title: title, filename: filename, url: url }
+      $container.append(MTL.renderTemplate('no_preview', data))
 
 findOrCreateDocumentModal = ->
   return $('<div/>').appendTo('body') unless $('body > .document-modal').first().length
