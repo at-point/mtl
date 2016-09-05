@@ -37,7 +37,7 @@ MTL.templates.document_modal = """
 MTL.templates.preview_unknown = """
   <div class="no-preview">
     <p class="center">
-      <%= MTL.icon('visibility_off', { size: 'large' }) %>
+      <%= MTL.icon('visibility_off', { size: 'large grey-text' }) %>
     </p>
     <a href="<%- url %>" target="_blank" class="btn btn-primary truncate">
       <%= MTL.icon('file_download', { class: 'left' }) %>
