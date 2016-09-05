@@ -39,9 +39,14 @@ cp -r node_modules/material-design-icons/iconfont vendor/assets/fonts/material-i
 echo " * [lodash] Copy node_modules/lodash/lodash.js..."
 cp -r node_modules/lodash/lodash.js vendor/assets/javascripts/lodash.js
 
+# PDFOBJECT: 1 - Copy JS
+echo " * [pdfobject] Copy node_modules/pdfobject/pdfobject.js..."
+cp -r node_modules/pdfobject/pdfobject.js vendor/assets/javascripts/pdfobject.js
+
 materialize_vers=$(node -e 'var p=require("./node_modules/materialize-css/package.json");console.log(p.version)')
 icons_vers=$(node -e 'var p=require("./node_modules/material-design-icons/package.json");console.log(p.version)')
 lodash_vers=$(node -e 'var p=require("./node_modules/lodash/package.json");console.log(p.version)')
+pdfobject_vers=$(node -e 'var p=require("./node_modules/pdfobject/package.json");console.log(p.version)')
 
 echo
 echo "NEXT STEPS:"
@@ -56,3 +61,4 @@ echo " 3. [ ] Check _material-icons.scss against original from node_modules/mate
 echo " 4. [ ] Update lib/mtl/version#MATERIALIZE_VERSION => ${materialize_vers}"
 echo " 5. [ ] Update lib/mtl/version#ICONS_VERSION => ${icons_vers}"
 echo " 6. [ ] Update lib/mtl/version#LODASH_VERSION => ${lodash_vers}"
+echo " 7. [ ] Update lib/mtl/version#PDFOBJECT_VERSION => ${pdfobject_vers}"
