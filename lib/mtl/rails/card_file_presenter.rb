@@ -53,8 +53,7 @@ module Mtl
       end
 
       def modal(filename, params)
-        return unless params.delete(:modal)
-        { mtl_document_modal: 'open', mtl_document_name: filename }
+        { mtl_document_modal: 'open', mtl_document_name: filename } if params.delete(:modal)
       end
     end
   end

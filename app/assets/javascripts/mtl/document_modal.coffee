@@ -1,36 +1,36 @@
 IMAGE_EXTENSIONS = ['png', 'jpg', 'gif', 'bmp']
 MTL.templates.document_modal = """
   <div class="document-modal">
-    <div class="document-modal-dimmer"></div>
+    <div class="document-modal-dimmer" data-mtl-document-modal="close"></div>
     <div class="document-modal-header">
       <div class="document-modal-title left white-text">
         <%= MTL.fileIcon(filename, { class: 'left' }) %>
         <%- title %>
       </div>
       <div class="document-modal-toolbar right">
-        <a href="<%- url %>" target="_blank">
+        <a href="<%- url %>" target="_blank" download="<%- filename %>">
           <%= MTL.icon('file_download', { class: 'white-text left' }) %>
         </a>
         <a href="#" data-mtl-document-modal="close">
           <%= MTL.icon('close', { class: 'white-text left' }) %>
         </a>
       </div>
-
-      <div class="document-modal-content">
-      </div>
-
-      <% if(hasNext) { %>
-        <div class="document-modal-next btn black">
-          <%= MTL.icon('keyboard_arrow_right', { class: 'white-text' }) %>
-        </div>
-      <% } %>
-
-      <% if(hasPrev) { %>
-        <div class="document-modal-prev btn black">
-          <%= MTL.icon('keyboard_arrow_left', { class: 'white-text' }) %>
-        </div>
-      <% } %>
     </div>
+
+    <div class="document-modal-content">
+    </div>
+
+    <% if(hasNext) { %>
+      <div class="document-modal-next btn black">
+        <%= MTL.icon('keyboard_arrow_right', { class: 'white-text' }) %>
+      </div>
+    <% } %>
+
+    <% if(hasPrev) { %>
+      <div class="document-modal-prev btn black">
+        <%= MTL.icon('keyboard_arrow_left', { class: 'white-text' }) %>
+      </div>
+    <% } %>
   </div>
 """
 
@@ -70,10 +70,14 @@ isPDF = (filename) ->
 createPreview = ($container, title, filename, url) ->
   switch
     when isImage(filename)
+      $container.css 'height', 'auto'
       $container.append($('<img/>', { src: url, alt: filename }))
     when isPDF(filename) && PDFObject.supportsPDFs
-      PDFObject.embed(url, $container, { width: '800px', height: $(window).height() + 'px' })
+      $container.css 'height', '100%'
+      $pdfWrapper = $('<div/>').appendTo $container
+      PDFObject.embed(url, $pdfWrapper, { width: '800px' })
     else
+      $container.css 'height', 'auto'
       data = { title: title, filename: filename, url: url }
       $container.append(MTL.renderTemplate('no_preview', data))
 
@@ -104,11 +108,23 @@ initDocumentModal = ($fileCard) ->
 closeDocumentModal = ->
   findOrCreateDocumentModal().remove()
   $('body').removeClass('no-scroll')
+  $(document).off 'keydown.mtl-document-modal'
 
 $(document).on 'click', '[data-mtl-document-modal="open"]', (e) ->
   e.preventDefault()
   initDocumentModal($(e.currentTarget))
+  $(document).on 'keydown.mtl-document-modal', (e) ->
+    switch e.keyCode
+      when 27 # esc
+        closeDocumentModal()
+      when 37 # left
+        findOrCreateDocumentModal().find('.document-modal-prev').trigger 'click'
+      when 39 # right
+        findOrCreateDocumentModal().find('.document-modal-next').trigger 'click'
 
 $(document).on 'click', '[data-mtl-document-modal="close"]', (e) ->
   e.preventDefault()
   closeDocumentModal()
+
+
+
