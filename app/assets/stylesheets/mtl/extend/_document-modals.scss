@@ -45,7 +45,7 @@
     top: 50%;
     overflow: auto;
     max-width: 100%;
-    max-height: calc(100% - (2.4 * $navbar-height));
+    max-height: calc(100% - #{(2.4 * $navbar-height)});
     transform: translate3d(-50%, -50%, 0);
     background-color: color('shades', 'white');
     z-index: 1;
@@ -54,7 +54,7 @@
     &.pdfobject-container {
       top: auto;
       bottom: 0;
-      max-height: calc(100% - (1.2 * $navbar-height));
+      max-height: calc(100% - #{(1.2 * $navbar-height)});
       transform: translate3d(-50%, 0, 0);
     }
 
