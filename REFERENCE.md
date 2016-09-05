@@ -240,7 +240,7 @@ This will be rendered into a neat and responsive listing of files with previews 
 
 ![collection-files](images/collection-files.jpg)
 
-The files inside a collection can be preview by appending `data-mtl-document-modal="open"` and `data-mtl-document-name="file.jpg"`, e.g:
+The files inside a collection can be previewed by appending `data-mtl-document-modal="open"` and `data-mtl-document-name="file.jpg"`, e.g:
 
 ```html
   <a class="card-panel" href="/path/to/file.pdf" title="Document Dolorem.jpg" data-mtl-document-modal="open" data-mtl-document-name="Document Dolorem.jpg">
