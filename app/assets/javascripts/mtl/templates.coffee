@@ -1,4 +1,4 @@
 @MTL.templates = {}
-@MTL.renderTemplate = (template, data) ->
-  MTL.templates[template] = _.template(MTL.templates[template]) unless _.isFunction(MTL.templates[template])
-  MTL.templates[template](data)
+@MTL.renderTemplate = (name, data) ->
+  MTL.templates[name] = _.template(MTL.templates[name]) unless _.isFunction(MTL.templates[name])
+  MTL.templates[name](data)

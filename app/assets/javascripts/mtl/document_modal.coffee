@@ -85,7 +85,15 @@ initDocumentModal = ($fileCard) ->
   url = $fileCard.prop('href')
   hasNext = hasNextFileCard($fileCard)
   hasPrev = hasPrevFileCard($fileCard)
-  $modal = $(MTL.renderTemplate('document_modal', filename: filename, url: url, hasNext: hasNext, hasPrev: hasPrev))
+  $modal = $(
+    MTL.renderTemplate(
+      'document_modal',
+      filename: filename,
+      url: url,
+      hasNext: hasNext,
+      hasPrev: hasPrev
+    )
+  )
   $modal.find('.document-modal-next').on('click', -> initDocumentModal(nextFileCard($fileCard)))
   $modal.find('.document-modal-prev').on('click', -> initDocumentModal(prevFileCard($fileCard)))
   createPreview($modal.find('.document-modal-content'), filename, url)
