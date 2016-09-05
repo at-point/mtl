@@ -17,7 +17,7 @@
     top: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(color('shades', 'back'), .7);
+    background-color: rgba(color('shades', 'black'), .7);
   }
 
   // header bar
@@ -26,7 +26,7 @@
     left: 0;
     top: 0;
     right: 0;
-    background-color: rgba(color('shades', 'back'), .6);
+    background-color: rgba(color('shades', 'black'), .6);
     padding: 9px;
     z-index: 2;
 
@@ -45,20 +45,19 @@
     top: 50%;
     overflow: auto;
     max-width: 100%;
-    max-height: calc(100% - (2.4 * $navbar-height));
+    max-height: calc(100% - #{(2.4 * $navbar-height)});
     transform: translate3d(-50%, -50%, 0);
     background-color: color('shades', 'white');
     z-index: 1;
-    box-shadow: 0 2px 4px rgba(color('shades', 'back'), .5);
+    box-shadow: 0 2px 4px rgba(color('shades', 'black'), .5);
 
-    &.pdfobject-container {
-      top: auto;
-      bottom: 0;
-      max-height: calc(100% - (1.2 * $navbar-height));
-      transform: translate3d(-50%, 0, 0);
+    .pdfobject-container {
+      height: 100%;
     }
 
-    iframe {
+    iframe,
+    embed {
+      height: 100%;
       border: 0;
       margin: 0;
       display: block;
@@ -67,6 +66,10 @@
       display: block;
       width: 100%;
       height: auto;
+    }
+
+    .no-preview {
+      padding: $card-padding;
     }
   }
 

@@ -4,6 +4,9 @@ ChangeLog
 Development 0.1.0
 ------------------
 
+- Render preview of file cards in a modal dialog [#65]
+- Basic template registry for lodash templates [#65]
+- PDFObject dependency [#65]
 - Removed default table extends to disable coulouring and borders [#64]
 - Exposed label styles for the h5 element [#61, #62]
 - Introduced JS helpers within MTL namespace (icon helpers) [#60]

@@ -19,3 +19,7 @@
   -webkit-overflow-scrolling: touch;
   transform: translate3d(0, 0, 0);
 }
+
+.no-scroll {
+  overflow: hidden;
+}
