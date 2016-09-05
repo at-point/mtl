@@ -5,7 +5,7 @@ MTL.templates.document_modal = """
     <div class="document-modal-header">
       <div class="document-modal-title left white-text">
         <%= MTL.fileIcon(filename, { class: 'left' }) %>
-        <%- filename %>
+        <%- title %>
       </div>
       <div class="document-modal-toolbar right">
         <a href="<%- url %>" target="_blank">
@@ -41,7 +41,7 @@ MTL.templates.no_preview = """
     </p>
     <a href="<%- url %>" target="_blank" class="btn btn-primary truncate">
       <%= MTL.icon('file_download', { class: 'left' }) %>
-      <%- filename %>
+      <%- title %>
     </a>
   </div>
 """
@@ -67,14 +67,14 @@ isImage = (filename) ->
 isPDF = (filename) ->
   fileExtension(filename) == 'pdf'
 
-createPreview = ($container, filename, url) ->
+createPreview = ($container, title, filename, url) ->
   switch
     when isImage(filename)
       $container.append($('<img/>', { src: url, alt: filename }))
     when isPDF(filename) && PDFObject.supportsPDFs
       PDFObject.embed(url, $container, { width: '800px', height: $(window).height() + 'px' })
     else
-      $container.append(MTL.renderTemplate('no_preview', { filename: filename, url: url }))
+      $container.append(MTL.renderTemplate('no_preview', { title: title, filename: filename, url: url }))
 
 findOrCreateDocumentModal = ->
   return $('<div/>').appendTo('body') unless $('body > .document-modal').first().length
@@ -82,11 +82,13 @@ findOrCreateDocumentModal = ->
 
 initDocumentModal = ($fileCard) ->
   filename = $fileCard.data('mtl-document-name')
+  title = $fileCard.prop('title')
   url = $fileCard.prop('href')
   $modal = $(
     MTL.renderTemplate(
       'document_modal',
       filename: filename,
+      title: title,
       url: url,
       hasNext: hasNextFileCard($fileCard),
       hasPrev: hasPrevFileCard($fileCard)
@@ -94,7 +96,7 @@ initDocumentModal = ($fileCard) ->
   )
   $modal.find('.document-modal-next').on('click', -> initDocumentModal(nextFileCard($fileCard)))
   $modal.find('.document-modal-prev').on('click', -> initDocumentModal(prevFileCard($fileCard)))
-  createPreview($modal.find('.document-modal-content'), filename, url)
+  createPreview($modal.find('.document-modal-content'), title, filename, url)
   findOrCreateDocumentModal().replaceWith($modal)
   $('body').addClass('no-scroll')
 
