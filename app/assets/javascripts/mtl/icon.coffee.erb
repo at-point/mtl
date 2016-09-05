@@ -3,4 +3,15 @@ icon = (code, options = {}) ->
   delete options.size
   $("<i/>", options).html(code)[0].outerHTML
 
+fileIcon = (filename, options = {}) ->
+  extension = String(filename).toLowerCase().split('.').pop();
+  [code, icon_class] = if MTL.fileIcons.hasOwnProperty(extension)
+    MTL.fileIcons[extension]
+  else
+    MTL.fileIcons.other
+
+  options.class = [icon_class, options.class].join ' '
+  icon(code, options)
+
 @MTL.icon = icon
+@MTL.fileIcon = fileIcon
