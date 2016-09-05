@@ -25,6 +25,7 @@
 
 //= require_self
 //= require "mtl/configuration"
+//= require "mtl/templates"
 //= require "mtl/hooks"
 //= require "mtl/clickables"
 //= require "mtl/collapsible"
@@ -33,6 +34,7 @@
 //= require "mtl/select"
 //= require "mtl/toc"
 //= require "mtl/icon"
+//= require "mtl/document_modal"
 
 
 // Export
