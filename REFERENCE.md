@@ -240,6 +240,19 @@ This will be rendered into a neat and responsive listing of files with previews 
 
 ![collection-files](images/collection-files.jpg)
 
+The files inside a collection can be preview by appending `data-mtl-document-modal="open"` and `data-mtl-document-name="file.jpg"`, e.g:
+
+```html
+  <a class="card-panel" href="/path/to/file.pdf" title="Document Dolorem.jpg" data-mtl-document-modal="open" data-mtl-document-name="Document Dolorem.jpg">
+    <!-- ... -->
+  </a>
+```
+
+The preview displays images (jpg, png, bmp, gif) and PDFs if there is support for an inline
+PDF viewer. If the file cannot be previewed, a modal with a download button is shown.
+The modal dialog for non-previewable files can be customized by overriding the `MTL.templates.no_preview`
+template.
+
 ## Rails view helpers
 
 ![Buttons](images/buttons.jpg)
@@ -576,22 +589,44 @@ The form is targeted by a CSS selector.
 </form>
 ```
 
-### JS Helper: `Mtl.fileIcons`
+### JS Helper: `MTL.fileIcons`
 
 Utility that returns the exact same content that Mtl.fileIcons, but in Javascript
 
 ```javascript
-Mtl.fileIcons['pdf'] # returns ['picture_as_pdf', 'red-text']
+MTL.fileIcons['pdf'] # returns ['picture_as_pdf', 'red-text']
 ```
 
-### JS Helper: `Mtl.icon`
+### JS Helper: `MTL.icon`
 
 JS equivalent of the mtl_icon helper in ruby. Returns HTML
 
 ```javascript
-Mtl.icon('picture_as_pdf', { class: 'red-text' })
+MTL.icon('picture_as_pdf', { class: 'red-text' })
 ```
 
+### JS Helper: `MTL.fileIcon`
+
+JS helper to resolve a filename to a mime-type icon. Returns HTML
+
+```javascript
+MTL.fileIcon('a_picture.jpg', { size: 'large' })
+```
+
+There are distinct icons for `pdf, png, jpg, gif, bmp` other file types are
+resolved to a generic file icon.
+
+### JS Helper: `MTL.renderTemplate`
+
+A very basic template registry for lodash templates, it compiles registered templates
+once and then caches them for efficiency.
+
+A template can be defined and used like:
+
+```javascript
+MTL.templates.my_template = "<div>Hello <%= name %></div>";
+MTL.renderTemplate('my_template', { name: 'Dr. Who' })
+```
 
 [material]: https://material.google.com/
 [materialize]: http://materializecss.com/
