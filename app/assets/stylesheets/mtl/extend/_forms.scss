@@ -6,3 +6,14 @@
 .select-wrapper span.caret {
   color: inherit;
 }
+
+// fix for too long labels
+.input-field label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+.input-field.col label {
+  padding-right: $gutter-width;
+}
