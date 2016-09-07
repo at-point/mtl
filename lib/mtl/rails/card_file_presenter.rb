@@ -31,12 +31,16 @@ module Mtl
       private
 
       def label(filename, title = nil)
-        return filename unless title
-        view.safe_join [view.content_tag(:strong, title), filename]
+        return filename_tag(filename) unless title
+        view.safe_join [view.content_tag(:strong, title, class: 'truncate'), filename_tag(filename)]
+      end
+
+      def filename_tag(filename)
+        view.content_tag(:span, filename, class: 'truncate')
       end
 
       def infos(params)
-        view.content_tag :span, icon(params[:type]) + " #{params[:type].upcase}", class: 'grey-text'
+        view.content_tag :span, icon(params[:type]) + " #{params[:type].upcase}", class: 'secondary'
       end
 
       def icon(type)

@@ -41,12 +41,10 @@ $mtl-collection-file-text-secondary: color('grey', 'base');
       display: block;
       font-size: 13px;
       line-height: 16px;
-    }
-    > strong {
       color: $mtl-collection-file-text-primary;
     }
+
     > span {
-      color: $mtl-collection-file-text-secondary;
       vertical-align: middle;
 
       // icon override 1
@@ -55,6 +53,10 @@ $mtl-collection-file-text-secondary: color('grey', 'base');
         height: 16px;
         font-size: 20px;
         vertical-align: middle;
+      }
+
+      &.secondary {
+        color: $mtl-collection-file-text-secondary;
       }
     }
 

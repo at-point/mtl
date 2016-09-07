@@ -4,6 +4,7 @@ ChangeLog
 Development 0.1.0
 ------------------
 
+- Truncate long file names and titles on file cards [#70]
 - Render preview of file cards in a modal dialog [#65]
 - Basic template registry for lodash templates [#65]
 - PDFObject dependency [#65]
