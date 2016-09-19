@@ -58,11 +58,12 @@ module Mtl
 
       def data(filename, params)
         data = params[:data] || {}
-        data = data.merge(modal_data(filename)) if params[:modal]
+        data = data.merge(modal_data(filename, params))
         data
       end
 
-      def modal_data(filename)
+      def modal_data(filename, params)
+        return {} unless params[:modal]
         { mtl_document_modal: 'open', mtl_document_name: filename }
       end
     end
