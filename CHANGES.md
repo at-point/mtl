@@ -4,6 +4,7 @@ ChangeLog
 Development 0.1.0
 ------------------
 
+- Add support for custom data attributes on file cards [#73]
 - Truncate long file names and titles on file cards [#70]
 - Render preview of file cards in a modal dialog [#65]
 - Basic template registry for lodash templates [#65]
