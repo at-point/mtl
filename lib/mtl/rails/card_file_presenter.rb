@@ -18,7 +18,7 @@ module Mtl
                      title: params[:title] || filename,
                      target: '_blank',
                      class: ['card-panel', params[:preview] ? 'card-panel-image' : nil],
-                     data: modal(filename, params),
+                     data: data(filename, params),
                      style: if params[:preview]
                               "background-image: url(#{URI.encode(params[:preview])})"
                             end
@@ -56,8 +56,14 @@ module Mtl
         view.mtl_icon :close, class: 'close', data: data.reject { |_, v| v.blank? }
       end
 
-      def modal(filename, params)
-        { mtl_document_modal: 'open', mtl_document_name: filename } if params.delete(:modal)
+      def data(filename, params)
+        data = params[:data] || {}
+        data = data.merge(modal_data(filename)) if params[:modal]
+        data
+      end
+
+      def modal_data(filename)
+        { mtl_document_modal: 'open', mtl_document_name: filename }
       end
     end
   end
