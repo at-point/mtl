@@ -66,3 +66,12 @@ table {
     }
   }
 }
+
+// horizontal ruler
+hr {
+  line-height: 0;
+  overflow: hidden;
+  border-color: $table-border-color;
+  border-width: 0 0 1px;
+  border-style: solid;
+}
