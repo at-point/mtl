@@ -17,3 +17,37 @@
 .input-field.col label {
   padding-right: $gutter-width;
 }
+
+// fields with text suffix/unit
+.input-field.has-suffix {
+  input:not([type]),
+  input[type=text],
+  input[type=password],
+  input[type=email],
+  input[type=url],
+  input[type=time],
+  input[type=date],
+  input[type=datetime],
+  input[type=datetime-local],
+  input[type=tel],
+  input[type=number],
+  input[type=search] {
+    padding-right: 4rem;
+    width: calc(100% - 4rem);
+  }
+
+  .suffix {
+    position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 3rem;
+    color: $input-border-color;
+    font-size: $input-font-size;
+    text-align: right;
+    max-width: 3.8rem;
+  }
+
+  &.col .suffix {
+    right: .75rem;
+  }
+}
