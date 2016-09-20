@@ -30,6 +30,21 @@
     cursor: text;
     position: relative;
     top: -15px;
-    line-height: 1.6rem;
+    line-height: 2rem;
+  }
+
+  &.boolean {
+    label::before {
+      border-color: $input-error-color !important;
+    }
+    [type="checkbox"]:checked + label::before {
+      // scss-lint:disable Shorthand
+      border-color: transparent $input-error-color $input-error-color transparent !important;
+      // scss-lint:enable Shorthand
+    }
+    .error-block {
+      top: 0;
+      padding-left: 10px;
+    }
   }
 }
