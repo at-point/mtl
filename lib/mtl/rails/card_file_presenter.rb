@@ -58,8 +58,7 @@ module Mtl
 
       def data(filename, params)
         data = params[:data] || {}
-        data = data.merge(modal_data(filename, params))
-        data
+        data.merge(modal_data(filename, params))
       end
 
       def modal_data(filename, params)
