@@ -17,7 +17,7 @@ module SimpleForm
     # Pass in custom HTML options to the suffix div:
     #
     # ```erb
-    #   <%= f.input :amount, suffix: 'CHF', suffix_html: 'red-text' %>
+    #   <%= f.input :amount, suffix: 'CHF', suffix_html: { class: 'red-text' } %>
     # ```
     #
     module Suffix
