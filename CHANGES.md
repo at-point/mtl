@@ -5,6 +5,7 @@ ChangeLog
 Development 0.1.0
 ------------------
 
+- Added simple_form compatible error styling [#72, #75]
 - Enabled suffix text labels for input fields [#71,#74]
 - Add support for custom data attributes on file cards [#73]
 - Truncate long file names and titles on file cards [#70]
