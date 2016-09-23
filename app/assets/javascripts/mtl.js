@@ -3,6 +3,7 @@
 //=require "materialize/hammer.min"
 //=require "materialize/jquery.hammer"
 //=require "lodash"
+//=require "pdfobject"
 
 //=require "materialize/global"
 
