@@ -16,6 +16,8 @@ matrix:
   exclude:
     - rvm: 2.2.4
       gemfile: Gemfile
+  allow_failures:
+    - rvm: ruby-head
 
 before_install:
   - gem install bundler -v 1.11.2
