@@ -1,3 +1,5 @@
+require 'mtl/simple_form/suffix'
+
 # Copyright 2016 Patrick Lindsay
 # https://github.com/patricklindsay/simple_form-materialize
 #
@@ -80,6 +82,7 @@ SimpleForm.setup do |config|
     ## Inputs
     b.use :input
     b.use :label
+    b.optional :suffix
 
     b.use :hint,  wrap_with: { tag: :span, class: 'help-block' }
     b.use :error, wrap_with: { tag: :span, class: 'error-block' }
