@@ -117,6 +117,24 @@ views.
 
 ## CSS extensions
 
+
+### Suffixes for single line inputs
+
+We enabled the use of static suffixes for input fields with following types: text, password, email, url, time, date, datetime, datetime-local, tel, number and search.
+
+These can be used for units like currencies and more:
+
+```html
+<div class="input-field has-suffix">
+  <input type="text"/>
+  <label>Label</label>
+  <div class="suffix">CHF</div>
+</div>
+```
+
+If you use simple_form, check out our component extension: [SimpleForm/Components/Suffix](SimpleForm/Components/Suffix.html).
+
+
 ### Buttons
 
 We added **square-button** to display an icon in a squared button.
