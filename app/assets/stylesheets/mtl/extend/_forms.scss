@@ -36,6 +36,11 @@
     width: calc(100% - 4rem);
   }
 
+  label {
+    padding-right: 4rem;
+    width: 100%;
+  }
+
   .suffix {
     position: absolute;
     right: 0;
@@ -45,9 +50,17 @@
     font-size: $input-font-size;
     text-align: right;
     max-width: 3.8rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
-  &.col .suffix {
-    right: .75rem;
+  &.col {
+    label {
+      padding-right: 5.5rem;
+    }
+    .suffix {
+      right: .75rem;
+    }
   }
 }
