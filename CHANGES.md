@@ -2,8 +2,11 @@
 ChangeLog
 =========
 
-Development 0.1.0
-------------------
+Version 1.0.0
+-------------
+
+:tada: First official release to rubygems, thanks for all your pushes
+and fixes!
 
 - Added simple_form compatible error styling [#72, #75]
 - Enabled suffix text labels for input fields [#71,#74]
