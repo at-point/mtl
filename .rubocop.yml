@@ -24,6 +24,7 @@ Rails:
 Metrics/LineLength:
   Max: 100
   Exclude:
+    - mtl.gemspec
     - spec/*
     - spec/**/*
 
