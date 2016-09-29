@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
 
   spec.files         = %w{.gitignore Gemfile Rakefile LICENSE.txt README.md
                           mtl.gemspec package.json} +
-                       Dir['{lib,app,bin,vendor,spec}/**/*.{rb,erb,scss,eot,svg,ttf,woff}']
+                       Dir['{lib,app,bin,vendor,spec}/**/*.{rb,erb,js,coffee,scss,gif,jpg,svg,eot,ttf,woff,woff2,ijmap}']
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = %w{lib}
