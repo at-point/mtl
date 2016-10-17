@@ -1,10 +1,22 @@
 // scss-lint:disable QualifyingElement SelectorFormat
-.simple_form .check_boxes > label,
-.simple_form .radio_buttons > label {
-  display: none;
-}
+
+// caret fix
 .select-wrapper span.caret {
   color: inherit;
+}
+
+// radio buttons in one line
+.radio_buttons--horizontal {
+  > label {
+    display: block;
+  }
+  > .radio {
+    display: inline-block;
+
+    label {
+      left: 0;
+    }
+  }
 }
 
 // fix for too long labels
@@ -16,6 +28,7 @@
 }
 .input-field.col label {
   padding-right: $gutter-width;
+  left: .75rem;
 }
 
 // fields with text suffix/unit
