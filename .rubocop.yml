@@ -31,6 +31,18 @@ Metrics/LineLength:
 Metrics/AbcSize:
   Max: 20
 
+Metrics/BlockLength:
+  CountComments: false
+  Max: 25
+  Exclude:
+    - lib/generators/mtl/templates/simple_form.rb
+    - spec/mtl/rails/card_file_presenter_spec.rb
+    - spec/mtl/rails/card_file_presenter_spec.rb
+    - spec/mtl/rails/view_helpers_spec.rb
+    - spec/mtl/rails/view_helpers_spec.rb
+    - spec/mtl/rails/view_helpers_spec.rb
+    - spec/mtl/simple_form/suffix_spec.rb
+
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
     '%r': '{}'

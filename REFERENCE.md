@@ -135,6 +135,25 @@ These can be used for units like currencies and more:
 If you use simple_form, check out our component extension: [SimpleForm/Components/Suffix](SimpleForm/Components/Suffix.html).
 
 
+### Radio buttons
+
+We extended the default radio buttons with a horizontal mode. This will align radio buttons in one horizontal line, instead of breaking them to new lines.
+
+```html
+<div class="input-field radio_buttons radio_buttons--horizontal">
+  <p class="radio">
+    <input class="radio_buttons" type="radio">
+    <label class="collection_radio_buttons">Mr.</label>
+  </p>
+  <p class="radio">
+    <input class="radio_buttons" type="radio">
+    <label class="collection_radio_buttons">Mrs</label>
+  </p>
+  <label class="radio_buttons">Title</label>
+</div>
+```
+
+
 ### Buttons
 
 We added **square-button** to display an icon in a squared button.
