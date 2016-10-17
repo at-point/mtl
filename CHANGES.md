@@ -1,7 +1,7 @@
-
 ChangeLog
 =========
 
+- refined general radios and positionin [#79]
 - made hidden main labels visible again [#79]
 - added single line mode for radios [#79]
 

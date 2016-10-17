@@ -5,16 +5,23 @@
   color: inherit;
 }
 
+.radio_buttons {
+  padding: .8rem .75rem !important;
+
+  > label {
+    top: 0;
+    padding: 0 !important;
+    font-size: .8rem;
+  }
+}
+
 // radio buttons in one line
 .radio_buttons--horizontal {
-  > label {
-    display: block;
-  }
   > .radio {
     display: inline-block;
 
     label {
-      left: 0;
+      left: 0 !important;
     }
   }
 }
