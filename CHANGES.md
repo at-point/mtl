@@ -1,6 +1,10 @@
 ChangeLog
 =========
 
+Version 1.0.3
+-------------
+- Radio buttons error blocks display fix [#80, #81]
+
 Version 1.0.2
 -------------
 - refined general radios and positionin [#79]
