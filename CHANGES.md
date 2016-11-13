@@ -1,9 +1,12 @@
 ChangeLog
 =========
 
-Version 1.0.3
+Version 1.0.4
 -------------
 - Selects/dropdowns: Added ellipsis cropping for active element and enabled word-breaking for dropdown entries [#82]
+
+Version 1.0.3
+-------------
 - Radio buttons error blocks display fix [#80, #81]
 
 Version 1.0.2
