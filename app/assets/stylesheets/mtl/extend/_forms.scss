@@ -1,8 +1,23 @@
 // scss-lint:disable QualifyingElement SelectorFormat
 
-// caret fix
-.select-wrapper span.caret {
-  color: inherit;
+// select/dropdown hotfixes
+.select-wrapper {
+  // caret fix
+  span.caret {
+    color: inherit;
+  }
+  // ellipsis of selected option
+  input.select-dropdown {
+    padding-right: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+  }
+}
+.dropdown-content li > a,
+.dropdown-content li > span {
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 .radio_buttons {

@@ -1,7 +1,6 @@
 updateAttrs = ($el) ->
   $el
     .on('click', -> false)
-    .attr('data-constrainwidth', 'false')
     .attr('data-beloworigin', 'true')
     .attr('data-alignment', alignment($el))
     .attr('data-activates', activator($el))
@@ -15,7 +14,9 @@ activator = ($el) ->
 init = ->
   $('[data-mtl-dropdown]').each ->
     $el = $(this)
-    updateAttrs($el).dropdown()
+    updateAttrs($el).dropdown(constrain_width: false)
+    $el.siblings('input.select-dropdown').on 'mousedown', (e) ->
+      e.preventDefault() if e.clientX >= e.target.clientWidth || e.clientY >= e.target.clientHeight
 
 closeAll = ->
   setTimeout -> $('[data-mtl-dropdown]').dropdown('close')
