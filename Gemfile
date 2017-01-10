@@ -5,5 +5,5 @@ gemspec
 
 # Linters
 gem 'rubocop', require: false
-gem 'scss_lint', require: false
 gem 'coffeelint', require: false
+gem 'scss_lint', require: false
