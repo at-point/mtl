@@ -502,7 +502,7 @@ markup details of the modal itself, please refer to the
 #### Inline modals
 
 A modal usually consists of a trigger and the corresponding modal content.
-The modal is executed as such, by adding data-mtl-modal="inline" to its tag
+The modal is executed as such, by adding `data-mtl-modal="inline"` to its tag
 or by manually firing the modal creation via the help of Materialize
 
 ```html

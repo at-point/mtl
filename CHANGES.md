@@ -4,7 +4,7 @@ ChangeLog
 Version 1.0.4
 -------------
 - New Materialize version 0.97.8 [#85, #87]
-- Modal API change for inline modals
+- Modal API change for inline modals [#85, #87]
 - Selects/dropdowns: Added ellipsis cropping for active element and enabled word-breaking for dropdown entries [#82]
 
 Version 1.0.3
