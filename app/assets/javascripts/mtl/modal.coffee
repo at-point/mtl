@@ -22,11 +22,11 @@ initXhrModal = ($el) ->
   initDefaultModal $el,
     ready: -> $modal.load(ds)
 
-initDefaultModal = ($el, options = {}) -> $el.leanModal(options)
+initDefaultModal = ($el, options = {}) -> $el.modal(options)
 
 $(document).on 'click', '[data-mtl-modal="close"]', (e) ->
   e.preventDefault()
-  $(this).parents('.modal:first').closeModal()
+  $(this).parents('.modal:first').modal('close')
 
 init = -> $('[data-mtl-modal]').each -> initModal($(this))
 if Turbolinks? then $(document).on('turbolinks:load', init) else $(init)

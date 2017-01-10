@@ -6,6 +6,6 @@
     "pdfobject": "2.0",
     "lodash": "4.14.1",
     "material-design-icons": "2.2.3",
-    "materialize-css": "https://github.com/Dogfalo/materialize.git#171a9ef"
+    "materialize-css": "https://github.com/Dogfalo/materialize.git#fda1e45"
   }
 }
