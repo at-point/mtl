@@ -494,21 +494,21 @@ There is also a Rails helper, see {Mtl::Rails::ViewHelpers#mtl_button_more}.
 
 ### Modals
 
-Based on leanModal MTL adds turbolinks support as well as loading content over
+Based on MTL modals, adds turbolinks support as well as loading content over
 XHR GET requests. This can be used to render partials into modal windows. For
 markup details of the modal itself, please refer to the
 [Materialize CSS: Modals][m-modals] documentation.
 
-#### Simple modals
+#### Inline modals
 
-A modal usually consists of a trigger (via `data-mtl-modal="default"`) and the
-corresponding modal content.
+A modal usually consists of a trigger and the corresponding modal content.
+The modal is executed as such, by adding data-mtl-modal="inline" to its tag
+or by manually firing the modal creation via the help of Materialize
 
 ```html
-<!-- Use data-mtl-modal="default" to enable as trigger, uses href or data-target -->
-<a href="#modal" class="btn-flat" data-mtl-modal="default">Open Modal</a>
+<a href="#modal1" class="btn-flat">Open Modal</a>
 
-<div class="modal">
+<div class="modal" id="modal1" data-mtl-modal="inline">
   <div class="modal-content">
     <h4>Your modal</h4>
     <p>Example modal.</p>
