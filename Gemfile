@@ -4,6 +4,6 @@ source 'https://rubygems.org'
 gemspec
 
 # Linters
+gem 'coffeelint', require: false
 gem 'rubocop', require: false
 gem 'scss_lint', require: false
-gem 'coffeelint', require: false

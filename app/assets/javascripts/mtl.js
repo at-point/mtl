@@ -9,7 +9,7 @@
 
 //=require "materialize/collapsible"
 //=require "materialize/dropdown"
-//=require "materialize/leanModal"
+//=require "materialize/modal"
 //=require "materialize/materialbox"
 //=require "materialize/parallax"
 //=require "materialize/tabs"
