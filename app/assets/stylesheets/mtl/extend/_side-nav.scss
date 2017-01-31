@@ -2,11 +2,13 @@
 .side-nav {
 
   // scss-lint:disable QualifyingElement
-  li.active > a,
-  li.active > a i.material-icons {
+  li.active > a {
   // scss-lint:enable QualifyingElement
     background-color: $mtl-sidenav-bg-active-color;
     color: $mtl-sidenav-font-active-color;
+    .material-icons {
+      color: $mtl-sidenav-font-active-color;
+    }
   }
 
   ul {
