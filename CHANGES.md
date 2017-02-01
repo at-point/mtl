@@ -1,6 +1,9 @@
 ChangeLog
 =========
 
+Version 1.1.1
+- New Materialize version 0.98.0
+
 Version 1.1.0
 -------------
 - New Materialize version 0.97.8 [#85, #87]

@@ -1,6 +1,6 @@
 module Mtl
-  VERSION = '1.1.0'.freeze
-  MATERIALIZE_VERSION = '0.97.8'.freeze
+  VERSION = '1.1.1'.freeze
+  MATERIALIZE_VERSION = '0.98.0'.freeze
   ICONS_VERSION = '2.2.3'.freeze
   LODASH_VERSION = '4.14.1'.freeze
   PDFOBJECT_VERSION = '2.0.201604172'.freeze
