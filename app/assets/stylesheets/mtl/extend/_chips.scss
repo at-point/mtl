@@ -1,3 +1,23 @@
 .chip {
+  border-radius: $chip-border-radius;
+  height: $chip-height;
+  line-height: $chip-line-height;
+  font-size: $chip-font-size;
+  font-weight: $chip-font-weight;
   white-space: nowrap;
+  padding-right: $chip-height / 2;
+
+  > img {
+    border-radius: $chip-border-radius;
+    height: $chip-height;
+    margin-right: $chip-height / 4;
+    width: $chip-height;
+  }
+
+  .close {
+    font-size: $chip-font-size + 3px;
+    height: $chip-height;
+    line-height: $chip-line-height;
+    padding-left: ($chip-font-size + 3px) / 2;
+  }
 }

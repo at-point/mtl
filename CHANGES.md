@@ -2,13 +2,15 @@ ChangeLog
 =========
 
 Version 1.1.1
-- new materialize 0.98.0 standardized plugin option naming to camelcase
+------------
+- Add variables to chip component #88
+- New materialize 0.98.0, adapted to the standardized plugin option naming to camelcase
   ```
   $('.modal').modal({
     in_duration: 300
   })
   ```
-  become
+  becomes
   ```
   $('.modal').modal({
     inDuration: 300
@@ -27,7 +29,7 @@ Version 1.0.3
 
 Version 1.0.2
 -------------
-- refined general radios and positionin [#79]
+- refined general radios and positioning [#79]
 - made hidden main labels visible again [#79]
 - added single line mode for radios [#79]
 

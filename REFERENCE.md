@@ -290,6 +290,15 @@ PDF viewer. If the file cannot be previewed, a modal with a download button is s
 The modal dialog for non-previewable files can be customized by overriding the `MTL.templates.no_preview`
 template.
 
+
+### Variable extensions
+
+#### Chips
+
+For additional control of the dimensions and look of chips, we have extended them with new _scss_ variables:
+`$chip-height`, `$chip-line-height`, `$chip-font-size`, `$chip-font-weight` and `$chip-border-radius`.
+
+
 ## Rails view helpers
 
 ![Buttons](images/buttons.jpg)
