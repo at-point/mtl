@@ -32,4 +32,15 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec', '> 3.0'
   spec.add_development_dependency 'actionview'
   spec.add_development_dependency 'simple_form', '>= 3.3'
+
+  spec.post_install_message = %q{
+    Some component have been extend with configuration variables, don't forget to re-generate the scss configuration or
+    add the following values to your existing one:
+
+      $chip-height: 32px !default;
+      $chip-line-height: 32px !default;
+      $chip-font-size: 13px !default;
+      $chip-font-weight: 500 !default;
+      $chip-border-radius: 16px !default;
+  }
 end
