@@ -1,6 +1,20 @@
 ChangeLog
 =========
 
+Version 1.1.1
+- new materialize 0.98.0 standardized plugin option naming to camelcase
+  ```
+  $('.modal').modal({
+    in_duration: 300
+  })
+  ```
+  become
+  ```
+  $('.modal').modal({
+    inDuration: 300
+  })
+  ```
+
 Version 1.1.0
 -------------
 - New Materialize version 0.97.8 [#85, #87]

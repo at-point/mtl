@@ -14,7 +14,7 @@ activator = ($el) ->
 init = ->
   $('[data-mtl-dropdown]').each ->
     $el = $(this)
-    updateAttrs($el).dropdown(constrain_width: false)
+    updateAttrs($el).dropdown(constrainWidth: false)
     $el.siblings('input.select-dropdown').on 'mousedown', (e) ->
       e.preventDefault() if e.clientX >= e.target.clientWidth || e.clientY >= e.target.clientHeight
 
