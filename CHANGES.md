@@ -1,8 +1,12 @@
 ChangeLog
 =========
 
-Version 1.1.1
+Next release
 ------------
+- Fix unit calculation problem #92
+
+Version 1.1.1
+-------------
 - Add variables to chip component #88
 - New materialize 0.98.0, adapted to the standardized plugin option naming to camelcase
   ```
