@@ -35,6 +35,7 @@ Metrics/BlockLength:
   CountComments: false
   Max: 25
   Exclude:
+    - mtl.gemspec
     - lib/generators/mtl/templates/simple_form.rb
     - spec/mtl/rails/card_file_presenter_spec.rb
     - spec/mtl/rails/card_file_presenter_spec.rb
