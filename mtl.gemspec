@@ -42,5 +42,10 @@ Gem::Specification.new do |spec|
       $chip-font-size: 13px !default;
       $chip-font-weight: 500 !default;
       $chip-border-radius: 16px !default;
-  "
+      $badge-height: 22px !default;
+      $collapsible-line-height: $collapsible-height !default;
+      $navbar-line-height: $navbar-height !default;
+      $navbar-line-height-mobile: $navbar-height-mobile !default;
+      $sidenav-line-height: $sidenav-item-height !default;
+      $collection-line-height: 1.5rem !default;"
 end
