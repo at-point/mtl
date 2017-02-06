@@ -15,9 +15,9 @@
   }
 
   .close {
-    font-size: $chip-font-size + 3px;
+    font-size: calc($chip-font-size + 3px);
     height: $chip-height;
     line-height: $chip-line-height;
-    padding-left: ($chip-font-size + 3px) / 2;
+    padding-left: calc($chip-font-size + 3px) / 2;
   }
 }
