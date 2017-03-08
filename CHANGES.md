@@ -1,9 +1,10 @@
 ChangeLog
 =========
 
-Next release
+Version 1.1.2
 ------------
 - Fix unit calculation problem #92
+- Fix 1.1.1 bugs #91
 
 Version 1.1.1
 -------------
