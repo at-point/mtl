@@ -1,6 +1,10 @@
 ChangeLog
 =========
 
+Next version
+-------------
+- Made non-active text color of tabs configurable.
+
 Version 1.1.6
 -------------
 - Add generic margin-helper classes.
