@@ -1,5 +1,6 @@
 require 'uri'
 require 'mtl/rails/card_file_presenter'
+require 'mtl/rails/navbar_presenter'
 
 module Mtl
   module Rails
@@ -404,8 +405,12 @@ module Mtl
       # @option options [String] :data-mtl-delete URL to use as the delete action, if any
       # @param options [Hash] additional options passed to `content_tag`
       # @return [String] HTML safe String
-      def mtl_card_file(filename, href, params = {})
-        CardFilePresenter.new(self).render(filename, href, params)
+      def mtl_card_file(filename, href, options = {})
+        CardFilePresenter.new(self).render(filename, href, options)
+      end
+
+      def mtl_navbar(options = {}, &block)
+        NavbarPresenter.new(self).render(options, &block)
       end
     end
   end
