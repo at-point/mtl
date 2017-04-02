@@ -1,7 +1,7 @@
 module Mtl
   module Rails
     # Private
-    # Specialised renderer for the file card element used in a file collection
+    # Specialised renderer for the navbar element
     class NavbarPresenter
       attr_reader :view
 

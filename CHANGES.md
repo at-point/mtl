@@ -1,6 +1,10 @@
 ChangeLog
 =========
 
+Next release
+------------
+- Added navbar helper #94
+
 Version 1.1.2
 ------------
 - Fix unit calculation problem #92

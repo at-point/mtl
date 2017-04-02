@@ -261,6 +261,37 @@ module Mtl
     #     data-method="delete" data-confirm="Sure?">close</i>
     # </a>
     # ```
+    #
+    # # Navbars
+    #
+    # Basic usage:
+    #
+    # ```haml
+    # = mtl_navbar do
+    #   Hello
+    # ```
+    #
+    # Fixed navbar:
+    # ```haml
+    # = mtl_navbar fixed: true do
+    #   Hello
+    # ```
+    #
+    # Extended navbar:
+    # ```haml
+    # = mtl_navbar do |nav|
+    #   Hello
+    #   = nav.extended do
+    #     Hellobis
+    # ```
+    #
+    # Extended and fixed navbar:
+    # ```haml
+    # = mtl_navbar fixed: true do |nav|
+    #   Hello
+    #   = nav.extended do
+    #     Hellobis
+    # ```
     module ViewHelpers
       # Renders a flat button which does not visually lift like the raised buttons.
       #
@@ -409,6 +440,13 @@ module Mtl
         CardFilePresenter.new(self).render(filename, href, options)
       end
 
+      # Renders a navbar, wrapping the given block as content. Options also allows to fix the navbar and/or include
+      # an extended navigation
+      #
+      # @option options [Boolean] :fixed Define if the header has to be fixed or not
+      # @yield Content to be rendered into the navbar, with a navbar object as argument, to also build the
+      #        extended navigation if needed (by passing another block to nav.extended)
+      # @return [String] HTML safe String
       def mtl_navbar(options = {}, &block)
         NavbarPresenter.new(self).render(options, &block)
       end
