@@ -277,7 +277,7 @@ module Mtl
     #   Hello
     # ```
     #
-    # Extended navbar:
+    # Extended navbar:
     # ```haml
     # = mtl_navbar do |nav|
     #   Hello
@@ -285,7 +285,7 @@ module Mtl
     #     Hellobis
     # ```
     #
-    # Extended and fixed navbar:
+    # Extended and fixed navbar:
     # ```haml
     # = mtl_navbar fixed: true do |nav|
     #   Hello

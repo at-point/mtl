@@ -38,9 +38,7 @@ Metrics/BlockLength:
     - mtl.gemspec
     - lib/generators/mtl/templates/simple_form.rb
     - spec/mtl/rails/card_file_presenter_spec.rb
-    - spec/mtl/rails/card_file_presenter_spec.rb
-    - spec/mtl/rails/view_helpers_spec.rb
-    - spec/mtl/rails/view_helpers_spec.rb
+    - spec/mtl/rails/navbar_presenter_spec.rb
     - spec/mtl/rails/view_helpers_spec.rb
     - spec/mtl/simple_form/suffix_spec.rb
 

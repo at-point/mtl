@@ -3,7 +3,7 @@ ChangeLog
 
 Next release
 ------------
-- Added navbar helper #94
+- Added navbar helper #94 #96
 
 Version 1.1.2
 ------------

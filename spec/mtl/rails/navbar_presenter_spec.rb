@@ -41,7 +41,7 @@ RSpec.describe Mtl::Rails::NavbarPresenter, dom: true do
         end
 
         'Hello'
-       end).to match_dom <<-HTML
+      end).to match_dom <<-HTML
         <nav class="nav-extended">
           <div class="nav-wrapper">
             Hello
@@ -60,7 +60,7 @@ RSpec.describe Mtl::Rails::NavbarPresenter, dom: true do
         end
 
         'Hello'
-       end).to match_dom <<-HTML
+      end).to match_dom <<-HTML
         <div class="navbar-fixed">
           <nav class="nav-extended">
             <div class="nav-wrapper">
