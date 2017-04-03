@@ -1,5 +1,5 @@
 module Mtl
-  VERSION = '1.1.2'.freeze
+  VERSION = '1.1.3'.freeze
   MATERIALIZE_VERSION = '0.98.0'.freeze
   ICONS_VERSION = '2.2.3'.freeze
   LODASH_VERSION = '4.14.1'.freeze

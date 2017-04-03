@@ -1,7 +1,7 @@
 ChangeLog
 =========
 
-Next release
+Version 1.1.3
 ------------
 - Added navbar helper #94 #96
 
