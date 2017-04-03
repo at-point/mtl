@@ -22,7 +22,7 @@ Rails:
   Enabled: true
 
 Metrics/LineLength:
-  Max: 100
+  Max: 120
   Exclude:
     - mtl.gemspec
     - spec/*
@@ -38,9 +38,7 @@ Metrics/BlockLength:
     - mtl.gemspec
     - lib/generators/mtl/templates/simple_form.rb
     - spec/mtl/rails/card_file_presenter_spec.rb
-    - spec/mtl/rails/card_file_presenter_spec.rb
-    - spec/mtl/rails/view_helpers_spec.rb
-    - spec/mtl/rails/view_helpers_spec.rb
+    - spec/mtl/rails/navbar_presenter_spec.rb
     - spec/mtl/rails/view_helpers_spec.rb
     - spec/mtl/simple_form/suffix_spec.rb
 
@@ -61,4 +59,7 @@ Style/ClassVars:
     - lib/mtl.rb
 
 Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/MixinGrouping:
   Enabled: false

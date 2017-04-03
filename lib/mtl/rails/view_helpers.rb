@@ -1,5 +1,6 @@
 require 'uri'
 require 'mtl/rails/card_file_presenter'
+require 'mtl/rails/navbar_presenter'
 
 module Mtl
   module Rails
@@ -260,6 +261,37 @@ module Mtl
     #     data-method="delete" data-confirm="Sure?">close</i>
     # </a>
     # ```
+    #
+    # # Navbars
+    #
+    # Basic usage:
+    #
+    # ```haml
+    # = mtl_navbar do
+    #   Hello
+    # ```
+    #
+    # Fixed navbar:
+    # ```haml
+    # = mtl_navbar fixed: true do
+    #   Hello
+    # ```
+    #
+    # Extended navbar:
+    # ```haml
+    # = mtl_navbar do |nav|
+    #   Hello
+    #   = nav.extended do
+    #     Hellobis
+    # ```
+    #
+    # Extended and fixed navbar:
+    # ```haml
+    # = mtl_navbar fixed: true do |nav|
+    #   Hello
+    #   = nav.extended do
+    #     Hellobis
+    # ```
     module ViewHelpers
       # Renders a flat button which does not visually lift like the raised buttons.
       #
@@ -325,14 +357,14 @@ module Mtl
       #   nav menu to show / hide on mobile devices. The default used is `nav-menu`.
       #   When set to `false`, this button is skipped.
       # @param class [String, Array] (HTML CLASS) additional, custom css class on header
-      # @yield Additional content to be rendered as part of the header
+      # @yield Additional content to be rendered as part of the header, with a navbar object as argument,
+      #        to also build the extended navigation if needed (by passing another block to nav.extended)
       # @return [String] HTML safe string
       def mtl_header(title = translate('.title', default: 'Menu'), **options, &block)
-        mtl_content = block_given? ? capture(&block) : nil
         mtl_class = ['mtl-layout-default-header', options[:class]].compact.flatten.join(' ')
 
         render file: 'mtl/header', locals: {
-          mtl_content: mtl_content,
+          mtl_content: block,
           mtl_title: title.presence,
           mtl_back: options.fetch(:back, false),
           mtl_menu: options.fetch(:menu, 'nav-menu'),
@@ -404,8 +436,21 @@ module Mtl
       # @option options [String] :data-mtl-delete URL to use as the delete action, if any
       # @param options [Hash] additional options passed to `content_tag`
       # @return [String] HTML safe String
-      def mtl_card_file(filename, href, params = {})
-        CardFilePresenter.new(self).render(filename, href, params)
+      def mtl_card_file(filename, href, options = {})
+        CardFilePresenter.new(self).render(filename, href, options)
+      end
+
+      # Renders a navbar, wrapping the given block as content. Options also allows to fix the navbar and/or include
+      # an extended navigation
+      #
+      # @option options [Boolean] :fixed Define if the header has to be fixed or not
+      # @option options [String/Array] :class Additional class to add the to nav-wrapper
+      # @yield Content to be rendered into the navbar, with a navbar object as argument, to also build the
+      #        extended navigation if needed (by passing another block to nav.extended)
+      # @option yield.extended options [String/Array] :class Additional class to add the to nav-extended
+      # @return [String] HTML safe String
+      def mtl_navbar(options = {}, &block)
+        NavbarPresenter.new(self).render(options, &block)
       end
     end
   end
