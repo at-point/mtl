@@ -444,8 +444,10 @@ module Mtl
       # an extended navigation
       #
       # @option options [Boolean] :fixed Define if the header has to be fixed or not
+      # @option options [String/Array] :class Additional class to add the to nav-wrapper
       # @yield Content to be rendered into the navbar, with a navbar object as argument, to also build the
       #        extended navigation if needed (by passing another block to nav.extended)
+      # @option yield.extended options [String/Array] :class Additional class to add the to nav-extended
       # @return [String] HTML safe String
       def mtl_navbar(options = {}, &block)
         NavbarPresenter.new(self).render(options, &block)
