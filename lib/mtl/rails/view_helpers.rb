@@ -368,6 +368,7 @@ module Mtl
           mtl_title: title.presence,
           mtl_back: options.fetch(:back, false),
           mtl_menu: options.fetch(:menu, 'nav-menu'),
+          mtl_fixed: options.fetch(:fixed, false),
           mtl_class: mtl_class
         }
       end
