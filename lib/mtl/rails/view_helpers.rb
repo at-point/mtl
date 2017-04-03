@@ -357,14 +357,14 @@ module Mtl
       #   nav menu to show / hide on mobile devices. The default used is `nav-menu`.
       #   When set to `false`, this button is skipped.
       # @param class [String, Array] (HTML CLASS) additional, custom css class on header
-      # @yield Additional content to be rendered as part of the header
+      # @yield Additional content to be rendered as part of the header, with a navbar object as argument,
+      #        to also build the extended navigation if needed (by passing another block to nav.extended)
       # @return [String] HTML safe string
       def mtl_header(title = translate('.title', default: 'Menu'), **options, &block)
-        mtl_content = block_given? ? capture(&block) : nil
         mtl_class = ['mtl-layout-default-header', options[:class]].compact.flatten.join(' ')
 
         render file: 'mtl/header', locals: {
-          mtl_content: mtl_content,
+          mtl_content: block,
           mtl_title: title.presence,
           mtl_back: options.fetch(:back, false),
           mtl_menu: options.fetch(:menu, 'nav-menu'),

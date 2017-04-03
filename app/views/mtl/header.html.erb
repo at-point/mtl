@@ -1,5 +1,5 @@
 <header class="<%= mtl_class %>">
-  <%= mtl_navbar do %>
+  <%= mtl_navbar do |nav| %>
     <%- if mtl_back  %>
       <%= link_to mtl_back, class: 'mtl-layout-default-header-back left' do %>
         <i class="material-icons">arrow_back</i>
@@ -17,7 +17,7 @@
     <%- end %>
 
     <%- if mtl_content %>
-      <%= mtl_content %>
+      <%= capture(nav, &mtl_content) %>
     <%- end %>
   <%- end %>
 </header>
