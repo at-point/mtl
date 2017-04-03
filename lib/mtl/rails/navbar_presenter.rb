@@ -29,11 +29,12 @@ module Mtl
       private
 
       def render_main(options = {}, &block)
-        view.content_tag(:div, view.capture(self, &block), class: [options[:class], 'nav-wrapper'].flatten)
+        view.content_tag(:div, view.capture(self, &block), class: [options[:class], 'nav-wrapper'].flatten.compact)
       end
 
       def render_extended(options = {}, &block)
-        view.content_tag(:div, view.capture(&block), class: [options[:class], 'nav-content'].flatten) if block_given?
+        return unless block_given?
+        view.content_tag(:div, view.capture(&block), class: [options[:class], 'nav-content'].flatten.compact)
       end
     end
   end
