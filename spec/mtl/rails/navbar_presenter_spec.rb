@@ -22,6 +22,16 @@ RSpec.describe Mtl::Rails::NavbarPresenter, dom: true do
       HTML
     end
 
+    it 'renders a basic navbar with the given content and some custom class on the wrapper' do
+      expect(subject.render(class: 'custom-class') { 'Hello' }).to match_dom <<-HTML
+        <nav>
+          <div class="custom-class nav-wrapper">
+            Hello
+          </div>
+        </nav>
+      HTML
+    end
+
     it 'renders a fixed navbar with the given content' do
       expect(subject.render(fixed: true) { 'Hello' }).to match_dom <<-HTML
         <div class="navbar-fixed">
@@ -47,6 +57,25 @@ RSpec.describe Mtl::Rails::NavbarPresenter, dom: true do
             Hello
           </div>
           <div class="nav-content">
+            Hellobis
+          </div>
+        </nav>
+      HTML
+    end
+
+    it 'renders a navbar with the given content and the extended content and some custom class on the ext wrapper' do
+      expect(subject.render do |nav|
+        nav.extended(class: 'custom-bis') do
+          'Hellobis'
+        end
+
+        'Hello'
+      end).to match_dom <<-HTML
+        <nav class="nav-extended">
+          <div class="nav-wrapper">
+            Hello
+          </div>
+          <div class="custom-bis nav-content">
             Hellobis
           </div>
         </nav>
