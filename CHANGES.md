@@ -1,9 +1,13 @@
 ChangeLog
 =========
 
-Version 1.1.3
+Version 1.1.4
 ------------
 - Added navbar helper #94 #96
+
+Version 1.1.3
+------------
+Yanked.
 
 Version 1.1.2
 ------------
