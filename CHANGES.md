@@ -1,6 +1,10 @@
 ChangeLog
 =========
 
+Next release
+------------
+- Context fix for header #97
+
 Version 1.1.4
 ------------
 - Added navbar helper #94 #96
