@@ -1,4 +1,5 @@
 require 'mtl/simple_form/suffix'
+require 'mtl/simple_form/switch_input'
 
 # Copyright 2016 Patrick Lindsay
 # https://github.com/patricklindsay/simple_form-materialize
@@ -24,22 +25,6 @@ require 'mtl/simple_form/suffix'
 #
 # Use this setup block to configure all options available in SimpleForm.
 SimpleForm.setup do |config|
-  # Wrappers are used by the form builder to generate a
-  # complete input. You can remove any component from the
-  # wrapper, change the order or even add your own to the
-  # stack. The options given below are used to wrap the
-  # whole input.
-  config.wrappers :material_checkbox,
-                  hint_class: :field_with_hint, error_class: 'has-error' do |b|
-    b.use :input
-    b.use :label
-
-    b.use :hint,  wrap_with: { tag: :span, class: 'help-block' }
-    b.use :error, wrap_with: { tag: :span, class: 'error-block' }
-
-    b.use :html5
-  end
-
   config.wrappers :disabled_form do |b|
     b.use :label
     b.use :input, disabled: true, readonly: true
@@ -173,9 +158,7 @@ SimpleForm.setup do |config|
 
   # Custom wrappers for input types. This should be a hash containing an input
   # type as key and the wrapper that will be used for all inputs with specified type.
-  config.wrapper_mappings = {
-    switch: :material_checkbox
-  }
+  config.wrapper_mappings = { }
 
   # Namespaces where SimpleForm should look for custom input classes that
   # override default inputs.
