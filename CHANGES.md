@@ -1,7 +1,7 @@
 ChangeLog
 =========
 
-Next release
+Version 1.1.5
 ------------
 - Context fix for header #97
 - Switch support for simple_form #98
