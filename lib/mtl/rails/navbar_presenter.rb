@@ -13,16 +13,16 @@ module Mtl
 
       def render(options = {}, &block)
         nav = view.content_tag :nav, view.safe_join([render_main(options, &block),
-                                                     render_extended(@extended_options, &@extended_block)].compact),
+                                                     render_extended(@extended_block, @extended_options)].compact),
                                class: @extended_block ? 'nav-extended' : nil
 
-        nav = view.content_tag :div, nav, class: 'navbar-fixed' if options[:fixed]
-        nav
+        return nav unless options[:fixed]
+        view.content_tag :div, nav, class: ['navbar-fixed', @extended_block ? 'navbar-fixed-extended' : nil]
       end
 
       def extended(options = {}, &block)
         @extended_options = options
-        @extended_block = block
+        @extended_block = view.capture(&block)
         nil
       end
 
@@ -32,9 +32,9 @@ module Mtl
         view.content_tag(:div, view.capture(self, &block), class: [options[:class], 'nav-wrapper'].flatten.compact)
       end
 
-      def render_extended(options = {}, &block)
-        return unless block_given?
-        view.content_tag(:div, view.capture(&block), class: [options[:class], 'nav-content'].flatten.compact)
+      def render_extended(content, options = {})
+        return unless content.presence
+        view.content_tag(:div, content, class: [options[:class], 'nav-content'].flatten.compact)
       end
     end
   end

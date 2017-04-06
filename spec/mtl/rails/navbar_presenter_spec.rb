@@ -90,7 +90,7 @@ RSpec.describe Mtl::Rails::NavbarPresenter, dom: true do
 
         'Hello'
       end).to match_dom <<-HTML
-        <div class="navbar-fixed">
+        <div class="navbar-fixed navbar-fixed-extended">
           <nav class="nav-extended">
             <div class="nav-wrapper">
               Hello

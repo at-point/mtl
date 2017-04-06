@@ -362,15 +362,12 @@ module Mtl
       # @return [String] HTML safe string
       def mtl_header(title = translate('.title', default: 'Menu'), **options, &block)
         mtl_class = ['mtl-layout-default-header', options[:class]].compact.flatten.join(' ')
-
-        render file: 'mtl/header', locals: {
-          mtl_content: block,
-          mtl_title: title.presence,
-          mtl_back: options.fetch(:back, false),
-          mtl_menu: options.fetch(:menu, 'nav-menu'),
-          mtl_fixed: options.fetch(:fixed, false),
-          mtl_class: mtl_class
-        }
+        mtl_nav = NavbarPresenter.new(self)
+        mtl_content = block_given? ? capture(mtl_nav, &block) : nil
+        render file: 'mtl/header', locals: { mtl_title: title.presence, mtl_back: options.fetch(:back, false),
+                                             mtl_menu: options.fetch(:menu, 'nav-menu'),
+                                             mtl_fixed: options.fetch(:fixed, false), mtl_class: mtl_class,
+                                             mtl_nav: mtl_nav, mtl_content: mtl_content }
       end
 
       # Renders an avatar link, for the given url with the name's initials
