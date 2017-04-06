@@ -4,14 +4,15 @@ require 'simple_form'
 module SimpleForm
   # :nodoc:
   module Inputs
+    # :nodoc:
     class SwitchInput < ::SimpleForm::Inputs::BooleanInput
-      def input(wrapper_options = nil)
+      def input(_wrapper_options = nil)
         template.content_tag(:div, class: :switch) do
           build_hidden_field_for_checkbox +
             template.label_tag(nil) do
               build_check_box_without_hidden_field(input_html_options) +
-              template.content_tag(:span, nil, class: :lever) +
-              label_text
+                template.content_tag(:span, nil, class: :lever) +
+                label_text
             end
         end
       end
@@ -20,7 +21,7 @@ module SimpleForm
         input(wrapper_options)
       end
 
-      def label(wrapper_options)
+      def label(_wrapper_options = nil)
         ''
       end
     end
