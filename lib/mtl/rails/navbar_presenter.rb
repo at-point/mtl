@@ -16,9 +16,8 @@ module Mtl
                                                      render_extended(@extended_block, @extended_options)].compact),
                                class: @extended_block ? 'nav-extended' : nil
 
-        nav = view.content_tag :div, nav, class: ['navbar-fixed',
-                                                  @extended_block ? 'navbar-fixed-extended' : nil] if options[:fixed]
-        nav
+        return nav unless options[:fixed]
+        view.content_tag :div, nav, class: ['navbar-fixed', @extended_block ? 'navbar-fixed-extended' : nil]
       end
 
       def extended(options = {}, &block)
