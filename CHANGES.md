@@ -1,21 +1,25 @@
 ChangeLog
 =========
 
+Version 1.1.6
+-------------
+- Add generic margin-helper classes.
+
 Version 1.1.5
-------------
+-------------
 - Context fix for header #97
 - Switch support for simple_form #98
 
 Version 1.1.4
-------------
+-------------
 - Added navbar helper #94 #96
 
 Version 1.1.3
-------------
+-------------
 Yanked.
 
 Version 1.1.2
-------------
+-------------
 - Fix unit calculation problem #92
 - Fix 1.1.1 bugs #91
 

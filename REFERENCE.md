@@ -117,6 +117,65 @@ views.
 
 ## CSS extensions
 
+### Generic margin helper classes
+
+To be as flexible as possible, we provide generic css classes to control the vertical space between two elements:
+
+<table>
+  <thead>
+    <th>class-name</th>
+    <th>margin-top</th>
+    <th>margin-bottom</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>margin-<b>lg</b></td>
+      <td>40px</td>
+      <td>40px</td>
+    </tr>
+    <tr>
+      <td>margin-<b>md</b></td>
+      <td>20px</td>
+      <td>20px</td>
+    </tr>
+    <tr>
+      <td>margin-<b>md</b></td>
+      <td>10px</td>
+      <td>10px</td>
+    </tr>
+    <tr>
+      <td>margin-<b>top-lg</b></td>
+      <td>40px</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>margin-<b>top-md</b></td>
+      <td>20px</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>margin-<b>top-md</b></td>
+      <td>10px</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>margin-<b>bottom-lg</b></td>
+      <td>&nbsp;</td>
+      <td>40px</td>
+    </tr>
+    <tr>
+      <td>margin-<b>bottom-md</b></td>
+      <td>&nbsp;</td>
+      <td>20px</td>
+    </tr>
+    <tr>
+      <td>margin-<b>bottom-md</b></td>
+      <td>&nbsp;</td>
+      <td>10px</td>
+    </tr>
+  </tbody>
+</table>
+
 
 ### Suffixes for single line inputs
 

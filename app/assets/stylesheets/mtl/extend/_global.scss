@@ -67,6 +67,38 @@ table {
   }
 }
 
+// margin helpers
+$margin-lg: 40px !important;
+$margin-md: 20px !important;
+$margin-sm: 10px !important;
+
+.margin-lg,
+.margin-top-lg {
+  margin-top: $margin-lg;
+}
+.margin-lg,
+.margin-bottom-lg {
+  margin-bottom: $margin-lg;
+}
+
+.margin-md,
+.margin-top-md {
+  margin-top: $margin-md;
+}
+.margin-md,
+.margin-bottom-md {
+  margin-bottom: $margin-md;
+}
+
+.margin-sm,
+.margin-top-sm {
+  margin-top: $margin-sm;
+}
+.margin-sm,
+.margin-bottom-sm {
+  margin-bottom: $margin-sm;
+}
+
 // horizontal ruler
 hr {
   line-height: 0;
@@ -74,4 +106,17 @@ hr {
   border-color: $table-border-color;
   border-width: 0 0 1px;
   border-style: solid;
+
+  &.margin-lg,
+  &.margin-top-lg {
+    margin-top: $margin-lg - 10px;
+  }
+  &.margin-md,
+  &.margin-top-md {
+    margin-top: $margin-md - 10px;
+  }
+  &.margin-sm,
+  &.margin-top-sm {
+    margin-top: $margin-sm - 10px;
+  }
 }
