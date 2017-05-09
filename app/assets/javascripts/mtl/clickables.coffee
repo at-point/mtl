@@ -13,6 +13,7 @@ $(document).on 'click', '[data-mtl-href]', (e) ->
 
   if Turbolinks?.supported?
     Turbolinks.visit($(this).data('mtl-href'))
+    return $.rails.stopEverything(e);
   else
     window.location.href = $(this).data('mtl-href')
 
