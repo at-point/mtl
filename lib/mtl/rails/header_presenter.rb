@@ -18,7 +18,7 @@ module Mtl
         title(options.delete(:title)) if options[:title].presence
 
         options[:class] = ['mtl-layout-default-header', options[:class]].compact.flatten
-        fixed = !options.delete(:fixed).nil?
+        fixed = options.delete(:fixed).present?
 
         @user_content = block_given? ? view.capture(self, &block) : nil
 
