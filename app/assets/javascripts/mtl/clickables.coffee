@@ -2,7 +2,9 @@ oldHref = $.rails.href
 $.rails.href = (element) -> element.data('mtl-href') || oldHref(element)
 
 $(document).on 'click', '[data-mtl-href]', (e) ->
+  e.preventDefault()
   link = $(this)
+  url = $(this).prop('href') || $(this).data('mtl-href')
   method = link.data('method')
 
   return $.rails.stopEverything(e) if !$.rails.allowAction(link)
@@ -12,10 +14,9 @@ $(document).on 'click', '[data-mtl-href]', (e) ->
     return $.rails.stopEverything(e)
 
   if Turbolinks?.supported?
-    Turbolinks.visit($(this).data('mtl-href'))
-    return $.rails.stopEverything(e);
+    Turbolinks.visit(url)
   else
-    window.location.href = $(this).data('mtl-href')
+    window.location.href = url
 
 $(document).on 'click', '[data-mtl-href] a', (ev) ->
   ev.stopPropagation()
