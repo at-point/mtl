@@ -4,7 +4,7 @@
 
 [![Build Status](https://travis-ci.org/at-point/mtl.svg?branch=master)](https://travis-ci.org/at-point/mtl)
 
-Welcome to **MTL: Materializer**, this is a Rails gem we use at [at-point](https://at-point.ch)
+Welcome to **MTL: Materializer**, this is a Rails gem we use at [atpoint](https://atpoint.ch)
 to simplify UI designs for back-office heavy applications by leveraging the following
 tools:
 
@@ -93,7 +93,7 @@ code of conduct.
 
 ### License
 
-[MIT License][license]. Copyright 2016 at-point ag. https://at-point.ch
+[MIT License][license]. Copyright 2016 at-point ag. https://atpoint.ch
 
 [materialize]: http://materializecss.com/
 [icons]: https://design.google.com/icons/
