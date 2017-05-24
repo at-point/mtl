@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.name          = 'mtl'
   spec.version       = Mtl::VERSION
   spec.authors       = ['Marco Plüss', 'Lukas Westermann', 'Loris Gavillet']
-  spec.email         = ['marco@at-point.ch', 'lukas@at-point.ch', 'loris@at-point.ch']
+  spec.email         = ['marco@atpoint.ch', 'loris@atpoint.ch']
 
   spec.summary       = 'Rails gem to package materialize-css for reuse between projects.'
   spec.description   = 'Reusable components and Rails helpers on top of materialize-css ' \
