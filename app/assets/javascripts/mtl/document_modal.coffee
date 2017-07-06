@@ -1,4 +1,4 @@
-IMAGE_EXTENSIONS = ['png', 'jpg', 'gif', 'bmp']
+IMAGE_EXTENSIONS = ['png', 'jpg', 'gif', 'bmp', 'jpeg']
 MTL.templates.document_modal = """
   <div class="document-modal">
     <div class="document-modal-dimmer" data-mtl-document-modal="close"></div>
