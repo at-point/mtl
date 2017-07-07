@@ -1,9 +1,12 @@
 ChangeLog
 =========
 
-Next version
+Version 1.1.7
 -------------
-- Made non-active text color of tabs configurable.
+- Made non-active text color of tabs configurable #95
+- Use interpolation for variables inside calc() #102
+- Turbolinks reload for tooltips #100
+
 
 Version 1.1.6
 -------------
