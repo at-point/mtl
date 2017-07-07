@@ -48,5 +48,6 @@ Gem::Specification.new do |spec|
       $navbar-line-height: $navbar-height !default;
       $navbar-line-height-mobile: $navbar-height-mobile !default;
       $sidenav-line-height: $sidenav-item-height !default;
-      $collection-line-height: 1.5rem !default;"
+      $collection-line-height: 1.5rem !default;
+      $tabs-text-color-not-active: $primary-color !default;"
 end
