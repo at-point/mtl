@@ -10,5 +10,6 @@ if Turbolinks? then $(document).on('turbolinks:load', initMtlHooks) else $(initM
 # Things to run only once via on('ready') and need to be re-run in turbolinks
 $ ->
   $(document).on 'turbolinks:load', ->
+    $('.tooltipped').tooltip()
     Materialize.updateTextFields()
     Waves.displayEffect()
