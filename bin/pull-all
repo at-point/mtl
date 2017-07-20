@@ -23,23 +23,19 @@ echo " * [materialize-css] Copy node_modules/materialize-css/js..."
 cp -r node_modules/materialize-css/js vendor/assets/javascripts/materialize
 [ -f vendor/assets/javascripts/materialize/materialize.js ] && rm vendor/assets/javascripts/materialize/materialize.js || true
 
-# MATERIALIZE: 3 - Copy fonts
-echo " * [materialize-css] Copy node_modules/materialize-css/fonts..."
-cp -r node_modules/materialize-css/fonts/roboto vendor/assets/fonts/roboto
-
-# MATERIALIZE: 4 - Cleanup / chmod
+# MATERIALIZE: 3 - Cleanup / chmod
 echo " * [materialize-css] Cleanup file permissions -x flags?!"
 find vendor/assets -type f -print0 | xargs -0 chmod gou-x
 
-# ICONS: 1 - Copy fonts
+# ICONS: Copy fonts
 echo " * [materialize-css] Copy node_modules/material-design-icons/iconfont..."
 cp -r node_modules/material-design-icons/iconfont vendor/assets/fonts/material-icons
 
-# LODASH: 1 - Copy JS
+# LODASH: Copy JS
 echo " * [lodash] Copy node_modules/lodash/lodash.js..."
 cp -r node_modules/lodash/lodash.js vendor/assets/javascripts/lodash.js
 
-# PDFOBJECT: 1 - Copy JS
+# PDFOBJECT: Copy JS
 echo " * [pdfobject] Copy node_modules/pdfobject/pdfobject.js..."
 cp -r node_modules/pdfobject/pdfobject.js vendor/assets/javascripts/pdfobject.js
 

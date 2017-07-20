@@ -3,8 +3,7 @@
     data: [],
     placeholder: '',
     secondaryPlaceholder: '',
-    autocompleteData: {},
-    autocompleteLimit: Infinity,
+    autocompleteOptions: {},
   };
 
   $(document).ready(function() {
@@ -35,7 +34,7 @@
     }
 
     var curr_options = $.extend({}, materialChipsDefaults, options);
-    self.hasAutocomplete = !$.isEmptyObject(curr_options.autocompleteData);
+    self.hasAutocomplete = !$.isEmptyObject(curr_options.autocompleteOptions.data);
 
     // Initialize
     this.init = function() {
@@ -150,7 +149,7 @@
         $currChips.removeClass('focus');
 
         // Remove active if empty
-        if (!$currChips.data('chips').length) {
+        if ($currChips.data('chips') === undefined || !$currChips.data('chips').length) {
           $currChips.siblings('label').removeClass('active');
         }
         $currChips.siblings('.prefix').removeClass('active');
@@ -197,12 +196,11 @@
     };
 
     this.chips = function($chips, chipId) {
-      var html = '';
+      $chips.empty();
       $chips.data('chips').forEach(function(elem){
-        html += self.renderChip(elem);
+        $chips.append(self.renderChip(elem));
       });
-      html += '<input id="' + chipId +'" class="input" placeholder="">';
-      $chips.html(html);
+      $chips.append($('<input id="' + chipId +'" class="input" placeholder="">'));
       self.setPlaceholder($chips);
 
       // Set for attribute for label
@@ -210,7 +208,7 @@
       if (label.length) {
         label.attr('for', chipId);
 
-        if ($chips.data('chips').length) {
+        if ($chips.data('chips')!== undefined && $chips.data('chips').length) {
           label.addClass('active');
         }
       }
@@ -218,35 +216,37 @@
       // Setup autocomplete if needed.
       var input = $('#' + chipId);
       if (self.hasAutocomplete) {
-        input.autocomplete({
-          data: curr_options.autocompleteData,
-          limit: curr_options.autocompleteLimit,
-          onAutocomplete: function(val) {
-            self.addChip({tag: val}, $chips);
-            input.val('');
-            input.focus();
-          },
-        })
+        curr_options.autocompleteOptions.onAutocomplete = function(val) {
+          self.addChip({tag: val}, $chips);
+          input.val('');
+          input.focus();
+        }
+        input.autocomplete(curr_options.autocompleteOptions);
       }
     };
 
+    /**
+     * Render chip jQuery element.
+     * @param {Object} elem
+     * @return {jQuery}
+     */
     this.renderChip = function(elem) {
       if (!elem.tag) return;
 
-      var html = '<div class="chip">' + elem.tag;
+      var $renderedChip = $('<div class="chip"></div>');
+      $renderedChip.text(elem.tag);
       if (elem.image) {
-        html += ' <img src="' + elem.image + '"> ';
+        $renderedChip.prepend($('<img />').attr('src', elem.image))
       }
-      html += '<i class="material-icons close">close</i>';
-      html += '</div>';
-      return html;
+      $renderedChip.append($('<i class="material-icons close">close</i>'));
+      return $renderedChip;
     };
 
     this.setPlaceholder = function($chips) {
-      if ($chips.data('chips').length && curr_options.placeholder) {
+      if ($chips.data('chips') !== undefined && $chips.data('chips').length && curr_options.placeholder) {
         $chips.find('input').prop('placeholder', curr_options.placeholder);
 
-      } else if (!$chips.data('chips').length && curr_options.secondaryPlaceholder) {
+      } else if (($chips.data('chips') === undefined || !$chips.data('chips').length) && curr_options.secondaryPlaceholder) {
         $chips.find('input').prop('placeholder', curr_options.secondaryPlaceholder);
       }
     };
@@ -267,7 +267,7 @@
       if (!self.isValid($chips, elem)) {
         return;
       }
-      var chipHtml = self.renderChip(elem);
+      var $renderedChip = self.renderChip(elem);
       var newData = [];
       var oldData = $chips.data('chips');
       for (var i = 0; i < oldData.length; i++) {
@@ -276,7 +276,7 @@
       newData.push(elem);
 
       $chips.data('chips', newData);
-      $(chipHtml).insertBefore($chips.find('input'));
+      $renderedChip.insertBefore($chips.find('input'));
       $chips.trigger('chip.add', elem);
       self.setPlaceholder($chips);
     };

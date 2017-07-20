@@ -1,4 +1,4 @@
-//=require "materialize/jquery.easing.1.3"
+//=require "materialize/jquery.easing.1.4"
 //=require "materialize/velocity.min"
 //=require "materialize/hammer.min"
 //=require "materialize/jquery.hammer"

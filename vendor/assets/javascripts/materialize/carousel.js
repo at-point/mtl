@@ -14,44 +14,60 @@
         onCycleTo: null // Callback for when a new slide is cycled to.
       };
       options = $.extend(defaults, options);
+      var namespace = Materialize.objectSelectorString($(this));
 
-      return this.each(function() {
+      return this.each(function(i) {
 
+        var uniqueNamespace = namespace+i;
         var images, item_width, item_height, offset, center, pressed, dim, count,
-            reference, referenceY, amplitude, target, velocity,
+            reference, referenceY, amplitude, target, velocity, scrolling,
             xform, frame, timestamp, ticker, dragged, vertical_dragged;
         var $indicators = $('<ul class="indicators"></ul>');
+        var scrollingTimeout = null;
+        var oneTimeCallback = null;
 
 
         // Initialize
         var view = $(this);
         var showIndicators = view.attr('data-indicators') || options.indicators;
 
-        // Don't double initialize.
-        if (view.hasClass('initialized')) {
-          // Redraw carousel.
-          $(this).trigger('carouselNext', [0.000001]);
-          return true;
-        }
-
 
         // Options
-        if (options.fullWidth) {
-          options.dist = 0;
+        var setCarouselHeight = function() {
           var firstImage = view.find('.carousel-item img').first();
           if (firstImage.length) {
-            imageHeight = firstImage.on('load', function(){
-              view.css('height', $(this).height());
-            });
+            if (firstImage.prop('complete')) {
+              view.css('height', firstImage.height());
+            } else {
+              firstImage.on('load', function(){
+                view.css('height', $(this).height());
+              });
+            }
           } else {
-            imageHeight = view.find('.carousel-item').first().height();
+            var imageHeight = view.find('.carousel-item').first().height();
             view.css('height', imageHeight);
           }
+        };
+
+        if (options.fullWidth) {
+          options.dist = 0;
+          setCarouselHeight();
 
           // Offset fixed items when indicators.
           if (showIndicators) {
             view.find('.carousel-fixed-item').addClass('with-indicators');
           }
+        }
+
+
+        // Don't double initialize.
+        if (view.hasClass('initialized')) {
+          // Recalculate variables
+          $(window).trigger('resize');
+
+          // Redraw carousel.
+          $(this).trigger('carouselNext', [0.000001]);
+          return true;
         }
 
 
@@ -128,6 +144,20 @@
         }
 
         function scroll(x) {
+          // Track scrolling state
+          scrolling = true;
+          if (!view.hasClass('scrolling')) {
+            view.addClass('scrolling');
+          }
+          if (scrollingTimeout != null) {
+            window.clearTimeout(scrollingTimeout);
+          }
+          scrollingTimeout = window.setTimeout(function() {
+            scrolling = false;
+            view.removeClass('scrolling');
+          }, options.duration);
+
+          // Start actual scroll
           var i, half, delta, dir, tween, el, alignment, xTranslation;
           var lastCenter = center;
 
@@ -238,6 +268,12 @@
             var $curr_item = view.find('.carousel-item').eq(wrap(center));
             options.onCycleTo.call(this, $curr_item, dragged);
           }
+
+          // One time callback
+          if (typeof(oneTimeCallback) === "function") {
+            oneTimeCallback.call(this, $curr_item, dragged);
+            oneTimeCallback = null;
+          }
         }
 
         function track() {
@@ -277,7 +313,7 @@
 
           } else if (!options.fullWidth) {
             var clickedIndex = $(e.target).closest('.carousel-item').index();
-            var diff = (center % count) - clickedIndex;
+            var diff = wrap(center) - clickedIndex;
 
             // Disable clicks if carousel was shifted by click
             if (diff !== 0) {
@@ -311,6 +347,9 @@
         }
 
         function tap(e) {
+          if (e.type === 'mousedown') {
+            e.preventDefault();
+          }
           pressed = true;
           dragged = false;
           vertical_dragged = false;
@@ -322,7 +361,6 @@
           timestamp = Date.now();
           clearInterval(ticker);
           ticker = setInterval(track, 100);
-
         }
 
         function drag(e) {
@@ -405,7 +443,7 @@
         });
 
 
-        $(window).on('resize.carousel', function() {
+        $(window).off('resize.carousel-'+uniqueNamespace).on('resize.carousel-'+uniqueNamespace, function() {
           if (options.fullWidth) {
             item_width = view.find('.carousel-item').first().innerWidth();
             item_height = view.find('.carousel-item').first().innerHeight();
@@ -420,10 +458,14 @@
         setupEvents();
         scroll(offset);
 
-        $(this).on('carouselNext', function(e, n) {
+        $(this).on('carouselNext', function(e, n, callback) {
           if (n === undefined) {
             n = 1;
           }
+          if (typeof(callback) === "function") {
+            oneTimeCallback = callback;
+          }
+
           target = (dim * Math.round(offset / dim)) + (dim * n);
           if (offset !== target) {
             amplitude = target - offset;
@@ -432,10 +474,14 @@
           }
         });
 
-        $(this).on('carouselPrev', function(e, n) {
+        $(this).on('carouselPrev', function(e, n, callback) {
           if (n === undefined) {
             n = 1;
           }
+          if (typeof(callback) === "function") {
+            oneTimeCallback = callback;
+          }
+
           target = (dim * Math.round(offset / dim)) - (dim * n);
           if (offset !== target) {
             amplitude = target - offset;
@@ -444,10 +490,14 @@
           }
         });
 
-        $(this).on('carouselSet', function(e, n) {
+        $(this).on('carouselSet', function(e, n, callback) {
           if (n === undefined) {
             n = 0;
           }
+          if (typeof(callback) === "function") {
+            oneTimeCallback = callback;
+          }
+
           cycleTo(n);
         });
 
@@ -456,14 +506,14 @@
 
 
     },
-    next : function(n) {
-      $(this).trigger('carouselNext', [n]);
+    next : function(n, callback) {
+      $(this).trigger('carouselNext', [n, callback]);
     },
-    prev : function(n) {
-      $(this).trigger('carouselPrev', [n]);
+    prev : function(n, callback) {
+      $(this).trigger('carouselPrev', [n, callback]);
     },
-    set : function(n) {
-      $(this).trigger('carouselSet', [n]);
+    set : function(n, callback) {
+      $(this).trigger('carouselSet', [n, callback]);
     }
   };
 

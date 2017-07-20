@@ -8,8 +8,11 @@
         responsiveThreshold: Infinity, // breakpoint for swipeable
       };
       options = $.extend(defaults, options);
+      var namespace = Materialize.objectSelectorString($(this));
 
-      return this.each(function() {
+      return this.each(function(i) {
+
+      var uniqueNamespace = namespace+i;
 
       // For each set of tabs, we want to keep track of
       // which tab is active and its associated content
@@ -31,13 +34,13 @@
       // Finds right attribute for indicator based on active tab.
       // el: jQuery Object
       var calcRightPos = function(el) {
-        return $tabs_width - el.position().left - el.outerWidth() - $this.scrollLeft();
+        return Math.ceil($tabs_width - el.position().left - el.outerWidth() - $this.scrollLeft());
       };
 
       // Finds left attribute for indicator based on active tab.
       // el: jQuery Object
       var calcLeftPos = function(el) {
-        return el.position().left + $this.scrollLeft();
+        return Math.floor(el.position().left + $this.scrollLeft());
       };
 
       // Animates Indicator to active tab.
@@ -85,7 +88,7 @@
 
       // append indicator then set indicator width to tab width
       if (!$this.find('.indicator').length) {
-        $this.append('<div class="indicator"></div>');
+        $this.append('<li class="indicator"></li>');
       }
       $indicator = $this.find('.indicator');
 
@@ -100,7 +103,7 @@
           $indicator.css({"left": calcLeftPos($active) });
         }, 0);
       }
-      $(window).resize(function () {
+      $(window).off('resize.tabs-'+uniqueNamespace).on('resize.tabs-'+uniqueNamespace, function () {
         $tabs_width = $this.width();
         $tab_width = Math.max($tabs_width, $this[0].scrollWidth) / $links.length;
         if (index < 0) {
@@ -131,6 +134,9 @@
               index = $tabs_wrapper.index(item);
               $active = $links.eq(index);
               animateIndicator(prev_index);
+              if (typeof(options.onShow) === "function") {
+                options.onShow.call($this[0], $content);
+              }
             }
           },
         });
@@ -143,7 +149,7 @@
 
 
       // Bind the click event handler
-      $this.on('click', 'a', function(e) {
+      $this.off('click.tabs').on('click.tabs', 'a', function(e) {
         if ($(this).parent().hasClass('disabled')) {
           e.preventDefault();
           return;
@@ -181,7 +187,11 @@
         // Swap content
         if (options.swipeable) {
           if ($tabs_content.length) {
-            $tabs_content.carousel('set', index);
+            $tabs_content.carousel('set', index, function() {
+              if (typeof(options.onShow) === "function") {
+                options.onShow.call($this[0], $content);
+              }
+            });
           }
         } else {
           if ($content !== undefined) {

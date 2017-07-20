@@ -10,8 +10,9 @@
 //  4. Cards
 //  5. Collapsible
 //  6. Chips
-//  7. Date Picker
+//  7. Date + Time Picker
 //  8. Dropdown
+//  9. Fonts
 //  10. Forms
 //  11. Global
 //  12. Grid
@@ -56,7 +57,8 @@ $badge-height: 22px !default;
 // Shared styles
 $button-border: none !default;
 $button-background-focus: lighten($secondary-color, 4%) !default;
-$button-font-size: 1.3rem !default;
+$button-font-size: 1rem !default;
+$button-icon-font-size: 1.3rem !default;
 $button-height: 36px !default;
 $button-padding: 0 2rem !default;
 $button-radius: 2px !default;
@@ -114,15 +116,20 @@ $chip-selected-color: #26a69a !default;
 $chip-margin: 5px !default;
 
 
-// 7. Date Picker
+// 7. Date + Time Picker
 // ==========================================================================
 
+$datepicker-display-font-size: 2.8rem;
+$datepicker-weekday-color: rgba(0, 0, 0, .87) !default;
 $datepicker-weekday-bg: darken($secondary-color, 7%) !default;
 $datepicker-date-bg: $secondary-color !default;
-$datepicker-year: rgba(255, 255, 255, .4) !default;
+$datepicker-year: rgba(255, 255, 255, .7) !default;
 $datepicker-focus: rgba(0,0,0, .05) !default;
 $datepicker-selected: $secondary-color !default;
 $datepicker-selected-outfocus: desaturate(lighten($secondary-color, 35%), 15%) !default;
+
+$timepicker-clock-color: rgba(0, 0, 0, .87) !default;
+$timepicker-clock-plate-bg: #eee;
 
 
 // 8. Dropdown
@@ -152,7 +159,8 @@ $input-error-color: $error-color !default;
 $input-success-color: $success-color !default;
 $input-focus-color: $secondary-color !default;
 $input-font-size: 1rem !default;
-$input-margin: 0 0 20px 0 !default;
+$input-margin-bottom: 20px;
+$input-margin: 0 0 $input-margin-bottom 0 !default;
 $input-padding: 0 !default;
 $input-transition: all .3s !default;
 $label-font-size: .8rem !default;
@@ -184,7 +192,7 @@ $select-disabled-color: rgba(0,0,0,.3) !default;
 $switch-bg-color: $secondary-color !default;
 $switch-checked-lever-bg: desaturate(lighten($secondary-color, 25%), 25%) !default;
 $switch-unchecked-bg: #F1F1F1 !default;
-$switch-unchecked-lever-bg: #818181 !default;
+$switch-unchecked-lever-bg: rgba(0,0,0,.38) !default;
 $switch-radius: 15px !default;
 
 
@@ -201,6 +209,7 @@ $large-screen: 1200px !default;
 
 $medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
 $large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
+$extra-large-and-up: "only screen and (min-width : #{$large-screen-up})" !default;
 $small-and-down: "only screen and (max-width : #{$small-screen})" !default;
 $medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
 $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
