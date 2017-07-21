@@ -1,3 +1,8 @@
+```diff
+- This repository reached end-of-life and the gem is deprecated.
+- We won't maintain it any more.
+```
+
 # MTL: Materializer
 
 ![unmaintained](http://img.shields.io/badge/status-unmaintained-red.svg)
