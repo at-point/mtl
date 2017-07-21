@@ -71,17 +71,17 @@ label {
 // fields with text suffix/unit
 .input-field.has-suffix {
   input:not([type]),
-  input[type=text],
-  input[type=password],
-  input[type=email],
-  input[type=url],
-  input[type=time],
-  input[type=date],
-  input[type=datetime],
-  input[type=datetime-local],
-  input[type=tel],
-  input[type=number],
-  input[type=search] {
+  [type=text],
+  [type=password],
+  [type=email],
+  [type=url],
+  [type=time],
+  [type=date],
+  [type=datetime],
+  [type=datetime-local],
+  [type=tel],
+  [type=number],
+  [type=search] {
     padding-right: 4rem;
     width: calc(100% - 4rem);
   }

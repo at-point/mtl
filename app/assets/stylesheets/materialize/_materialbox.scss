@@ -1,3 +1,4 @@
+// scss-lint:disable ColorVariable
 .materialboxed {
   &:hover {
     &:not(.active) {
@@ -16,8 +17,10 @@
   }
 }
 
+// scss-lint:disable IdSelector
 #materialbox-overlay {
-  position:fixed;
+// scss-lint:enable IdSelector
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;

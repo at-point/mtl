@@ -1,43 +1,33 @@
-/* Text Inputs + Textarea
-   ========================================================================== */
+// scss-lint:disable ColorVariable
 
-/* Style Placeholders */
+// Text Inputs + Textarea
 
-::-webkit-input-placeholder {
+// Style Placeholders
+::placeholder {
   color: $placeholder-text-color;
 }
 
-:-moz-placeholder { /* Firefox 18- */
-  color: $placeholder-text-color;
-}
+// Text inputs
 
-::-moz-placeholder {  /* Firefox 19+ */
-  color: $placeholder-text-color;
-}
-
-:-ms-input-placeholder {
-  color: $placeholder-text-color;
-}
-
-/* Text inputs */
-
+// scss-lint:disable QualifyingElement
 input:not([type]),
-input[type=text]:not(.browser-default),
-input[type=password]:not(.browser-default),
-input[type=email]:not(.browser-default),
-input[type=url]:not(.browser-default),
-input[type=time]:not(.browser-default),
-input[type=date]:not(.browser-default),
-input[type=datetime]:not(.browser-default),
-input[type=datetime-local]:not(.browser-default),
-input[type=tel]:not(.browser-default),
-input[type=number]:not(.browser-default),
-input[type=search]:not(.browser-default),
+// scss-lint:enable QualifyingElement
+[type=text]:not(.browser-default),
+[type=password]:not(.browser-default),
+[type=email]:not(.browser-default),
+[type=url]:not(.browser-default),
+[type=time]:not(.browser-default),
+[type=date]:not(.browser-default),
+[type=datetime]:not(.browser-default),
+[type=datetime-local]:not(.browser-default),
+[type=tel]:not(.browser-default),
+[type=number]:not(.browser-default),
+[type=search]:not(.browser-default),
 textarea.materialize-textarea {
 
   // General Styles
   background-color: transparent;
-  border: none;
+  border: 0;
   border-bottom: $input-border;
   border-radius: 0;
   outline: none;
@@ -82,8 +72,8 @@ textarea.materialize-textarea {
   }
 
   // Custom Success Message
-  &.valid + label:after,
-  &:focus.valid + label:after {
+  &.valid + label::after,
+  &:focus.valid + label::after {
     content: attr(data-success);
     color: $input-success-color;
     opacity: 1;
@@ -97,8 +87,8 @@ textarea.materialize-textarea {
   }
 
   // Custom Error message
-  &.invalid + label:after,
-  &:focus.invalid + label:after {
+  &.invalid + label::after,
+  &:focus.invalid + label::after {
     content: attr(data-error);
     color: $input-error-color;
     opacity: 1;
@@ -111,9 +101,9 @@ textarea.materialize-textarea {
   }
 
   // Form Message Shared Styles
-  & + label:after {
+  + label::after {
     display: block;
-    content: "";
+    content: '';
     position: absolute;
     top: 60px;
     left: 0;
@@ -124,6 +114,7 @@ textarea.materialize-textarea {
 
 // Styling for input field wrapper
 .input-field {
+
   // Inline styles
   &.inline {
     display: inline-block;
@@ -154,7 +145,7 @@ textarea.materialize-textarea {
   label {
     color: $input-border-color;
     position: absolute;
-    top: 0.8rem;
+    top: .8rem;
     left: 0;
     font-size: 1rem;
     cursor: text;
@@ -183,31 +174,17 @@ textarea.materialize-textarea {
   .prefix ~ .validate ~ label,
   .prefix ~ .autocomplete-content {
     margin-left: 3rem;
-    width: 92%;
     width: calc(100% - 3rem);
   }
-
-  .prefix ~ label { margin-left: 3rem; }
-
-  @media #{$medium-and-down} {
-    .prefix ~ input {
-      width: 86%;
-      width: calc(100% - 3rem);
-    }
-  }
-
-  @media #{$small-and-down} {
-    .prefix ~ input {
-      width: 80%;
-      width: calc(100% - 3rem);
-    }
+  .prefix ~ label {
+    margin-left: 3rem;
   }
 }
 
 
-/* Search Field */
+// Search Field
 
-.input-field input[type=search] {
+.input-field [type=search] {
   display: block;
   line-height: inherit;
   padding-left: 4rem;
@@ -219,19 +196,18 @@ textarea.materialize-textarea {
     box-shadow: none;
     color: #444;
 
-    & + label i,
-    & ~ .mdi-navigation-close,
-    & ~ .material-icons {
+    + label i,
+    ~ .mdi-navigation-close,
+    ~ .material-icons {
       color: #444;
     }
   }
-
-  & + label {
+  + label {
     left: 1rem;
   }
 
-  & ~ .mdi-navigation-close,
-  & ~ .material-icons {
+  ~ .mdi-navigation-close,
+  ~ .material-icons {
     position: absolute;
     top: 0;
     right: 1rem;
@@ -243,7 +219,7 @@ textarea.materialize-textarea {
 }
 
 
-/* Textarea */
+// Textarea
 
 // Default textarea
 textarea {
@@ -252,8 +228,8 @@ textarea {
   background-color: transparent;
 
   &.materialize-textarea {
-    overflow-y: hidden; /* prevents scroll bar flash */
-    padding: .8rem 0 1.6rem 0; /* prevents text jump on Enter keypress */
+    overflow-y: hidden; // prevents scroll bar flash
+    padding: .8rem 0 1.6rem; // prevents text jump on Enter keypress
     resize: none;
     min-height: $input-height;
   }
@@ -264,8 +240,8 @@ textarea {
   display: none;
   white-space: pre-wrap;
   word-wrap: break-word;
-  overflow-wrap: break-word; /* future version of deprecated 'word-wrap' */
-  padding-top: 1.2rem; /* prevents text jump on Enter keypress */
+  overflow-wrap: break-word; // future version of deprecated 'word-wrap'
+  padding-top: 1.2rem; // prevents text jump on Enter keypress
 
   // Reduces repaints
   position: absolute;
@@ -273,7 +249,7 @@ textarea {
 }
 
 
-/* Autocomplete */
+// Autocomplete
 .autocomplete-content {
   margin-top: -1 * $input-margin-bottom;
   display: block;
@@ -297,17 +273,17 @@ textarea {
   // scss-lint:disable QualifyingElement
   input:not([type]),
   // scss-lint:enable QualifyingElement
-  input[type=text],
-  input[type=password],
-  input[type=email],
-  input[type=url],
-  input[type=time],
-  input[type=date],
-  input[type=datetime],
-  input[type=datetime-local],
-  input[type=tel],
-  input[type=number],
-  input[type=search],
+  [type=text],
+  [type=password],
+  [type=email],
+  [type=url],
+  [type=time],
+  [type=date],
+  [type=datetime],
+  [type=datetime-local],
+  [type=tel],
+  [type=number],
+  [type=search],
   textarea.materialize-textarea {
     border-bottom: $input-invalid-border;
     box-shadow: 0 1px 0 0 $input-error-color;

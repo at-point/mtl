@@ -1,9 +1,11 @@
+// scss-lint:disable ColorVariable
+
 .chip {
   display: inline-block;
   height: 32px;
   font-size: 13px;
   font-weight: 500;
-  color: rgba(0,0,0,.6);
+  color: rgba(0, 0, 0, .6);
   line-height: 32px;
   padding: 0 12px;
   border-radius: 16px;
@@ -29,7 +31,7 @@
 }
 
 .chips {
-  border: none;
+  border: 0;
   border-bottom: 1px solid $chip-border-color;
   box-shadow: none;
   margin: $input-margin;
@@ -54,7 +56,7 @@
   .input {
     background: none;
     border: 0;
-    color: rgba(0,0,0,.6);
+    color: rgba(0, 0, 0, .6);
     display: inline-block;
     font-size: $input-font-size;
     height: $input-height;
@@ -79,11 +81,10 @@
 // Form prefix
 .prefix ~ .chips {
   margin-left: 3rem;
-  width: 92%;
   width: calc(100% - 3rem);
 }
-.chips:empty ~ label  {
-  font-size: 0.8rem;
+.chips:empty ~ label {
+  font-size: .8rem;
   transform: translateY(-140%);
 }
 

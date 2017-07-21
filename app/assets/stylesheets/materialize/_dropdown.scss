@@ -21,7 +21,9 @@
     text-align: left;
     text-transform: none;
 
-    &:hover, &.active, &.selected {
+    &:hover,
+    &.active,
+    &.selected {
       background-color: $dropdown-hover-bg-color;
     }
 
@@ -34,7 +36,8 @@
       height: 1px;
     }
 
-    & > a, & > span {
+    > a,
+    > span {
       font-size: 16px;
       color: $dropdown-color;
       display: block;
@@ -42,14 +45,14 @@
       padding: (($dropdown-item-height - 22) / 2) 16px;
     }
 
-    & > span > label {
+    > span > label {
       top: 1px;
       left: 0;
       height: 18px;
     }
 
     // Icon alignment override
-    & > a > i {
+    > a > i {
       height: inherit;
       line-height: inherit;
       float: left;

@@ -1,14 +1,13 @@
-/* ==========================================================================
-   $BASE-PICKER
-   ========================================================================== */
-/**
- * Note: the root picker element should *NOT* be styled more than what's here.
- */
+// scss-lint:disable ColorVariable
+
+// BASE-PICKER
+
+//Note: the root picker element should *NOT* be styled more than what's here.
 .picker {
   font-size: 16px;
   text-align: left;
   line-height: 1.2;
-  color: #000000;
+  color: #000;
   position: absolute;
   z-index: 10000;
   -webkit-user-select: none;
@@ -16,37 +15,29 @@
   -ms-user-select: none;
   user-select: none;
 }
-/**
- * The picker input element.
- */
+
+// The picker input element.
 .picker__input {
   cursor: default;
 }
-/**
- * When the picker is opened, the input element is "activated".
- */
+
+// When the picker is opened, the input element is "activated".
 .picker__input.picker__input--active {
   border-color: #0089ec;
 }
-/**
- * The holder is the only "scrollable" top-level container element.
- */
+
+// The holder is the only "scrollable" top-level container element.
 .picker__holder {
   width: 100%;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
 
-/*!
- * Default mobile-first, responsive styling for pickadate.js
- * Demo: http://amsul.github.io/pickadate.js
- */
-/**
- * Note: the root picker element should *NOT* be styled more than what's here.
- */
-/**
- * Make the holder and frame fullscreen.
- */
+// Default mobile-first, responsive styling for pickadate.js
+// Demo: http://amsul.github.io/pickadate.js
+//
+// Note: the root picker element should *NOT* be styled more than what's here.
+// Make the holder and frame fullscreen.
 .picker__holder,
 .picker__frame {
   bottom: 0;
@@ -54,19 +45,18 @@
   right: 0;
   top: 100%;
 }
-/**
- * The holder should overlay the entire screen.
- */
+
+// The holder should overlay the entire screen.
+$picker-holder-transition: background .15s ease-out, top 0s .15s;
 .picker__holder {
   position: fixed;
-  -webkit-transition: background 0.15s ease-out, top 0s 0.15s;
-  -moz-transition: background 0.15s ease-out, top 0s 0.15s;
-  transition: background 0.15s ease-out, top 0s 0.15s;
+  -webkit-transition: $picker-holder-transition;
+  -moz-transition: $picker-holder-transition;
+  transition: $picker-holder-transition;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
-/**
- * The frame that bounds the box contents of the picker.
- */
+// The frame that bounds the box contents of the picker.
 .picker__frame {
   position: absolute;
   margin: 0 auto;
@@ -76,13 +66,13 @@
   width: 300px;
   max-height: 350px;
 
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=0)';
+  filter: alpha(opacity = 0);
   -moz-opacity: 0;
   opacity: 0;
-  -webkit-transition: all 0.15s ease-out;
-  -moz-transition: all 0.15s ease-out;
-  transition: all 0.15s ease-out;
+  -webkit-transition: all .15s ease-out;
+  -moz-transition: all .15s ease-out;
+  transition: all .15s ease-out;
 }
 @media (min-height: 28.875em) {
   .picker__frame {
@@ -97,9 +87,8 @@
     margin-bottom: 7.5%;
   }
 }
-/**
- * The wrapper sets the stage to vertically align the box contents.
- */
+
+// The wrapper sets the stage to vertically align the box contents.
 .picker__wrap {
   display: table;
   width: 100%;
@@ -110,82 +99,53 @@
     display: block;
   }
 }
-/**
- * The box contains all the picker contents.
- */
+
+// The box contains all the picker contents.
 .picker__box {
-  background: #ffffff;
+  background: #fff;
   display: table-cell;
   vertical-align: middle;
 }
-//@media (min-height: 26.5em) {
-//  .picker__box {
-////    font-size: 1.25em;
-//  }
-//}
+
 @media (min-height: 28.875em) {
   .picker__box {
     display: block;
-
-//    picker header font-size
-//    font-size: 1rem;
-
-    border: 1px solid #777777;
+    border: 1px solid #777;
     border-top-color: #898989;
     border-bottom-width: 0;
     -webkit-border-radius: 5px 5px 0 0;
     -moz-border-radius: 5px 5px 0 0;
     border-radius: 5px 5px 0 0;
-    -webkit-box-shadow: 0 12px 36px 16px rgba(0, 0, 0, 0.24);
-    -moz-box-shadow: 0 12px 36px 16px rgba(0, 0, 0, 0.24);
-    box-shadow: 0 12px 36px 16px rgba(0, 0, 0, 0.24);
+    -webkit-box-shadow: 0 12px 36px 16px rgba(0, 0, 0, .24);
+    -moz-box-shadow: 0 12px 36px 16px rgba(0, 0, 0, .24);
+    box-shadow: 0 12px 36px 16px rgba(0, 0, 0, .24);
   }
 }
-//@media (min-height: 40.125em) {
-//  .picker__box {
-//    font-size: 1.1rem;
-//    border-bottom-width: 1px;
-//    -webkit-border-radius: 5px;
-//    -moz-border-radius: 5px;
-//    border-radius: 5px;
-//  }
-//}
-/**
- * When the picker opens...
- */
+
+// When the picker opens...
 .picker--opened .picker__holder {
   top: 0;
-  background: transparent;
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#1E000000,endColorstr=#1E000000)";
   zoom: 1;
-  background: rgba(0, 0, 0, 0.32);
-  -webkit-transition: background 0.15s ease-out;
-  -moz-transition: background 0.15s ease-out;
-  transition: background 0.15s ease-out;
+  background: rgba(0, 0, 0, .32);
+  transition: background .15s ease-out;
 }
 .picker--opened .picker__frame {
   top: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-  filter: alpha(opacity=100);
-  -moz-opacity: 1;
   opacity: 1;
 }
+
 @media (min-height: 35.875em) {
   .picker--opened .picker__frame {
     top: 10%;
     bottom: auto;
   }
 }
-/**
- * For `large` screens, transform into an inline picker.
- */
 
-/* ==========================================================================
-   CUSTOM MATERIALIZE STYLES
-   ========================================================================== */
+// For `large` screens, transform into an inline picker.
 
+// CUSTOM MATERIALIZE STYLES
 .picker__input.picker__input--active {
-  border-color: color("blue", "lighten-5");
+  border-color: color('blue', 'lighten-5');
 }
 
 .picker__frame {
@@ -201,11 +161,11 @@
 }
 
 @media only screen and (min-width: 601px) {
-	.picker__box {
-		display:flex;
-	}
-	.picker__frame {
-		width: 80%;
-		max-width:600px;
-	}
+  .picker__box {
+    display: flex;
+  }
+  .picker__frame {
+    width: 80%;
+    max-width: 600px;
+  }
 }

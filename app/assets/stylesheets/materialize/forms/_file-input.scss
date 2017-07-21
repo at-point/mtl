@@ -1,5 +1,4 @@
-/* File Input
-   ========================================================================== */
+// File Input
 
 .file-field {
   position: relative;
@@ -9,7 +8,7 @@
     padding-left: 10px;
   }
 
-  input.file-path { width: 100%; }
+  .file-path { width: 100%; }
 
   .btn {
     float: left;
@@ -21,7 +20,7 @@
     cursor: pointer;
   }
 
-  input[type=file] {
+  [type=file] {
     position: absolute;
     top: 0;
     right: 0;
@@ -33,6 +32,6 @@
     font-size: 20px;
     cursor: pointer;
     opacity: 0;
-    filter: alpha(opacity=0);
+    filter: alpha(opacity = 0);
   }
 }

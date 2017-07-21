@@ -1,3 +1,4 @@
+// scss-lint:disable ColorVariable
 nav {
   &.nav-extended {
     height: auto;
@@ -23,8 +24,9 @@ nav {
   a { color: $navbar-font-color; }
 
   i,
-  [class^="mdi-"], [class*="mdi-"],
-  i.material-icons {
+  [class^='mdi-'],
+  [class*='mdi-'],
+  .material-icons {
     display: block;
     font-size: 24px;
     height: $navbar-height-mobile;
@@ -37,7 +39,7 @@ nav {
   }
 
   @media #{$large-and-up} {
-    a.button-collapse { display: none; }
+    .button-collapse { display: none; }
   }
 
 
@@ -74,31 +76,34 @@ nav {
       left: 50%;
       transform: translateX(-50%);
 
-      &.left, &.right {
+      &.left,
+      &.right {
         padding: 0;
         transform: none;
       }
 
-      &.left { left: 0.5rem; }
+      &.left {
+        left: .5rem;
+      }
       &.right {
-        right: 0.5rem;
+        right: .5rem;
         left: auto;
       }
     }
 
     &.right {
-      right: 0.5rem;
+      right: .5rem;
       padding: 0;
     }
 
     i,
-    [class^="mdi-"], [class*="mdi-"],
-    i.material-icons {
+    [class^="mdi-"],
+    [class*="mdi-"],
+    .material-icons {
       float: left;
       margin-right: 15px;
     }
   }
-
 
   // Title
   .nav-title {
@@ -106,7 +111,6 @@ nav {
     font-size: 32px;
     padding: 28px 0;
   }
-
 
   // Navbar Links
   ul {
@@ -118,7 +122,7 @@ nav {
       padding: 0;
 
       &.active {
-        background-color: rgba(0,0,0,.1);
+        background-color: rgba(0, 0, 0, .1);
       }
     }
     a {
@@ -129,19 +133,22 @@ nav {
       padding: 0 15px;
       cursor: pointer;
 
-      &.btn, &.btn-large, &.btn-flat, &.btn-floating {
+      &.btn,
+      &.btn-large,
+      &.btn-flat,
+      &.btn-floating {
         margin-top: -2px;
         margin-left: 15px;
         margin-right: 15px;
 
-        & > .material-icons {
+        > .material-icons {
           height: inherit;
           line-height: inherit;
         }
       }
 
       &:hover {
-        background-color: rgba(0,0,0,.1);
+        background-color: rgba(0, 0, 0, .1);
       }
     }
 
@@ -162,12 +169,16 @@ nav {
     input {
       height: 100%;
       font-size: 1.2rem;
-      border: none;
+      border: 0;
       padding-left: 2rem;
 
-      &:focus, &[type=text]:valid, &[type=password]:valid,
-      &[type=email]:valid, &[type=url]:valid, &[type=date]:valid {
-        border: none;
+      &:focus,
+      &[type=text]:valid,
+      &[type=password]:valid,
+      &[type=email]:valid,
+      &[type=url]:valid,
+      &[type=date]:valid {
+        border: 0;
         box-shadow: none;
       }
     }
@@ -177,7 +188,7 @@ nav {
       left: 0;
 
       i {
-        color: rgba(255,255,255,.7);
+        color: rgba(255, 255, 255, .7);
         transition: color .3s;
       }
       &.active i { color: $navbar-font-color; }
@@ -196,10 +207,13 @@ nav {
   }
 }
 @media #{$medium-and-up} {
-  nav.nav-extended .nav-wrapper {
+  .nav-extended .nav-wrapper {
     min-height: $navbar-height;
   }
-  nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+  nav,
+  nav .nav-wrapper i,
+  nav .button-collapse,
+  nav .button-collapse i {
     height: $navbar-height;
     line-height: $navbar-line-height;
   }

@@ -1,9 +1,9 @@
-
+// scss-lint:disable ColorVariable
 
 .card-panel {
   transition: box-shadow .25s;
   padding: $card-padding;
-  margin: $element-top-margin 0 $element-bottom-margin 0;
+  margin: $element-top-margin 0 $element-bottom-margin;
   border-radius: 2px;
   @extend .z-depth-1;
   background-color: $card-bg-color;
@@ -11,24 +11,25 @@
 
 .card {
   position: relative;
-  margin: $element-top-margin 0 $element-bottom-margin 0;
+  margin: $element-top-margin 0 $element-bottom-margin;
   background-color: $card-bg-color;
   transition: box-shadow .25s;
   border-radius: 2px;
   @extend .z-depth-1;
 
-
   .card-title {
     font-size: 24px;
     font-weight: 300;
+
     &.activator {
       cursor: pointer;
     }
   }
 
   // Card Sizes
-  &.small, &.medium, &.large {
-    position: relative;
+  &.small,
+  &.medium,
+  &.large {
 
     .card-image {
       max-height: 60%;
@@ -63,7 +64,9 @@
 
   // Horizontal Cards
   &.horizontal {
-    &.small, &.medium, &.large {
+    &.small,
+    &.medium,
+    &.large {
       .card-image {
         height: 100%;
         max-height: none;
@@ -163,7 +166,7 @@
     }
     position: relative;
     background-color: inherit;
-    border-top: 1px solid rgba(160,160,160,.2);
+    border-top: 1px solid rgba(160, 160, 160, .2);
     padding: 16px $card-padding;
 
     a:not(.btn):not(.btn-large):not(.btn-floating) {

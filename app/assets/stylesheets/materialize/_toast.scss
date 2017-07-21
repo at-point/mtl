@@ -1,5 +1,7 @@
+// scss-lint:disable IdSelector
 #toast-container {
-  display:block;
+// scss-lint:enable IdSelector
+  display: block;
   position: fixed;
   z-index: 10000;
 
@@ -27,7 +29,7 @@
   clear: both;
   margin-top: 10px;
   position: relative;
-  max-width:100%;
+  max-width: 100%;
   height: auto;
   min-height: $toast-height;
   line-height: 1.5em;
@@ -42,17 +44,18 @@
   align-items: center;
   justify-content: space-between;
 
-  .btn, .btn-flat {
+  .btn,
+  .btn-flat {
     margin: 0;
     margin-left: 3rem;
   }
 
-  &.rounded{
+  &.rounded {
     border-radius: 24px;
   }
 
   @media #{$small-and-down} {
-    width:100%;
+    width: 100%;
     border-radius: 0;
   }
   @media #{$medium-only} {

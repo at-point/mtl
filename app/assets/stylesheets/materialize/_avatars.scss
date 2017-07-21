@@ -10,8 +10,8 @@
   position: relative;
   font-size: 11px !important;
   font-weight: normal;
-
-  @extend .grey, .lighten-2;
+  // TODO: re-enable this?
+  //@extend .grey, .lighten-2;
   color: $mtl-layout-default-text;
 
   img {

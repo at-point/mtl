@@ -1,4 +1,4 @@
-/* This is needed for some mobile phones to display the Google Icon font properly */
+// This is needed for some mobile phones to display the Google Icon font properly */
 .material-icons {
   text-rendering: optimizeLegibility;
   font-feature-settings: 'liga';
@@ -33,6 +33,7 @@
 
   // Support for all WebKit browsers.
   -webkit-font-smoothing: antialiased;
+
   // Support for Safari and Chrome.
   text-rendering: optimizeLegibility;
 

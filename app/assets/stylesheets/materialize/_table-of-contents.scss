@@ -1,16 +1,15 @@
-/***************
-    Nav List
-***************/
+// scss-lint:disable ColorVariable
+
+// Nav List
 .table-of-contents {
   &.fixed {
-      position: fixed;
-    }
+    position: fixed;
+  }
 
   li {
     padding: 2px 0;
   }
   a {
-    display: inline-block;
     font-weight: 300;
     color: #757575;
     padding-left: 20px;

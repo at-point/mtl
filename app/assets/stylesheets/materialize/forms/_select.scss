@@ -1,8 +1,13 @@
-/* Select Field
-   ========================================================================== */
+// scss-lint:disable ColorVariable
+// Select Field
 
-select { display: none; }
-select.browser-default { display: block; }
+select {
+  display: none;
+
+  &.browser-default {
+    display: block;
+  }
+}
 
 select {
   background-color: $select-background;
@@ -20,11 +25,11 @@ select {
 .select-wrapper {
   position: relative;
 
-  input.select-dropdown {
+  .select-dropdown {
     position: relative;
     cursor: pointer;
     background-color: transparent;
-    border: none;
+    border: 0;
     border-bottom: $input-border;
     outline: none;
     height: $input-height;
@@ -36,7 +41,7 @@ select {
     display: block;
   }
 
-  span.caret {
+  .caret {
     color: initial;
     position: absolute;
     right: 0;
@@ -52,7 +57,7 @@ select {
     }
   }
 
-  & + label {
+  + label {
     position: absolute;
     top: -14px;
     font-size: $label-font-size;
@@ -61,37 +66,40 @@ select {
 
 // Disabled styles
 select:disabled {
-  color: rgba(0,0,0,.3);
+  color: rgba(0, 0, 0, .3);
 }
 
-.select-wrapper input.select-dropdown:disabled {
-  color: rgba(0,0,0,.3);
+.select-wrapper .select-dropdown:disabled {
+  color: rgba(0, 0, 0, .3);
   cursor: default;
-  -webkit-user-select: none; /* webkit (safari, chrome) browsers */
-  -moz-user-select: none; /* mozilla browsers */
-  -ms-user-select: none; /* IE10+ */
-  border-bottom: 1px solid rgba(0,0,0,.3);
+  -webkit-user-select: none; // webkit (safari, chrome) browsers
+  -moz-user-select: none; // mozilla browsers
+  -ms-user-select: none; // IE10+
+  user-select: none;
+  border-bottom: 1px solid rgba(0, 0, 0, .3);
 }
 
 .select-wrapper i {
   color: $select-disabled-color;
 }
 
-.select-dropdown li.disabled,
-.select-dropdown li.disabled > span,
-.select-dropdown li.optgroup {
-  color: $select-disabled-color;
-  background-color: transparent;
+.select-dropdown {
+  .disabled,
+  .disabled > span,
+  .optgroup {
+    color: $select-disabled-color;
+    background-color: transparent;
+  }
 }
 
 // Prefix Icons
 .prefix ~ .select-wrapper {
   margin-left: 3rem;
-  width: 92%;
   width: calc(100% - 3rem);
 }
-
-.prefix ~ label { margin-left: 3rem; }
+.prefix ~ label {
+  margin-left: 3rem;
+}
 
 // Icons
 .select-dropdown li {
@@ -104,18 +112,16 @@ select:disabled {
 }
 
 // Optgroup styles
-.select-dropdown li.optgroup {
+.select-dropdown .optgroup {
   border-top: 1px solid $dropdown-hover-bg-color;
 
   &.selected > span {
     color: rgba(0, 0, 0, .7);
   }
-
-  & > span {
+  > span {
     color: rgba(0, 0, 0, .4);
   }
-
-  & ~ li.optgroup-option {
+  ~ .optgroup-option {
     padding-left: 1rem;
   }
 }

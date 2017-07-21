@@ -1,3 +1,5 @@
+// scss-lint:disable ColorVariable
+
 // ==========================================================================
 // Materialize variables
 // ==========================================================================
@@ -34,14 +36,14 @@
 // 1. Colors
 // ==========================================================================
 
-$primary-color: color("materialize-red", "lighten-2") !default;
+$primary-color: color('materialize-red', 'lighten-2') !default;
 $primary-color-light: lighten($primary-color, 15%) !default;
 $primary-color-dark: darken($primary-color, 15%) !default;
 
-$secondary-color: color("teal", "lighten-1") !default;
-$success-color: color("green", "base") !default;
-$error-color: color("red", "base") !default;
-$link-color: color("light-blue", "darken-1") !default;
+$secondary-color: color('teal', 'lighten-1') !default;
+$success-color: color('green', 'base') !default;
+$error-color: color('red', 'base') !default;
+$link-color: color('light-blue', 'darken-1') !default;
 
 
 // 2. Badges
@@ -64,8 +66,8 @@ $button-padding: 0 2rem !default;
 $button-radius: 2px !default;
 
 // Disabled styles
-$button-disabled-background: #DFDFDF !default;
-$button-disabled-color: #9F9F9F !default;
+$button-disabled-background: #dfdfdf !default;
+$button-disabled-color: #9f9f9f !default;
 
 // Raised buttons
 $button-raised-background: $secondary-color !default;
@@ -78,7 +80,7 @@ $button-large-height: $button-height * 1.5 !default;
 
 // Flat buttons
 $button-flat-color: #343434 !default;
-$button-flat-disabled-color: lighten(#999, 10%) !default;
+$button-flat-disabled-color: #b3b3b3 !default;
 
 // Floating buttons
 $button-floating-background: $secondary-color !default;
@@ -94,7 +96,7 @@ $button-floating-radius: 50% !default;
 
 $card-padding: 24px !default;
 $card-bg-color: #fff !default;
-$card-link-color: color("orange", "accent-2") !default;
+$card-link-color: color('orange', 'accent-2') !default;
 $card-link-color-light: lighten($card-link-color, 20%) !default;
 
 
@@ -124,7 +126,7 @@ $datepicker-weekday-color: rgba(0, 0, 0, .87) !default;
 $datepicker-weekday-bg: darken($secondary-color, 7%) !default;
 $datepicker-date-bg: $secondary-color !default;
 $datepicker-year: rgba(255, 255, 255, .7) !default;
-$datepicker-focus: rgba(0,0,0, .05) !default;
+$datepicker-focus: rgba(0, 0, 0, .05) !default;
 $datepicker-selected: $secondary-color !default;
 $datepicker-selected-outfocus: desaturate(lighten($secondary-color, 35%), 15%) !default;
 
@@ -144,7 +146,7 @@ $dropdown-item-height: 50px !default;
 // 9. Fonts
 // ==========================================================================
 
-$roboto-font-path: "../fonts/roboto/" !default;
+$roboto-font-path: '../fonts/roboto/' !default;
 
 
 // 10. Forms
@@ -152,7 +154,7 @@ $roboto-font-path: "../fonts/roboto/" !default;
 
 // Text Inputs + Textarea
 $input-height: 3rem !default;
-$input-border-color: color("grey", "base") !default;
+$input-border-color: color('grey', 'base') !default;
 $input-border: 1px solid $input-border-color !default;
 $input-background: #fff !default;
 $input-error-color: $error-color !default;
@@ -164,8 +166,8 @@ $input-margin: 0 0 $input-margin-bottom 0 !default;
 $input-padding: 0 !default;
 $input-transition: all .3s !default;
 $label-font-size: .8rem !default;
-$input-disabled-color: rgba(0,0,0, .26) !default;
-$input-disabled-solid-color: #BDBDBD !default;
+$input-disabled-color: rgba(0, 0, 0, .26) !default;
+$input-disabled-solid-color: #bdbdbd !default;
 $input-disabled-border: 1px dotted $input-disabled-color !default;
 $input-invalid-border: 1px solid $input-error-color !default;
 $placeholder-text-color: lighten($input-border-color, 20%) !default;
@@ -182,17 +184,17 @@ $track-height: 3px !default;
 
 // Select
 $select-border: 1px solid #f2f2f2 !default;
-$select-background: rgba(255, 255, 255, 0.90) !default;
+$select-background: rgba(255, 255, 255, .90) !default;
 $select-focus: 1px solid lighten($secondary-color, 47%) !default;
 $select-padding: 5px !default;
 $select-radius: 2px !default;
-$select-disabled-color: rgba(0,0,0,.3) !default;
+$select-disabled-color: rgba(0, 0, 0, .3) !default;
 
 // Switches
 $switch-bg-color: $secondary-color !default;
 $switch-checked-lever-bg: desaturate(lighten($secondary-color, 25%), 25%) !default;
-$switch-unchecked-bg: #F1F1F1 !default;
-$switch-unchecked-lever-bg: rgba(0,0,0,.38) !default;
+$switch-unchecked-bg: #f1f1f1 !default;
+$switch-unchecked-lever-bg: rgba(0, 0, 0, .38) !default;
 $switch-radius: 15px !default;
 
 
@@ -207,12 +209,12 @@ $small-screen: 600px !default;
 $medium-screen: 992px !default;
 $large-screen: 1200px !default;
 
-$medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
-$large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
-$extra-large-and-up: "only screen and (min-width : #{$large-screen-up})" !default;
-$small-and-down: "only screen and (max-width : #{$small-screen})" !default;
-$medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
-$medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
+$medium-and-up: 'only screen and (min-width : #{$small-screen-up})' !default;
+$large-and-up: 'only screen and (min-width : #{$medium-screen-up})' !default;
+$extra-large-and-up: 'only screen and (min-width : #{$large-screen-up})' !default;
+$small-and-down: 'only screen and (max-width : #{$small-screen})' !default;
+$medium-and-down: 'only screen and (max-width : #{$medium-screen})' !default;
+$medium-only: 'only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})' !default;
 
 
 // 12. Grid
@@ -220,8 +222,8 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
 
 $num-cols: 12 !default;
 $gutter-width: 1.5rem !default;
-$element-top-margin: $gutter-width/3 !default;
-$element-bottom-margin: ($gutter-width*2)/3 !default;
+$element-top-margin: ($gutter-width / 3) !default;
+$element-bottom-margin: (($gutter-width * 2) / 3) !default;
 
 
 // 13. Navigation Bar
@@ -239,7 +241,7 @@ $navbar-brand-font-size: 2.1rem !default;
 // ==========================================================================
 
 $sidenav-font-size: 14px !default;
-$sidenav-font-color: rgba(0,0,0,.87) !default;
+$sidenav-font-color: rgba(0, 0, 0, .87) !default;
 $sidenav-bg-color: #fff !default;
 $sidenav-padding: 16px !default;
 $sidenav-item-height: 48px !default;
@@ -287,7 +289,7 @@ $toast-text-color: #fff !default;
 // 20. Typography
 // ==========================================================================
 
-$off-black: rgba(0, 0, 0, 0.87) !default;
+$off-black: rgba(0, 0, 0, .87) !default;
 // Header Styles
 $h1-fontsize: 4.2rem !default;
 $h2-fontsize: 3.56rem !default;
@@ -306,7 +308,7 @@ $footer-bg-color: $primary-color !default;
 // 22. Flow Text
 // ==========================================================================
 
-$range : $large-screen - $small-screen !default;
+$range: $large-screen - $small-screen !default;
 $intervals: 20 !default;
 $interval-size: $range / $intervals !default;
 

@@ -1,20 +1,20 @@
-/* Range
-   ========================================================================== */
+// scss-lint:disable ColorVariable
 
+// Range
 .range-field {
   position: relative;
 }
 
-input[type=range],
-input[type=range] + .thumb {
+[type=range],
+[type=range] + .thumb {
   @extend .no-select;
   cursor: pointer;
 }
 
-input[type=range] {
+[type=range] {
   position: relative;
   background-color: transparent;
-  border: none;
+  border: 0;
   outline: none;
   width: 100%;
   margin: 15px 0;
@@ -25,11 +25,11 @@ input[type=range] {
   }
 }
 
-input[type=range] + .thumb {
+[type=range] + .thumb {
   position: absolute;
   top: 10px;
   left: 0;
-  border: none;
+  border: 0;
   height: 0;
   width: 0;
   border-radius: 50%;
@@ -61,48 +61,47 @@ input[type=range] + .thumb {
 }
 
 // WebKit
-input[type=range] {
+[type=range] {
   -webkit-appearance: none;
 }
 
-input[type=range]::-webkit-slider-runnable-track {
+[type=range]::-webkit-slider-runnable-track {
   height: $track-height;
   background: #c2c0c2;
-  border: none;
+  border: 0;
 }
 
-input[type=range]::-webkit-slider-thumb {
+[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  border: none;
+  border: 0;
   height: $range-height;
   width: $range-width;
   border-radius: 50%;
   background-color: $radio-fill-color;
   transform-origin: 50% 50%;
-  margin: -5px 0 0 0;
+  margin: -5px 0 0;
   transition: .3s;
 }
 
-input[type=range]:focus::-webkit-slider-runnable-track {
+[type=range]:focus::-webkit-slider-runnable-track {
   background: #ccc;
 }
 
 // FireFox
-input[type=range] {
-  /* fix for FF unable to apply focus style bug  */
-  border: 1px solid white;
-
-  /*required for proper track sizing in FF*/
+[type=range] {
+  // fix for FF unable to apply focus style bug
+  border: 1px solid #fff;
+  //required for proper track sizing in FF
 }
 
-input[type=range]::-moz-range-track {
+[type=range]::-moz-range-track {
   height: $track-height;
   background: #ddd;
-  border: none;
+  border: 0;
 }
 
-input[type=range]::-moz-range-thumb {
-  border: none;
+[type=range]::-moz-range-thumb {
+  border: 0;
   height: $range-height;
   width: $range-width;
   border-radius: 50%;
@@ -111,17 +110,17 @@ input[type=range]::-moz-range-thumb {
 }
 
 // hide the outline behind the border
-input[type=range]:-moz-focusring {
+[type=range]:-moz-focusring {
   outline: 1px solid #fff;
   outline-offset: -1px;
 }
 
-input[type=range]:focus::-moz-range-track {
+[type=range]:focus::-moz-range-track {
   background: #ccc;
 }
 
 // IE 10+
-input[type=range]::-ms-track {
+[type=range]::-ms-track {
   height: $track-height;
 
   // remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead
@@ -131,30 +130,30 @@ input[type=range]::-ms-track {
   border-color: transparent;
   border-width: 6px 0;
 
-  /*remove default tick marks*/
+  // remove default tick marks
   color: transparent;
 }
 
-input[type=range]::-ms-fill-lower {
+[type=range]::-ms-fill-lower {
   background: #777;
 }
 
-input[type=range]::-ms-fill-upper {
+[type=range]::-ms-fill-upper {
   background: #ddd;
 }
 
-input[type=range]::-ms-thumb {
-  border: none;
+[type=range]::-ms-thumb {
+  border: 0;
   height: $range-height;
   width: $range-width;
   border-radius: 50%;
   background: $radio-fill-color;
 }
 
-input[type=range]:focus::-ms-fill-lower {
+[type=range]:focus::-ms-fill-lower {
   background: #888;
 }
 
-input[type=range]:focus::-ms-fill-upper {
+[type=range]:focus::-ms-fill-upper {
   background: #ccc;
 }
