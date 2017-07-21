@@ -1,6 +1,10 @@
 ChangeLog
 =========
 
+Version 1.1.8
+-------------
+- Updated from MTL version v0.99.0
+
 Version 1.1.7
 -------------
 - Made non-active text color of tabs configurable #95

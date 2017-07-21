@@ -22,17 +22,17 @@
 /* Text inputs */
 
 input:not([type]),
-input[type=text],
-input[type=password],
-input[type=email],
-input[type=url],
-input[type=time],
-input[type=date],
-input[type=datetime],
-input[type=datetime-local],
-input[type=tel],
-input[type=number],
-input[type=search],
+input[type=text]:not(.browser-default),
+input[type=password]:not(.browser-default),
+input[type=email]:not(.browser-default),
+input[type=url]:not(.browser-default),
+input[type=time]:not(.browser-default),
+input[type=date]:not(.browser-default),
+input[type=datetime]:not(.browser-default),
+input[type=datetime-local]:not(.browser-default),
+input[type=tel]:not(.browser-default),
+input[type=number]:not(.browser-default),
+input[type=search]:not(.browser-default),
 textarea.materialize-textarea {
 
   // General Styles
@@ -116,6 +116,7 @@ textarea.materialize-textarea {
     content: "";
     position: absolute;
     top: 60px;
+    left: 0;
     opacity: 0;
     transition: .2s opacity ease-out, .2s color ease-out;
   }
@@ -158,6 +159,7 @@ textarea.materialize-textarea {
     font-size: 1rem;
     cursor: text;
     transition: .2s ease-out;
+    text-align: initial;
 
     &:not(.label-icon).active {
       font-size: $label-font-size;
@@ -264,12 +266,16 @@ textarea {
   word-wrap: break-word;
   overflow-wrap: break-word; /* future version of deprecated 'word-wrap' */
   padding-top: 1.2rem; /* prevents text jump on Enter keypress */
+
+  // Reduces repaints
+  position: absolute;
+  top: 0;
 }
 
 
 /* Autocomplete */
 .autocomplete-content {
-  margin-top: -15px;
+  margin-top: -1 * $input-margin-bottom;
   display: block;
   opacity: 1;
   position: static;
