@@ -290,3 +290,55 @@ textarea {
     }
   }
 }
+
+// extended by atp_mtl
+// invalid input style compatible with simple_form error markup
+.has-error {
+  // scss-lint:disable QualifyingElement
+  input:not([type]),
+  // scss-lint:enable QualifyingElement
+  input[type=text],
+  input[type=password],
+  input[type=email],
+  input[type=url],
+  input[type=time],
+  input[type=date],
+  input[type=datetime],
+  input[type=datetime-local],
+  input[type=tel],
+  input[type=number],
+  input[type=search],
+  textarea.materialize-textarea {
+    border-bottom: $input-invalid-border;
+    box-shadow: 0 1px 0 0 $input-error-color;
+
+    &:focus {
+      border-bottom: $input-invalid-border;
+      box-shadow: 0 1px 0 0 $input-error-color;
+    }
+  }
+  .error-block {
+    color: $input-error-color;
+    display: block;
+    font-size: .8rem;
+    cursor: text;
+    position: relative;
+    top: -15px;
+    line-height: 2rem;
+  }
+
+  &.boolean {
+    label::before {
+      border-color: $input-error-color !important;
+    }
+    [type="checkbox"]:checked + label::before {
+      // scss-lint:disable Shorthand
+      border-color: transparent $input-error-color $input-error-color transparent !important;
+      // scss-lint:enable Shorthand
+    }
+    .error-block {
+      top: 0;
+      padding-left: 10px;
+    }
+  }
+}

@@ -1,4 +1,20 @@
-// scss-lint:disable QualifyingElement SelectorFormat
+// Remove Focus Boxes
+select:focus {
+  outline: $select-focus;
+}
+
+button:focus {
+  outline: none;
+  background-color: $button-background-focus;
+}
+
+label {
+  font-size: $label-font-size;
+  color: $input-border-color;
+}
+
+// extended by atp_mtl
+//scss-lint:disable QualifyingElement SelectorFormat
 
 // select/dropdown hotfixes
 .select-wrapper {
@@ -105,3 +121,12 @@
   }
 }
 
+
+// includes by mtl
+@import 'input-fields';
+@import 'radio-buttons';
+@import 'checkboxes';
+@import 'switches';
+@import 'select';
+@import 'file-input';
+@import 'range';

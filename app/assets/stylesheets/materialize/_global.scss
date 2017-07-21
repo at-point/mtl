@@ -1,7 +1,7 @@
 //Default styles
-
 html {
  box-sizing: border-box;
+ height: 100%;
 }
 *, *:before, *:after {
  box-sizing: inherit;
@@ -736,4 +736,131 @@ td, th{
 
 .no-padding {
   padding: 0 !important;
+}
+
+
+
+
+// extended by atp_mtl
+td,
+th {
+  border-radius: 0;
+}
+
+table {
+  &.responsive-table {
+    th,
+    td {
+      &:first-child {
+        padding-left: 47px;
+      }
+    }
+
+    thead {
+      tr {
+        padding: 0;
+
+        th {
+          padding-right: 10px;
+
+          &:first-child {
+            padding-left: 47px;
+          }
+        }
+      }
+    }
+    td {
+      @media #{$medium-and-down} {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    tbody tr {
+      @media #{$medium-and-down} {
+        border-bottom-width: 0;
+        padding-right: 0;
+      }
+    }
+    tbody tr td {
+      @media #{$medium-and-down} {
+        border-right: 1px solid $table-border-color;
+        padding-right: 10px;
+      }
+    }
+  }
+
+  &.no-side-padding {
+    th,
+    td {
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+
+  &.compressed {
+    th,
+    td {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+  }
+}
+
+// margin helpers
+$margin-lg: 40px !important;
+$margin-md: 20px !important;
+$margin-sm: 10px !important;
+
+.margin-lg,
+.margin-top-lg {
+  margin-top: $margin-lg;
+}
+.margin-lg,
+.margin-bottom-lg {
+  margin-bottom: $margin-lg;
+}
+
+.margin-md,
+.margin-top-md {
+  margin-top: $margin-md;
+}
+.margin-md,
+.margin-bottom-md {
+  margin-bottom: $margin-md;
+}
+
+.margin-sm,
+.margin-top-sm {
+  margin-top: $margin-sm;
+}
+.margin-sm,
+.margin-bottom-sm {
+  margin-bottom: $margin-sm;
+}
+
+// horizontal ruler
+hr {
+  line-height: 0;
+  overflow: hidden;
+  border-color: $table-border-color;
+  border-width: 0 0 1px;
+  border-style: solid;
+
+  &.margin-lg,
+  &.margin-top-lg {
+    margin-top: $margin-lg - 10px;
+  }
+  &.margin-md,
+  &.margin-top-md {
+    margin-top: $margin-md - 10px;
+  }
+  &.margin-sm,
+  &.margin-top-sm {
+    margin-top: $margin-sm - 10px;
+  }
 }

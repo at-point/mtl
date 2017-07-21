@@ -290,3 +290,36 @@ button.btn-floating {
 .btn-block {
   display: block;
 }
+
+// extended by atp_mtl
+.btn-square,
+.btn-more {
+  padding: 0 !important;
+  width: $button-height;
+  text-align: center;
+}
+
+.btn-more {
+  color: $mtl-layout-default-text;
+
+  .material-icons {
+    display: inline;
+    height: $button-height;
+    line-height: $button-height;
+    font-size: 1.6rem;
+  }
+}
+
+.btn-more-wrapper {
+  float: right;
+  margin-right: 1rem;
+}
+
+.card-content .btn-more-wrapper {
+  margin-right: $card-padding * -.5;
+  margin-top: $card-padding * -.5;
+}
+
+.card-action .btn-more-wrapper {
+  margin-right: 0;
+}

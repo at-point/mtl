@@ -4,72 +4,39 @@
 @import 'materialize/normalize';
 
 // components
+@import 'materialize/mixins';
 @import 'materialize/global';
-@import './extend/global';
-
-@import './extend/material-icons';
-
+@import 'materialize/icons-material-design';
 @import 'materialize/grid';
-@import './extend/grid';
-
 @import 'materialize/navbar';
-@import './extend/navbar';
-
-// @import 'materialize/roboto';
-@import './extend/roboto-rails'; // using asset_url's
-
+@import 'materialize/roboto';
 @import 'materialize/typography';
-
 @import 'materialize/cards';
-@import './extend/cards';
-
 @import 'materialize/toast';
-
 @import 'materialize/tabs';
-
 @import 'materialize/tooltip';
 @import 'materialize/buttons';
-@import './extend/buttons';
 @import 'materialize/dropdown';
-@import 'extend/dropdown';
 @import 'materialize/waves';
 @import 'materialize/modal';
 @import 'materialize/collapsible';
-
 @import 'materialize/chips';
-@import './extend/chips';
-
 @import 'materialize/materialbox';
 @import 'materialize/forms/forms';
-@import './extend/forms';
-@import './extend/forms/input-fields';
-@import './extend/tabs';
 @import 'materialize/table_of_contents';
-@import './extend/toc';
-
 @import 'materialize/sideNav';
-@import './extend/side-nav';
-
-@import './extend/avatars';
-
+@import 'materialize/avatars';
 @import 'materialize/preloader';
 @import 'materialize/slider';
 @import 'materialize/carousel';
 @import 'materialize/date_picker/default';
 @import 'materialize/date_picker/default.date';
 @import 'materialize/date_picker/default.time';
-
-// extending the materializer library even more
-@import './extend/mixins';
-@import './extend/collection-files';
-@import './extend/typography';
-@import './extend/document-modals';
-
-// including layouts
-html { height: 100%; } // yes, necessary
-@import './layouts/default';
-@import './layouts/single';
-
-// new stuff (0.98.0 -> 0.99.0)
+@import 'materialize/document-modals';
 @import 'materialize/pulse';
 @import 'materialize/tapTarget';
+@import 'materialize/collection-files';
+
+// layouts
+@import 'materialize/layouts/default';
+@import 'materialize/layouts/single';

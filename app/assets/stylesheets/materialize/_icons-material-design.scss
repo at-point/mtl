@@ -1,3 +1,10 @@
+/* This is needed for some mobile phones to display the Google Icon font properly */
+.material-icons {
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'liga';
+}
+
+// extended by atp_mtl
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;
