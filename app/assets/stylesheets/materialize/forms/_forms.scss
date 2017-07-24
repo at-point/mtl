@@ -1,0 +1,122 @@
+// Remove Focus Boxes
+select:focus {
+  outline: $select-focus;
+}
+
+button:focus {
+  outline: none;
+  background-color: $button-background-focus;
+}
+
+label {
+  font-size: $label-font-size;
+  color: $input-border-color;
+}
+
+// extended by atp_mtl
+//scss-lint:disable QualifyingElement SelectorFormat
+
+// select/dropdown hotfixes
+.select-wrapper {
+  // caret fix
+  span.caret {
+    color: inherit;
+  }
+  // ellipsis of selected option
+  input.select-dropdown {
+    padding-right: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+  }
+}
+
+.radio_buttons {
+  padding: .8rem .75rem !important;
+
+  > label {
+    top: 0;
+    padding: 0 !important;
+    font-size: .8rem;
+  }
+
+  > .error-block {
+    top: 0 !important;
+  }
+}
+
+// radio buttons in one line
+.radio_buttons--horizontal {
+  > .radio {
+    display: inline-block;
+
+    label {
+      left: 0 !important;
+    }
+  }
+}
+
+// fix for too long labels
+.input-field label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+.input-field.col label {
+  padding-right: $gutter-width;
+  left: .75rem;
+}
+
+// fields with text suffix/unit
+.input-field.has-suffix {
+  input:not([type]),
+  [type=text],
+  [type=password],
+  [type=email],
+  [type=url],
+  [type=time],
+  [type=date],
+  [type=datetime],
+  [type=datetime-local],
+  [type=tel],
+  [type=number],
+  [type=search] {
+    padding-right: 4rem;
+    width: calc(100% - 4rem);
+  }
+
+  label {
+    padding-right: 4rem;
+    width: 100%;
+  }
+
+  .suffix {
+    position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 3rem;
+    color: $input-border-color;
+    font-size: $input-font-size;
+    text-align: right;
+    max-width: 3.8rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &.col {
+    label {
+      padding-right: 5.5rem;
+    }
+    .suffix {
+      right: .75rem;
+    }
+  }
+}
+
+.input-field.switch {
+  label {
+    position: static;
+  }
+}
