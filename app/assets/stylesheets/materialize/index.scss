@@ -1,6 +1,6 @@
 @charset 'UTF-8';
 
-// Reset
+// reset
 @import 'materialize/normalize';
 
 // components
@@ -22,20 +22,31 @@
 @import 'materialize/collapsible';
 @import 'materialize/chips';
 @import 'materialize/materialbox';
-@import 'materialize/forms/forms';
 @import 'materialize/table-of-contents';
 @import 'materialize/side-nav';
 @import 'materialize/avatars';
 @import 'materialize/preloader';
 @import 'materialize/slider';
 @import 'materialize/carousel';
-@import 'materialize/date-picker/default';
-@import 'materialize/date-picker/default.date';
-@import 'materialize/date-picker/default.time';
 @import 'materialize/document-modals';
 @import 'materialize/pulse';
 @import 'materialize/tap-target';
 @import 'materialize/collection-files';
+
+// forms
+@import 'materialize/forms/forms';
+@import 'materialize/forms/input-fields';
+@import 'materialize/forms/radio-buttons';
+@import 'materialize/forms/checkboxes';
+@import 'materialize/forms/switches';
+@import 'materialize/forms/select';
+@import 'materialize/forms/file-input';
+@import 'materialize/forms/range';
+
+// date-picker
+@import 'materialize/date-picker/default';
+@import 'materialize/date-picker/default.date';
+@import 'materialize/date-picker/default.time';
 
 // layouts
 @import 'materialize/layouts/default';
