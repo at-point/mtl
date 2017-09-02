@@ -119,6 +119,11 @@
     var text_area_selector = '.materialize-textarea';
 
     function textareaAutoResize($textarea) {
+      var hiddenDiv = $('.hiddendiv').first();
+      if (!hiddenDiv.length) {
+        hiddenDiv = $('<div class="hiddendiv common"></div>');
+        $('body').append(hiddenDiv);
+      }
       // Set font properties of hiddenDiv
 
       var fontFamily = $textarea.css('font-family');

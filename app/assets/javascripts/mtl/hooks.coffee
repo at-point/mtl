@@ -13,3 +13,8 @@ $ ->
     $('.tooltipped').tooltip()
     Materialize.updateTextFields()
     Waves.displayEffect()
+
+    $('.materialize-textarea').each ->
+      $textarea = $(this)
+      $textarea.data('original-height', $textarea.height())
+      $textarea.data('previous-length', $textarea.val().length)

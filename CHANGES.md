@@ -1,6 +1,10 @@
 ChangeLog
 =========
 
+Version 1.1.9
+-------------
+- Fix textarea resize event binding
+
 Version 1.1.8
 -------------
 - Updated from MTL version v0.99.0
