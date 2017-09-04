@@ -1,6 +1,10 @@
 ChangeLog
 =========
 
+Version 1.1.10
+-------------
+- Add download link in file card #107
+
 Version 1.1.9
 -------------
 - Fix textarea resize event binding
