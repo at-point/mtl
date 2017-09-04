@@ -7,6 +7,8 @@ $mtl-collection-file-bg: color('grey', 'lighten-5');
 $mtl-collection-file-text-primary: color('grey', 'darken-4');
 $mtl-collection-file-text-secondary: color('grey', 'base');
 
+$mtl-collection-file-download: color('grey', 'darken-2');
+
 // collection of file cards
 .collection-files {
   margin: (-$mtl-collection-files-spacing) 0 0 (-$mtl-collection-files-spacing);
@@ -27,6 +29,7 @@ $mtl-collection-file-text-secondary: color('grey', 'base');
     background-size: cover;
     background-position: center;
     padding: 12px 13px 0;
+    cursor: pointer;
 
     @media #{$small-and-down} {
       width: 100%;
@@ -58,6 +61,28 @@ $mtl-collection-file-text-secondary: color('grey', 'base');
       &.secondary {
         color: $mtl-collection-file-text-secondary;
       }
+    }
+
+    // additional direct download link
+    .download-link {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      transition-duration: .2s;
+      transition-property: opacity;
+
+      .material-icons {
+        display: block;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        color: $mtl-collection-file-download;
+      }
+    }
+    &:hover .download-link {
+      opacity: 1;
     }
 
     // image only panel
