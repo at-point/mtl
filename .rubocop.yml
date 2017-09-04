@@ -63,3 +63,7 @@ Style/FrozenStringLiteralComment:
 
 Style/MixinGrouping:
   Enabled: false
+
+Metrics/MethodLength:
+  Exclude:
+    - lib/mtl/rails/card_file_presenter.rb

@@ -18,8 +18,8 @@ module Mtl
                         class: ['card-panel', params[:preview] ? 'card-panel-image' : nil],
                         data: data(filename, params),
                         style: if params[:preview]
-                                "background-image: url(#{URI.encode(params[:preview])})"
-                              end }
+                                 "background-image: url(#{URI.encode(params[:preview])})"
+                               end }
         if params[:modal]
           view.content_tag :div, render_body(filename, params), card_params
         else
