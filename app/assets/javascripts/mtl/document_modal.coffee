@@ -88,7 +88,7 @@ findOrCreateDocumentModal = ->
 initDocumentModal = ($fileCard) ->
   filename = $fileCard.data('mtl-document-name')
   title = $fileCard.prop('title')
-  url = $fileCard.prop('href')
+  url = $fileCard.data('href')
   $modal = $(
     MTL.renderTemplate(
       'document_modal',
@@ -121,6 +121,22 @@ $(document).on 'click', '[data-mtl-document-modal="open"]', (e) ->
         findOrCreateDocumentModal().find('.document-modal-prev').trigger 'click'
       when 39 # right
         findOrCreateDocumentModal().find('.document-modal-next').trigger 'click'
+
+
+$(document).on 'click', '[data-mtl-document-modal="open"] .download-link', (e) ->
+  e.stopPropagation()
+  $(this).removeAttr('download') if navigator.userAgent.search('Firefox') > -1
+  if window.navigator && window.navigator.msSaveOrOpenBlob
+    e.preventDefault()
+    xhr = new XMLHttpRequest()
+    xhr.open('GET', this.href, true)
+    xhr.responseType = 'blob'
+    xhr.onload = (e) =>
+      if (xhr.status == 200)
+        blob = new Blob([xhr.response], type: xhr.getResponseHeader('content-type'))
+        window.navigator.msSaveOrOpenBlob(blob, this.title)
+    xhr.send()
+
 
 $(document).on 'click', '[data-mtl-document-modal="close"]', (e) ->
   e.preventDefault()
